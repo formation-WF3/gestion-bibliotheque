@@ -21,4 +21,10 @@ public class BookService {
         );
         return bookDtos;
     }
+
+    public BookDto getById(String id) {
+        return bookRepository.findById(id)
+                .map(BookAdapter::toDto)
+                .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
+    }
 }

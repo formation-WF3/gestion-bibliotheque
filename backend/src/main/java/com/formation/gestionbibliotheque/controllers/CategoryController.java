@@ -4,6 +4,7 @@ import com.formation.gestionbibliotheque.dtos.CategoryDto;
 import com.formation.gestionbibliotheque.services.CategoryService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +19,11 @@ public class CategoryController {
     @GetMapping
     public List<CategoryDto> getAll() {
         return categoryService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public CategoryDto getById(@PathVariable String id) {
+        return categoryService.getById(id);
     }
 
 }

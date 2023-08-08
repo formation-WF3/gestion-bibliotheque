@@ -30,7 +30,6 @@ A partir de là, plus besoin d'y toucher.
 # Projet de gestion d’une bibliothèque
 
 Le projet coté backend a été généré avec spring initializer :
-
 Maven, Spring 3.1.2, Java 17, et les dépendances Spring Web, MySQL Driver, Spring Data JPA, Lombok, Spring Boot DevTools, et Spring Security.
 
 Côté frontend, le projet a été généré avec Angular CLI 16.1.7

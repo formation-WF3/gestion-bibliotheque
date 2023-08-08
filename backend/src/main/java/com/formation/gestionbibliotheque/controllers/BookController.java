@@ -1,9 +1,11 @@
 package com.formation.gestionbibliotheque.controllers;
 
 import com.formation.gestionbibliotheque.dtos.BookDto;
+import com.formation.gestionbibliotheque.dtos.CategoryDto;
 import com.formation.gestionbibliotheque.services.BookService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +20,11 @@ public class BookController {
     @GetMapping
     public List<BookDto> getAll() {
         return bookService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public BookDto getById(@PathVariable String id) {
+        return bookService.getById(id);
     }
 
 }
