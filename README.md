@@ -1,12 +1,12 @@
 # gestion-bibliotheque
 
-| :warning: IMPORTANT
+:warning: IMPORTANT
 
 Avant le premier lancement du projet, aller dans le fichier "/backend/src/main/resources/application.properties", et vérifier que la ligne :
 ```properties
 spring.jpa.hibernate.ddl-auto=create-drop
 ```
-soit bien telle quelle.
+soit bien comme ci-dessus.
 Si ce n'est pas le cas, et qu'elle est, par exemple, comme ceci :
 ```properties
 spring.jpa.hibernate.ddl-auto=update
@@ -15,13 +15,13 @@ Il faut alors la modifier pour qu'elle soit comme indiquer plus haut.
 
 Une fois le projet lancé, aller dans le logiciel vous permettant d'accéder à la base de données, par exemple, Adminer ou PHPMyAdmin.
 Vérifier que la table "category" existe bien et exécuter le fichier "/backend/db-requests.sql" ou copier-coller son contenu dans la partie servant à exécuter des requêtes SQL, puis exécuter.
-Vérifier ensuite que la table contient bien 5 lignes.
+Vérifier ensuite que la table contient bien 5 enregistrements.
 
 Avant le prochain lancement du projet, aller dans le fichier "/backend/src/main/resources/application.properties", et modifier la ligne :
 ```properties
 spring.jpa.hibernate.ddl-auto=create-drop
 ```
-     en
+en
 ```properties
 spring.jpa.hibernate.ddl-auto=update
 ```
