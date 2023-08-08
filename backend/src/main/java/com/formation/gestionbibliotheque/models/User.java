@@ -36,6 +36,9 @@ public class User {
     private long id;
 
     @Column(length = 50, nullable = false, unique = true)
+    private String username;
+
+    @Column(length = 50, nullable = false, unique = true)
     private String lastname;
 
     @Column(length = 50, nullable = false, unique = true)
@@ -60,18 +63,28 @@ public class User {
     private Profile profile;
 
     /**
+     * @param username
      * @param lastname
      * @param firstname
      * @param email
      * @param password
      */
-    public User(String lastname, String firstname, String email, String password) {
+    public User(String username, String lastname, String firstname, String email, String password) {
+        this.username = username;
         this.lastname = lastname;
         this.firstname = firstname;
         this.email = email;
         this.password = password;
         
     }
+    public String getUsername() {
+        return username;
+    }
+    
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getfirstname(){
         return firstname;
     }
