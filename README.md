@@ -11,7 +11,7 @@ Si ce n'est pas le cas, et qu'elle est, par exemple, comme ceci :
 ```properties
 spring.jpa.hibernate.ddl-auto=update
 ```
-Il faut alors la modifier pour qu'elle soit comme indiquer plus haut.
+Il faut alors la modifier pour qu'elle soit comme indiqué plus haut.
 
 Une fois le projet lancé, aller dans le logiciel vous permettant d'accéder à la base de données, par exemple, Adminer ou PHPMyAdmin.
 Vérifier que la table "category" existe bien et exécuter le fichier "/backend/db-requests.sql" ou copier-coller son contenu dans la partie servant à exécuter des requêtes SQL, puis exécuter.
@@ -29,7 +29,7 @@ A partir de là, plus besoin d'y toucher.
 
 # Projet de gestion d’une bibliothèque
 
-Le projet coté backend a été généré avec spring initializr :
+Le projet coté backend a été généré avec spring initializer :
 
 Maven, Spring 3.1.2, Java 17, et les dépendances Spring Web, MySQL Driver, Spring Data JPA, Lombok, Spring Boot DevTools, et Spring Security.
 
