@@ -12,6 +12,7 @@ public class BookAdapter {
         dto.setAuthor(model.getAuthor());
         dto.setTotal_items(model.getTotal_items());
         dto.setRemaining_items(model.getRemaining_items());
+        dto.setCategory(model.getCategory());
         return dto;
     }
 }

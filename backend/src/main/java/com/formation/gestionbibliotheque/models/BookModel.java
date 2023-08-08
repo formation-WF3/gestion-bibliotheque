@@ -15,10 +15,10 @@ public class BookModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false)
+    @Column(length = 60, nullable = false)
     private String title;
 
-    @Column(nullable = false)
+    @Column(length = 50, nullable = false)
     private String author;
 
     @Column(nullable = false)
@@ -27,4 +27,6 @@ public class BookModel {
     @Column(nullable = false)
     private int remaining_items;
 
+    @ManyToOne(optional = false)
+    private CategoryModel category;
 }

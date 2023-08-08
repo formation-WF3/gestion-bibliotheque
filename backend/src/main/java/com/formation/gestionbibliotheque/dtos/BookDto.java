@@ -1,6 +1,7 @@
 package com.formation.gestionbibliotheque.dtos;
 
 
+import com.formation.gestionbibliotheque.models.CategoryModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,4 +17,5 @@ public class BookDto {
     private String author;
     private int total_items;
     private int remaining_items;
+    private CategoryModel category;
 }
