@@ -17,8 +17,8 @@ public class UserDto {
     private String firstname;
     private String password;
     private String email;
-    private boolean email_verified;
-    private boolean can_borrow;
-    private double penalty_amount;
+    private boolean emailVerified;
+    private boolean canBorrow;
+    private double penaltyAmount;
     private RoleModel role;
 }

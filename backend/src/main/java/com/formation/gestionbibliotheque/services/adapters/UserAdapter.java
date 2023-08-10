@@ -13,9 +13,9 @@ public class UserAdapter {
         dto.setFirstname(model.getFirstname());
         dto.setPassword(model.getPassword());
         dto.setEmail(model.getEmail());
-        dto.setEmail_verified(model.isEmail_verified());
-        dto.setCan_borrow(model.isCan_borrow());
-        dto.setPenalty_amount(model.getPenalty_amount());
+        dto.setEmailVerified(model.isEmailVerified());
+        dto.setCanBorrow(model.isCanBorrow());
+        dto.setPenaltyAmount(model.getPenaltyAmount());
         dto.setRole(model.getRole());
         return dto;
     }

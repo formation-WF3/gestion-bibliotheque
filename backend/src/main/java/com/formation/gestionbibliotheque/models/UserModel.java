@@ -30,14 +30,14 @@ public class UserModel {
     @Column(length = 50, nullable = false)
     private String email;
 
-    @Column(columnDefinition = "boolean default false")
-    private boolean email_verified;
+    @Column(name = "email_verified", columnDefinition = "boolean default false")
+    private boolean emailVerified;
 
-    @Column(columnDefinition = "boolean default false")
-    private boolean can_borrow;
+    @Column(name = "can_borrow", columnDefinition = "boolean default false")
+    private boolean canBorrow;
 
-    @Column(nullable = false)
-    private double penalty_amount;
+    @Column(name = "penalty_amount", nullable = false)
+    private double penaltyAmount;
 
     @ManyToOne(optional = false)
     private RoleModel role;
