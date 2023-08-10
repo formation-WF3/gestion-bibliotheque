@@ -2,8 +2,8 @@ package com.formation.gestionbibliotheque.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @NoArgsConstructor
@@ -18,11 +18,11 @@ public class LoanModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @CreatedDate
     @Column(name = "borrowed_at", nullable = false, updatable = false)
-    private Date borrowedAt;
+    private Date borrowedAt = new Date();
+//    private Date borrowedAt = LocalDateTime.now();
 
-    @Column(name = "return_date", nullable = false, updatable = false)
+    @Column(name = "return_date")
     private Date returnDate;
 
     @Column(name = "returned_at")

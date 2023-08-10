@@ -30,3 +30,9 @@ INSERT INTO `user` (`username`, `lastname`, `firstname`, `password`, `email`, `e
             ('Mymy', 'GUAN', 'Michel', 'juerghte', 'mymy@test.mag', false, true, 0, 1),
             ('Fred', 'TANG', 'Frederic', 'klertagi', 'fred.t@test.ue',  true, true, 0, 2),
             ('Julieg', 'GASTON', 'Julie', 'tagadaJG', 'julie.g@test.wor', true, false, 0, 2);
+
+/* Insertion d'emprunts pour tests */
+INSERT INTO `loan` (`borrowed_at`, `return_date`, `returned_at`, `book_id`, `user_id`)
+    VALUES  ('', '', '', 2, 3),
+            ('', '', '', 1, 5),
+            ('', '', '', 5, 2);
