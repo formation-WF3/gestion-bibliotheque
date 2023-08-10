@@ -1,6 +1,7 @@
 package com.formation.gestionbibliotheque.payload.response;
 
 public class MessageResponse {
+	
 	private String message;
 
 	public MessageResponse(String message) {

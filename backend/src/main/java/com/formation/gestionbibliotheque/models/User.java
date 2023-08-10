@@ -35,7 +35,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(length = 50, nullable = false, unique = true)
+    public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	@Column(length = 50, nullable = false, unique = true)
     private String username;
 
     @Column(length = 50, nullable = false, unique = true)

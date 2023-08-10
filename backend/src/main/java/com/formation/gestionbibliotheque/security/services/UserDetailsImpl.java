@@ -22,7 +22,7 @@ public class UserDetailsImpl implements UserDetails{
 
     private String firstname;
 
-    private String lastname;
+	private String lastname;
 
     private String email;
 
@@ -74,6 +74,37 @@ public class UserDetailsImpl implements UserDetails{
   public String getPassword() {
     return password;
   }
+  public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
   @Override
   public boolean isAccountNonExpired() {

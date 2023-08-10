@@ -34,7 +34,7 @@ import com.formation.gestionbibliotheque.security.services.UserDetailsImpl;
 
 import jakarta.validation.Valid;
 //for Angular Client (withCredentials)
-//@CrossOrigin(origins = "http://localhost:8081", maxAge = 3600, allowCredentials="true")
+//@CrossOrigin(origins = "http://localhost:8080", maxAge = 3600, allowCredentials="true")
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
