@@ -10,8 +10,8 @@ public class BookAdapter {
         dto.setId(model.getId());
         dto.setTitle(model.getTitle());
         dto.setAuthor(model.getAuthor());
-        dto.setTotal_items(model.getTotal_items());
-        dto.setRemaining_items(model.getRemaining_items());
+        dto.setTotalItems(model.getTotalItems());
+        dto.setRemainingItems(model.getRemainingItems());
         dto.setCategory(model.getCategory());
         return dto;
     }
