@@ -1,7 +1,7 @@
 package com.formation.gestionbibliotheque.controllers;
 
-import com.formation.gestionbibliotheque.dtos.BookDto;
-import com.formation.gestionbibliotheque.services.BookService;
+import com.formation.gestionbibliotheque.dtos.UserDto;
+import com.formation.gestionbibliotheque.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,18 +12,18 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/books")
-public class BookController {
-    private BookService bookService;
+@RequestMapping("/api/users")
+public class UserController {
+    private UserService userService;
 
     @GetMapping
-    public List<BookDto> getAll() {
-        return bookService.getAll();
+    public List<UserDto> getAll() {
+        return userService.getAll();
     }
 
     @GetMapping("/{id}")
-    public BookDto getById(@PathVariable String id) {
-        return bookService.getById(id);
+    public UserDto getById(@PathVariable String id) {
+        return userService.getById(id);
     }
 
 }

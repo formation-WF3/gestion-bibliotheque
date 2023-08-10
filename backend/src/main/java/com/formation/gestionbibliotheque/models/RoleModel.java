@@ -1,6 +1,6 @@
 package com.formation.gestionbibliotheque.models;
 
-import com.formation.gestionbibliotheque.models.enums.CategoryName;
+import com.formation.gestionbibliotheque.models.enums.RoleName;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,14 +10,13 @@ import lombok.*;
 @Setter
 @ToString
 @Entity
-@Table(name = "category")
-public class CategoryModel {
+@Table(name = "role")
+public class RoleModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(length = 30, nullable = false)
-    private CategoryName name;
-
+    @Column(length = 10, nullable = false)
+    private RoleName name;
 }
