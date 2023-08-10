@@ -15,7 +15,7 @@ public class BookDto {
     private long id;
     private String title;
     private String author;
-    private int total_items;
-    private int remaining_items;
+    private int totalItems;
+    private int remainingItems;
     private CategoryModel category;
 }

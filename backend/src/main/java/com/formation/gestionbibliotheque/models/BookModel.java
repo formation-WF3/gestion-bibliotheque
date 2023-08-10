@@ -21,11 +21,11 @@ public class BookModel {
     @Column(length = 50, nullable = false)
     private String author;
 
-    @Column(nullable = false)
-    private int total_items;
+    @Column(name = "total_items", nullable = false)
+    private int totalItems;
 
-    @Column(nullable = false)
-    private int remaining_items;
+    @Column(name = "remaining_items", nullable = false)
+    private int remainingItems;
 
     @ManyToOne(optional = false)
     private CategoryModel category;
