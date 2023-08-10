@@ -1,7 +1,8 @@
 package com.formation.gestionbibliotheque.controllers;
 
+import com.formation.gestionbibliotheque.dtos.BookDto;
 import com.formation.gestionbibliotheque.dtos.CategoryDto;
-import com.formation.gestionbibliotheque.services.CategoryService;
+import com.formation.gestionbibliotheque.services.BookService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,18 +13,18 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/categories")
-public class CategoryController {
-    private CategoryService categoryService;
+@RequestMapping("/api/books")
+public class BookController {
+    private BookService bookService;
 
     @GetMapping
-    public List<CategoryDto> getAll() {
-        return categoryService.getAll();
+    public List<BookDto> getAll() {
+        return bookService.getAll();
     }
 
     @GetMapping("/{id}")
-    public CategoryDto getById(@PathVariable String id) {
-        return categoryService.getById(id);
+    public BookDto getById(@PathVariable String id) {
+        return bookService.getById(id);
     }
 
 }
