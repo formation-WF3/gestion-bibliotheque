@@ -1,10 +1,5 @@
-<div class="col-md-12 mx-auto" style="width: 600px;">
-    <div class="card card-container">
-      <!--<img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />-->
+<div class="container" >
+<div class="littleContainer">
       <form
         *ngIf="!isLoggedIn"
         name="form"
@@ -13,18 +8,18 @@
         novalidate
       >
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="username">Nom d'utilisateur</label>
           <input
             type="text"
             class="form-control"
-            name="email"
-            [(ngModel)]="form.email"
+            name="username"
+            [(ngModel)]="form.user"
             required
-            #email="ngModel"
-            [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+            #user="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && user.errors }"
           />
-          <div *ngIf="email.errors && f.submitted" class="invalid-feedback">
-            Email obligatoire!
+          <div *ngIf="user.errors && f.submitted" class="invalid-feedback">
+            Champ Obligatoire
           </div>
         </div>
         <div class="form-group">
@@ -35,32 +30,27 @@
             name="password"
             [(ngModel)]="form.password"
             required
-            minlength="6"
+            minlength="8"
             #password="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
           />
           <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
-            <div *ngIf="password.errors['required']">Password est obligatoire</div>
+            <div *ngIf="password.errors['required']">Champ Obligatoire</div>
             <div *ngIf="password.errors['minlength']">
-                Le mot de passe doit être au moins de 6 caractères
+                Le mot de passe contenir 8 caractères minimum
             </div>
           </div>
         </div>
-        <div class="form-group">
-          <button class="btn btn-primary btn-block" type="submit">
+        <div class="form-group-buttons">
+          <button class="btn btn-primary btn-lg" type="submit">
             Login
           </button>
-        </div>
-        <div class="form-group">
-          <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
-            Login failed: {{ errorMessage }}
+          <button class="btn btn-primary btn-lg" type="reset">
+            reset
+          </button>
           </div>
-        </div>
       </form>
-  
-      <div class="alert alert-success" *ngIf="isLoggedIn">
-        Logged in as {{ roles }}.
       </div>
-    </div>
   </div>
+
   
