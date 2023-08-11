@@ -22,7 +22,7 @@ public class UserService {
         return userDtos;
     }
 
-    public UserDto getById(String id) {
+    public UserDto getById(long id) {
         return userRepository.findById(id)
                 .map(UserAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));

@@ -22,7 +22,7 @@ public class BookService {
         return bookDtos;
     }
 
-    public BookDto getById(String id) {
+    public BookDto getById(long id) {
         return bookRepository.findById(id)
                 .map(BookAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
