@@ -23,7 +23,7 @@ public class CategoryService {
         return categoryDtos;
     }
 
-    public CategoryDto getById(String id) {
+    public CategoryDto getById(long id) {
         return categoryRepository.findById(id)
                 .map(CategoryAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Catégorie non trouvée !"));

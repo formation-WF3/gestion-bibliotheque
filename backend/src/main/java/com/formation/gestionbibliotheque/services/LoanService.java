@@ -22,7 +22,7 @@ public class LoanService {
         return loanDtos;
     }
 
-    public LoanDto getById(String id) {
+    public LoanDto getById(long id) {
         return loanRepository.findById(id)
                 .map(LoanAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Emprunt non trouvé !"));

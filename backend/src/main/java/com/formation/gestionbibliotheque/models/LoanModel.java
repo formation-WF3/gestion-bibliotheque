@@ -2,9 +2,9 @@ package com.formation.gestionbibliotheque.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.Instant;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,15 +18,15 @@ public class LoanModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "borrowed_at", nullable = false, updatable = false)
-    private Date borrowedAt = new Date();
-//    private Date borrowedAt = LocalDateTime.now();
+    @CreationTimestamp
+    @Column(name = "borrowed_at", nullable = false)
+    private Instant borrowedAt;
 
     @Column(name = "return_date")
-    private Date returnDate;
+    private Instant returnDate;
 
     @Column(name = "returned_at")
-    private Date returnedAt;
+    private Instant returnedAt;
 
     @ManyToOne(optional = false)
     private BookModel book;
