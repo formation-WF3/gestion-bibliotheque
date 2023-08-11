@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.Instant;
 import java.util.Date;
 
 @NoArgsConstructor
@@ -16,9 +17,9 @@ import java.util.Date;
 @Setter
 public class LoanDto {
     private long id;
-    private Date borrowedAt;
-    private Date returnDate;
-    private Date returnedAt;
+    private Instant borrowedAt;
+    private Instant returnDate;
+    private Instant returnedAt;
     private BookModel book;
     private UserModel user;
 }
