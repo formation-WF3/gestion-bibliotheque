@@ -1,10 +1,30 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
+:root{
+
+    --color-primary:#009688;
+    --color-primary-light:#B2DFDB;
+    --color-primary-dark:#005449;
+    --color-accent:#607D8B;
+
+    --textColor-primary:#212121;
+    --textColor-secondary:#757575;
+    --textColor-white:#FFFFFF;
+    
+    --dividerColor-lightGray:#BDBDBD;
+
+    --border-global-dark:2px solid var(--color-primary-dark);
+    --border-global-light:2px solid var(--color-primary-light);
+    --border-radius:30px;
+
+}
+
 body{
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    background-color: var(--color-primary);
 }
 
 header{
@@ -13,11 +33,9 @@ header{
     display: flex;
     justify-content: center;
     width :90%;
-   max-height: 100px;
-   background-color: brown;
-  margin: auto;
-  
-  
+    max-height: 10vh; 
+    margin: auto;
+
 }
 
 #titleBanner{
@@ -25,13 +43,15 @@ header{
     justify-content: center;
     width: 60% ;
     border: 2px black;
-    background-color: aqua;
+    background-color: var(--color-accent);
+    border: var(--border-global-dark);
+    border-radius: var(--border-radius);
     
 }
 
 #titleBanner h1{
 
-    color: blue;
+    color: white;
 }
 .container{
     display: flex;
@@ -40,8 +60,10 @@ header{
     margin-right: auto;
     margin-top: 40px;
     max-width: 90%;
-    height: 600px;
-    background-color: blue;
+    height: 80vh;
+    border: var(--border-global-dark);
+    border-radius: var(--border-radius);
+    background-color:var(--color-primary-light);
 }
 
 
