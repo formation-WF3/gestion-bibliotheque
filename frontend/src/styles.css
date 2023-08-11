@@ -80,34 +80,4 @@ border: var(--border-secondary-dark);
 border-radius: var(--border-radius);
  background-color: var(--color-secondary);
 }
-.form-group{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    
-}
-
-
-.form-group-buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    
-}
-.form-group-buttons button{
-border: none !important;
-    background-color: var(--color-secondary-dark) !important;
-}
-.btn-primary:hover {
-    background-color:var(--color-primary)!important;
-    border: 0 !important;
-    box-shadow: none !important;
- }
- .btn-primary:focus {
-    background-color:var(--color-primary) !important;
-    border: 0 !important;
-    box-shadow: none !important;
- }
-
 
