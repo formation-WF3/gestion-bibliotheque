@@ -8,6 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
+@Builder
 @Entity
 @Table(name = "book")
 public class BookModel {
@@ -27,6 +28,7 @@ public class BookModel {
     @Column(name = "remaining_items", nullable = false)
     private int remainingItems;
 
-    @ManyToOne(optional = false)
+    @ManyToOne
+    @JoinColumn(name = "category_id")
     private CategoryModel category;
 }

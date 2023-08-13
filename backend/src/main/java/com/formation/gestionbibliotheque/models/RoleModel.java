@@ -1,6 +1,6 @@
 package com.formation.gestionbibliotheque.models;
 
-import com.formation.gestionbibliotheque.models.enums.RoleName;
+import com.formation.gestionbibliotheque.models.enums.RoleEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,6 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
+@Builder
 @Entity
 @Table(name = "role")
 public class RoleModel {
@@ -17,6 +18,6 @@ public class RoleModel {
     private long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(length = 10, nullable = false)
-    private RoleName name;
+    @Column(unique = true, length = 10, nullable = false)
+    private RoleEnum name;
 }
