@@ -11,6 +11,7 @@ import java.time.Instant;
 @Getter
 @Setter
 @ToString
+@Builder
 @Entity
 @Table(name = "loan")
 public class LoanModel {

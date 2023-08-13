@@ -1,6 +1,5 @@
 package com.formation.gestionbibliotheque.services;
 
-import com.formation.gestionbibliotheque.dtos.BookDto;
 import com.formation.gestionbibliotheque.dtos.CategoryDto;
 import com.formation.gestionbibliotheque.repositories.CategoryRepository;
 import com.formation.gestionbibliotheque.services.adapters.CategoryAdapter;
@@ -25,6 +24,12 @@ public class CategoryService {
 
     public CategoryDto getById(long id) {
         return categoryRepository.findById(id)
+                .map(CategoryAdapter::toDto)
+                .orElseThrow(() -> new RuntimeException("Catégorie non trouvée !"));
+    }
+
+    public CategoryDto getByName(String name) {
+        return categoryRepository.findByNameIgnoreCase(name)
                 .map(CategoryAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Catégorie non trouvée !"));
     }

@@ -1,6 +1,6 @@
 package com.formation.gestionbibliotheque.models.enums;
 
-public enum RoleName {
+public enum RoleEnum {
     MEMBER,
     ADMIN;
 }

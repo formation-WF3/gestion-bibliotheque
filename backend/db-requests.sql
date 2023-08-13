@@ -1,10 +1,10 @@
 /* Insertion des catégories */
 INSERT INTO `category` (`name`)
-    VALUES  ('POLICIER'),
-            ('SCIENCE_FICTION'),
-            ('LITTERATURE_FRANCAISE'),
-            ('LITTERATURE_INTERNATIONALE'),
-            ('POESIE');
+    VALUES  ('Policier'),
+            ('Science fiction'),
+            ('Littérature française'),
+            ('Littérature internationale'),
+            ('Poésie');
 
 /* Insertion de livres pour tests */
 INSERT INTO `book` (`title`, `author`, `total_items`, `remaining_items`, `category_id`)
@@ -33,6 +33,6 @@ INSERT INTO `user` (`username`, `lastname`, `firstname`, `password`, `email`, `e
 
 /* Insertion d'emprunts pour tests */
 INSERT INTO `loan` (`borrowed_at`, `return_date`, `returned_at`, `book_id`, `user_id`)
-    VALUES  ('', '', '', 2, 3),
-            ('', '', '', 1, 5),
-            ('', '', '', 5, 2);
+    VALUES  ('', '', '', 2, 4),
+            ('', '', '', 1, 6),
+            ('', '', '', 5, 9);
