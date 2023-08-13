@@ -32,16 +32,14 @@
     background-color: var(--color-secondary-dark) !important;
     box-shadow: var(--shadowBoxin-2);
 }
-.btn-primary :hover {
-    background-color:var(--color-primary)!important;
-    border: 0 !important;
-    box-shadow: none !important;
+
+/*animation on hover, focus don't work */
+.logBtn :hover
+.logBtn :focus {
+    background-color:red !important;
+    border: var(--border-secondary-dark) !important;
  }
- .btn-primary :focus {
-    background-color:var(--color-primary) !important;
-    border: 0 !important;
-    box-shadow: none !important;
- }
+
 
 #rpl{
 display: flex;
