@@ -3,21 +3,23 @@
 :warning: IMPORTANT
 
 Avant le premier lancement du projet, aller dans le fichier "/backend/src/main/resources/application.properties", et vérifier que la ligne :
-```properties
+```properties soit bien comme ci-dessous.
 spring.jpa.hibernate.ddl-auto=create-drop
 ```
-soit bien comme ci-dessus.
-Si ce n'est pas le cas, et qu'elle est, par exemple, comme ceci :
-```properties
-spring.jpa.hibernate.ddl-auto=update
-```
-Il faut alors la modifier pour qu'elle soit comme indiqué plus haut.
 
-Une fois le projet lancé, aller dans le logiciel vous permettant d'accéder à la base de données, par exemple, Adminer ou PHPMyAdmin.
-Vérifier que la table "category" existe bien et exécuter le fichier "/backend/db-requests.sql" ou copier-coller son contenu dans la partie servant à exécuter des requêtes SQL, puis exécuter.
+
+Une fois le projet lancé,
+Ovuvrir votr logiciel de gestion de base de données, par exemple, Adminer ou PHPMyAdmin.
+Vérifier que la table "category" existe bien
+Exécuter le fichier 
+"/backend/db-requests.sql"
+Sinon copier-coller son contenu dans la partie servant à exécuter des requêtes SQL, puis exécuter.
 Vérifier ensuite que la table contient bien 5 enregistrements.
 
-Avant le prochain lancement du projet, aller dans le fichier "/backend/src/main/resources/application.properties", et modifier la ligne :
+Avant le prochain lancement du projet,
+Aller dans le fichier :
+"/backend/src/main/resources/application.properties"
+Modifier la ligne :
 ```properties
 spring.jpa.hibernate.ddl-auto=create-drop
 ```
