@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="smallContainer">
-    <form id="logForm" *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+  <div class="small-container">
+    <form  *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="col-6 form-group">
-        <label class="logLabel" for="username">Nom d'utilisateur</label>
+        <label class="log-label" for="username">Nom d'utilisateur</label>
         <input type="text" class="form-control" name="username" [(ngModel)]="form.user" required #user="ngModel"
           [ngClass]="{ 'is-invalid': f.submitted && user.errors }" />
         <div *ngIf="user.errors && f.submitted" class="invalid-feedback">
@@ -11,7 +11,7 @@
       </div>
       
       <div class="col-6 form-group">
-        <label class="logLabel" for="password">Mot de passe</label>
+        <label class="log-label" for="password">Mot de passe</label>
         <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="8"
           #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
         <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
@@ -22,13 +22,9 @@
         </div>
        <div id="rpl"> <a [routerLink]="['/under-construction']" id="resetPasswordLink">mot de passe oublié</a></div>
       </div>
-      <div id="logValid" class="col-6 form-group-buttons">
-        <button class="logBtn btn btn-primary btn-lg" type="submit">
-          Login
-        </button>
-        <button class="logBtn btn btn-primary btn-lg" type="reset">
-          reset
-        </button>
+      <div  class="log-valid col-6 form-group-buttons">
+        <button class="log-btn col-4 " type="submit">Connexion</button>
+        <button class="log-btn col-4 " type="reset">Annuler</button>
       </div>
     </form>
   </div>
