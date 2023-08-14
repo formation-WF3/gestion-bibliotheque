@@ -17,13 +17,14 @@
     box-shadow: var(--shadowBoxin-2);
     border-radius: 20px;
 }
-
+/*
 .log-valid{
     
     display: flex;
     justify-content: space-around;
    
 }
+
 .log-btn {
     border: none ;
     border-radius: 20px;
@@ -42,6 +43,12 @@
     font-weight: 200;
  }
 
+ .log-btn:active {
+   
+    box-shadow: var(--shadowBoxin-2);
+    transform: translateY(1px);
+  }
+*/
 
 #rpl{
 display: flex;
