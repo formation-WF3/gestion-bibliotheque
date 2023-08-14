@@ -14,5 +14,5 @@ import lombok.Setter;
 @Builder
 public class CategoryDto {
     private long id;
-    private Enum<CategoryName> name;
+    private String name;
 }
