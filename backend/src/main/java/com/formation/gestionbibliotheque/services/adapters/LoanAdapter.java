@@ -6,13 +6,13 @@ import com.formation.gestionbibliotheque.models.LoanModel;
 public class LoanAdapter {
 
     public static LoanDto toDto(LoanModel model) {
-        LoanDto dto = new LoanDto();
-        dto.setId(model.getId());
-        dto.setBorrowedAt(model.getBorrowedAt());
-        dto.setReturnDate(model.getReturnDate());
-        dto.setReturnedAt(model.getReturnedAt());
-        dto.setBook(model.getBook());
-        dto.setUser(model.getUser());
-        return dto;
+        return LoanDto.builder()
+                .id(model.getId())
+                .borrowedAt(model.getBorrowedAt())
+                .returnDate(model.getReturnDate())
+                .returnedAt(model.getReturnedAt())
+                .book(model.getBook())
+                .user(model.getUser())
+                .build();
     }
 }
