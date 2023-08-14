@@ -10,15 +10,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class BookAdapter {
 
-    public static BookDto toDto(BookModel model) {
-        BookDto dto = new BookDto();
-        dto.setId(model.getId());
-        dto.setTitle(model.getTitle());
-        dto.setAuthor(model.getAuthor());
-        dto.setTotalItems(model.getTotalItems());
-        dto.setRemainingItems(model.getRemainingItems());
-        dto.setCategory(model.getCategory());
-        return dto;
+    public BookDto toDto(BookModel model) {
+        return BookDto.builder()
+                .id(model.getId())
+                .title(model.getTitle())
+                .author(model.getAuthor())
+                .totalItems(model.getTotalItems())
+                .remainingItems(model.getRemainingItems())
+                .categoryName(model.getCategory().getName())
+                .build();
     }
 
     public BookModel toModel(BookDto dto, CategoryModel categoryModel) {

@@ -1,6 +1,5 @@
 package com.formation.gestionbibliotheque.models;
 
-import com.formation.gestionbibliotheque.models.enums.CategoryName;
 import jakarta.persistence.*;
 import lombok.*;
 

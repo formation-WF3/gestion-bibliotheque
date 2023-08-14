@@ -17,10 +17,15 @@ import java.util.List;
 public class BookService {
     private BookRepository bookRepository;
 
+    private BookAdapter bookAdapter;
+
+    private CategoryRepository categoryRepository;
+
+
     public List<BookDto> getAll() {
         List<BookDto> bookDtos = new ArrayList<>();
         bookRepository.findAll().forEach(
-                model -> bookDtos.add(BookAdapter.toDto(model))
+                model -> bookDtos.add(bookAdapter.toDto(model))
         );
         return bookDtos;
     }
@@ -66,7 +71,7 @@ public class BookService {
 
     public BookDto getById(long id) {
         return bookRepository.findById(id)
-                .map(BookAdapter::toDto)
+                .map(bookAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
     }
 }
