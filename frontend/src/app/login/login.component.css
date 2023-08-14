@@ -1,8 +1,4 @@
-#logForm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 .form-group{
     display: flex;
     flex-direction: column;
@@ -10,7 +6,7 @@
 
 }
 
-.logLabel{
+.log-label{
     align-self: center;
     font-size: x-large;
 }
@@ -22,22 +18,28 @@
     border-radius: 20px;
 }
 
-#logValid{
+.log-valid{
+    
     display: flex;
     justify-content: space-around;
    
 }
-.form-group-buttons button{
-    border: none !important;
-    background-color: var(--color-secondary-dark) !important;
+.log-btn {
+    border: none ;
+    border-radius: 20px;
+    height: 50px;
+    background-color: var(--color-secondary-dark) ;
     box-shadow: var(--shadowBoxin-2);
+    color: white;
+    font-size: larger;
 }
 
-/*animation on hover, focus don't work */
-.logBtn :hover
-.logBtn :focus {
-    background-color:red !important;
-    border: var(--border-secondary-dark) !important;
+
+.log-btn:hover {
+    background-color:var(--color-secondary) ;
+    border: var(--border-secondary-dark) ;
+    color: black;
+    font-weight: 200;
  }
 
 
