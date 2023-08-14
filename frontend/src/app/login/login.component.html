@@ -1,18 +1,16 @@
 <div class="container">
   <div class="small-container">
     <form  *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-      <div class="col-6 form-group">
+      <div class=" col-8" >
+      <div class="form-group">
         <label class="log-label" for="username">Nom d'utilisateur</label>
-        <input type="text" class="form-control" name="username" [(ngModel)]="form.user" required #user="ngModel"
+        <input type="text" class="form-control col-8" name="username" [(ngModel)]="form.user" required #user="ngModel"
           [ngClass]="{ 'is-invalid': f.submitted && user.errors }" />
-        <div *ngIf="user.errors && f.submitted" class="invalid-feedback">
-          Champ Obligatoire
-        </div>
+        <div *ngIf="user.errors && f.submitted" class="invalid-feedback">Champ Obligatoire</div>
       </div>
-      
-      <div class="col-6 form-group">
+      <div class="form-group">
         <label class="log-label" for="password">Mot de passe</label>
-        <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="8"
+        <input type="password" class="form-control col-8" name="password" [(ngModel)]="form.password" required minlength="8"
           #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
         <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
           <div *ngIf="password.errors['required']">Champ Obligatoire</div>
@@ -20,11 +18,12 @@
             Le mot de passe contenir 8 caractères minimum
           </div>
         </div>
-       <div id="rpl"> <a [routerLink]="['/under-construction']" id="resetPasswordLink">mot de passe oublié</a></div>
+        <div id="rpl"> <a [routerLink]="['/under-construction']" id="resetPasswordLink">mot de passe oublié</a></div>
       </div>
-      <div  class="validation-buttons col-6 form-group-buttons">
-        <button class="validation-btn col-4 " type="submit">Connexion</button>
-        <button class="validation-btn col-4 " type="reset">Annuler</button>
+    </div>
+      <div class="validation-buttons line-container form-group-buttons">
+        <button class="validation-btn col-4" type="submit">Connexion</button>
+        <button class="validation-btn col-4" type="reset">Annuler</button>
       </div>
     </form>
   </div>
