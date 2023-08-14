@@ -11,7 +11,7 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 
 const routes: Routes = [
-  { path: 'home', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
