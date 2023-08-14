@@ -1,12 +1,52 @@
 .form-group{
+       /*Test
+   background-color: yellowgreen;*/
     margin-top: 10px;
+    
     width:95%;
     display: flex;
     justify-content: space-between;
+    font-size: larger;
     
 }
+
+.form-control{
+    min-height:45px ;
+    max-height: 45px;
+     align-self: center;
+     box-shadow: var(--shadowBoxin-2);
+     border-radius: 20px;
+ }
+
 .line-container{
-   
+   /*Test
+   background-color: yellowgreen;*/
     width: 95%;
     display: flex;
+}
+
+.inputs{
+    display: flex;
+    justify-content:space-evenly ;
+    padding-right: 0px;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+}
+.mail-field{
+       /*Test
+   background-color: red;*/
+   min-width: 100%;
+     padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.password-field{
+    /*Test
+    background-color: yellowgreen;*/
+    padding-right: 10px;;
 }
