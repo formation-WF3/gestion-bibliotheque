@@ -6,17 +6,17 @@ import com.formation.gestionbibliotheque.models.UserModel;
 public class UserAdapter {
 
     public static UserDto toDto(UserModel model) {
-        UserDto dto = new UserDto();
-        dto.setId(model.getId());
-        dto.setUsername(model.getUsername());
-        dto.setLastname(model.getLastname());
-        dto.setFirstname(model.getFirstname());
-        dto.setPassword(model.getPassword());
-        dto.setEmail(model.getEmail());
-        dto.setEmailVerified(model.isEmailVerified());
-        dto.setCanBorrow(model.isCanBorrow());
-        dto.setPenaltyAmount(model.getPenaltyAmount());
-        dto.setRole(model.getRole());
-        return dto;
+        return UserDto.builder()
+                .id(model.getId())
+                .username(model.getUsername())
+                .lastname(model.getLastname())
+                .firstname(model.getFirstname())
+                .password(model.getPassword())
+                .email(model.getEmail())
+                .emailVerified(model.isEmailVerified())
+                .canBorrow(model.isCanBorrow())
+                .penaltyAmount(model.getPenaltyAmount())
+                .role(model.getRole())
+                .build();
     }
 }

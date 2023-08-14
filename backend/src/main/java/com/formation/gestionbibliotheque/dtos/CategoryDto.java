@@ -1,11 +1,7 @@
 package com.formation.gestionbibliotheque.dtos;
 
 
-import com.formation.gestionbibliotheque.models.enums.CategoryName;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor

@@ -14,23 +14,25 @@ import java.util.List;
 public class CategoryService {
     private CategoryRepository categoryRepository;
 
+    private CategoryAdapter categoryAdapter;
+
     public List<CategoryDto> getAll() {
         List<CategoryDto> categoryDtos = new ArrayList<>();
         categoryRepository.findAll().forEach(
-                model -> categoryDtos.add(CategoryAdapter.toDto(model))
+                model -> categoryDtos.add(categoryAdapter.toDto(model))
         );
         return categoryDtos;
     }
 
     public CategoryDto getById(long id) {
         return categoryRepository.findById(id)
-                .map(CategoryAdapter::toDto)
+                .map(categoryAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Catégorie non trouvée !"));
     }
 
     public CategoryDto getByName(String name) {
         return categoryRepository.findByNameIgnoreCase(name)
-                .map(CategoryAdapter::toDto)
+                .map(categoryAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Catégorie non trouvée !"));
     }
 }
