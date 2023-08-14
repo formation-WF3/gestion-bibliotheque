@@ -20,7 +20,7 @@
 
       <div class="form-group">
         <label for="firstname">Prénom</label>
-        <input type="text" class="col-4 form-control" name="firstname" [(ngModel)]="form.lastname " required
+        <input type="text" class="col-2 form-control" name="firstname" [(ngModel)]="form.lastname " required
           minlength="3" maxlength="20" #firstname="ngModel"
           [ngClass]="{ 'is-invalid': f.submitted && firstname.errors }" />
         <div class="invalid-feedback" *ngIf="firstname.errors && f.submitted">
@@ -48,7 +48,7 @@
         <div *ngIf="password.errors['minlength']">Le mot de passe doit avoir 8 caractères minimum </div>
       </div>
     </div>
-          <div  class="line-container validation-buttons col-6 form-group-buttons">
+          <div  class="line-container validation-buttons  form-group-buttons">
         <button class="validation-btn col-4 " type="submit">Enregistrer</button>
         <button class="validation-btn col-4 " type="reset">Annuler</button>
       </div>

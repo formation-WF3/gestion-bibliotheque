@@ -87,15 +87,22 @@ border-radius: var(--border-radius);
 }
 
 form{
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    /*TEST
+    background-color: yellow;*/
 }
+
 .validation-buttons{
     display: flex;
     justify-content: space-around;
+
+    }
     
-}
+
 
 .validation-btn {    
     display: flex;
