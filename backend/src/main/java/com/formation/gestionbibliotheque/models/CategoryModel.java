@@ -9,6 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
+@Builder
 @Entity
 @Table(name = "category")
 public class CategoryModel {
@@ -16,8 +17,7 @@ public class CategoryModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Enumerated(EnumType.STRING)
-    @Column(length = 30, nullable = false)
-    private CategoryName name;
+    @Column(unique = true, length = 30, nullable = false)
+    private String name;
 
 }

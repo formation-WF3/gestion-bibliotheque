@@ -1,15 +1,13 @@
 package com.formation.gestionbibliotheque.dtos;
 
 import com.formation.gestionbibliotheque.models.RoleModel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class UserDto {
     private long id;
     private String username;
