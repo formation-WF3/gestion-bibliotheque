@@ -1,11 +1,41 @@
 <div class="container">
-  <div class="upper-pannel">Zone de recherche</div>
+  <div class="upper-pannel">search zone
+    <input type="text">
+    <button></button>
+  </div>
   <div class="main-pannel">
-    <div class="title-pannel">Zone de titre</div>
+    <div class="title-pannel"><h2>Zone de titre</h2></div>
     <div class="sub-main-pannel">
-      
-      <div class="side-pannel">Zone de navigation</div>
+      <div class="side-pannel">Zone de navigation
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
       <div class="content-pannel">
+        <table>
+
+          <tbody>
+            <tr>
+              <th scope="col">Titre</th>
+              <th scope="col">Auteur</th>
+              <th scope="col">Date d' emprunt</th>
+              <th scope="col">Date de retour</th>
+            </tr>
+            <tr>
+              <th >Les Miserables</th>
+              <td>Victor Hugo</td>
+              <td>12/09/23</td>
+              <td>12/10/23</td>
+            </tr>
+            <tr>
+              <th >La Peste</th>
+              <td>Albert Camus</td>
+              <td>15/8/23</td>
+              <td>15/9/23</td>
+            </tr>
+          </tbody>
+        </table>
+        
         <div> <a [routerLink]="['/login']" id="login_page">Login page</a></div>
         <div> <a [routerLink]="['/register']" id="register">Register page</a></div>
       </div>
