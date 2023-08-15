@@ -18,12 +18,17 @@
     flex-direction: column;
     border: 2px solid black;
 }
+.title-pannel{
+    height: 10%;
+    margin: 10px 5px 0px 5px;
+    border: 2px solid black;
+}
 
 .sub-main-pannel{
     margin: 20px 0px 20px 0px;
     height: 90%;
     display: flex;
-    border: 2px solid black;
+    
 }
 
 .side-pannel{
@@ -33,7 +38,7 @@
     border: 2px solid black;
 }
 .content-pannel{
-    margin: 2px 0 0 5px;
+    margin: 2px 5px 0 5px;
     width: 75%;
     height: 100%;
     border: 2px solid black;
