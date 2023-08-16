@@ -16,7 +16,7 @@ public class UserAdapter {
                 .emailVerified(model.isEmailVerified())
                 .canBorrow(model.isCanBorrow())
                 .penaltyAmount(model.getPenaltyAmount())
-                .role(model.getRole())
+                .roleName(model.getRole().getName().toString())
                 .build();
     }
 }

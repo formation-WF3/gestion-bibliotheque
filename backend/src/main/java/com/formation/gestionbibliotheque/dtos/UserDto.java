@@ -18,5 +18,5 @@ public class UserDto {
     private boolean emailVerified;
     private boolean canBorrow;
     private double penaltyAmount;
-    private RoleModel role;
+    private String roleName;
 }
