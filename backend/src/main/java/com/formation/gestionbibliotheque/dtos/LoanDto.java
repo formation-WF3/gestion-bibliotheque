@@ -18,6 +18,6 @@ public class LoanDto {
     private Instant borrowedAt;
     private Instant returnDate;
     private Instant returnedAt;
-    private BookModel book;
-    private UserModel user;
+    private String bookTitle;
+    private String userUsername;
 }

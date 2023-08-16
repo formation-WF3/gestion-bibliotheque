@@ -30,8 +30,10 @@ public class LoanModel {
     private Instant returnedAt;
 
     @ManyToOne(optional = false)
+    @JoinColumn(name = "book_id")
     private BookModel book;
 
     @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id")
     private UserModel user;
 }

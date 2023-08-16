@@ -41,5 +41,6 @@ public class UserModel {
     private double penaltyAmount;
 
     @ManyToOne(optional = false)
+    @JoinColumn(name = "role_id")
     private RoleModel role;
 }
