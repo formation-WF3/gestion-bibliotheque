@@ -27,20 +27,13 @@ import lombok.NoArgsConstructor;
 @Table(name = "user",
  uniqueConstraints = {
         @UniqueConstraint(columnNames = "email"),
-        @UniqueConstraint(columnNames = "password")
+        
        })
 public class User {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	@Column(length = 50, nullable = false, unique = true)
     private String username;
@@ -84,6 +77,12 @@ public class User {
         this.password = password;
         
     }
+    public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
     public String getUsername() {
         return username;
     }

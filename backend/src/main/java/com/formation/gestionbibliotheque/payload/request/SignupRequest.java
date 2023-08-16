@@ -2,20 +2,19 @@ package com.formation.gestionbibliotheque.payload.request;
 
 import java.util.Set;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+
+import jakarta.validation.constraints.*;
 
 public class SignupRequest {
     @NotBlank
     @Size(min = 3, max = 20)
     private String username;
 
-    @NotBlank
+    
     @Size(min = 3, max = 20)
     private String lastname;
 
-    @NotBlank
+    
     @Size(min = 3, max = 20)
     private String firstname;
  
@@ -45,7 +44,10 @@ public class SignupRequest {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
-
+    public String getFirstname() {
+        return null;
+    }
+    
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
@@ -74,7 +76,5 @@ public class SignupRequest {
       this.role = role;
     }
 
-    public String getFirstname() {
-        return null;
-    }
+    
 }
