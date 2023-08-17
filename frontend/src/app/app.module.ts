@@ -14,10 +14,12 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+   HeaderComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
@@ -26,6 +28,7 @@ import { UnderConstructionComponent } from './under-construction/under-construct
     BoardModeratorComponent,
     BoardUserComponent,
     UnderConstructionComponent
+   
   ],
   imports: [
     BrowserModule,
