@@ -18,5 +18,6 @@ border-radius: 30px;
 }
 
 .main-pannel{
+    display: flex;
     height: 60vh;
 }
