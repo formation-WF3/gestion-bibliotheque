@@ -21,7 +21,7 @@ public class Profile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String Bio;
+    @Column(nullable = false, columnDefinition = "email")
+    private String email;
 
 }
