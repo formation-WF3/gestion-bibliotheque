@@ -15,6 +15,9 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 import { HeaderComponent } from './header/header.component';
+import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
+import { MainBoardComponent } from './main-board/main-board.component';
+import { NavBoardComponent } from './nav-board/nav-board.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { HeaderComponent } from './header/header.component';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    UnderConstructionComponent
+    UnderConstructionComponent,
+    AdvancedSearchComponent,
+    MainBoardComponent,
+    NavBoardComponent
    
   ],
   imports: [

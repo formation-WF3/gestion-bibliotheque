@@ -1,0 +1,22 @@
+.upper-pannel,
+.main-pannel{
+/*TEST*/
+background-color:var(--color-primary);
+width: 100%;
+height: 100%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 10px;
+border: var(--border-secondary-dark);
+border-radius: 30px;
+
+}
+
+.upper-pannel{
+    
+    height: 15vh;
+}
+
+.main-pannel{
+    height: 60vh;
+}
