@@ -28,7 +28,6 @@ import com.formation.gestionbibliotheque.payload.request.LoginRequest;
 import com.formation.gestionbibliotheque.payload.request.SignupRequest;
 import com.formation.gestionbibliotheque.payload.response.JwtResponse;
 import com.formation.gestionbibliotheque.payload.response.MessageResponse;
-import com.formation.gestionbibliotheque.payload.response.UserInfoResponse;
 import com.formation.gestionbibliotheque.repositories.RoleRepository;
 import com.formation.gestionbibliotheque.repositories.UserRepository;
 import com.formation.gestionbibliotheque.security.jwt.JwtUtils;
@@ -55,13 +54,6 @@ public class AuthController {
   @Autowired
   JwtUtils jwtUtils;
   
-  private JwtUtils jwtUtil;
-  
-  public AuthController(AuthenticationManager authenticationManager, JwtUtils jwtUtil) {
-      this.authenticationManager = authenticationManager;
-      this.jwtUtil = jwtUtil;
-
-  }
 
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -101,7 +93,7 @@ public class AuthController {
 	      return ResponseEntity
 	          .badRequest()
 	          .body(new MessageResponse("Error: Email is already in use!"));
-	    }
+	    }else {
 
 
     // Create new user's account
@@ -145,6 +137,7 @@ public class AuthController {
       userRepository.save(user);
 
       return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+	    }
     }
 
   @PostMapping("/signout")
