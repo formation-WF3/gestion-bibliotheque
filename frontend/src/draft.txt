@@ -22,3 +22,17 @@
     --shadowBoxin: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     --shadowBoxin-2: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
+--tea-green: #def2c8ff;
+--tea-green-2: #c5dac1ff;
+--ash-gray: #bcd0c7ff;
+--ash-gray-2: #a9b2acff;
+--ash-gray-3: #999e96ff;
+--battleship-gray: #898980ff;
+
+    --color-primary:#c5dac1ff;
+    --color-primary-light:#def2c8ff;
+    --color-primary-dark:#a9b2acff;
+    --color-accent:#bcd0c7ff;
+    --color-secondary:##A5CDDB;
+    --color-secondary-dark:##96AFB8;
