@@ -1,6 +1,7 @@
 package com.formation.gestionbibliotheque.controllers;
 
 import com.formation.gestionbibliotheque.dtos.RoleDto;
+import com.formation.gestionbibliotheque.models.enums.RoleEnum;
 import com.formation.gestionbibliotheque.services.RoleService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,4 +26,10 @@ public class RoleController {
     public RoleDto getById(@PathVariable long id) {
         return roleService.getById(id);
     }
+
+    @GetMapping("/{name}")
+    public RoleDto getByName(@PathVariable String name) {
+        return roleService.getByName(name);
+    }
+
 }

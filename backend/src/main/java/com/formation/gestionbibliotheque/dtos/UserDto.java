@@ -1,6 +1,5 @@
 package com.formation.gestionbibliotheque.dtos;
 
-import com.formation.gestionbibliotheque.models.RoleModel;
 import lombok.*;
 
 @NoArgsConstructor

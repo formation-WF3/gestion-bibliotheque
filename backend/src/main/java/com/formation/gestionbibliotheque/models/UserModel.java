@@ -40,7 +40,7 @@ public class UserModel {
     @Column(name = "penalty_amount", nullable = false)
     private double penaltyAmount;
 
-    @ManyToOne(optional = false)
+    @ManyToOne
     @JoinColumn(name = "role_id")
     private RoleModel role;
 }
