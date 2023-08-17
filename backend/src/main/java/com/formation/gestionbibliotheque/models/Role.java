@@ -13,7 +13,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "roles")
@@ -27,6 +26,8 @@ public class Role {
     @Column(length = 20)
     private ERole name;
 
+    public Role() {}
+    
     public Role(ERole name) {
         this.name = name;
     }
