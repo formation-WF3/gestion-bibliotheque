@@ -1,6 +1,7 @@
 package com.formation.gestionbibliotheque.services;
 
 import com.formation.gestionbibliotheque.dtos.RoleDto;
+import com.formation.gestionbibliotheque.models.enums.RoleEnum;
 import com.formation.gestionbibliotheque.repositories.RoleRepository;
 import com.formation.gestionbibliotheque.services.adapters.RoleAdapter;
 import lombok.AllArgsConstructor;
@@ -14,17 +15,25 @@ import java.util.List;
 public class RoleService {
     private RoleRepository roleRepository;
 
+    private RoleAdapter roleAdapter;
+
     public List<RoleDto> getAll() {
         List<RoleDto> roleDtos = new ArrayList<>();
         roleRepository.findAll().forEach(
-                model -> roleDtos.add(RoleAdapter.toDto(model))
+                model -> roleDtos.add(roleAdapter.toDto(model))
         );
         return roleDtos;
     }
 
     public RoleDto getById(long id) {
         return roleRepository.findById(id)
-                .map(RoleAdapter::toDto)
+                .map(roleAdapter::toDto)
+                .orElseThrow(() -> new RuntimeException("Role non trouvé !"));
+    }
+
+    public RoleDto getByName(String name) {
+        return roleRepository.findByName(RoleEnum.valueOf(name))
+                .map(roleAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Role non trouvé !"));
     }
 }
