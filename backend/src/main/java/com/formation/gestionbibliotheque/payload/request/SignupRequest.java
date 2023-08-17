@@ -45,7 +45,7 @@ public class SignupRequest {
         this.lastname = lastname;
     }
     public String getFirstname() {
-        return null;
+        return firstname;
     }
     
     public void setFirstname(String firstname) {

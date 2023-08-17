@@ -39,8 +39,8 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-  @Autowired
-  AuthenticationManager authenticationManager;
+  
+  private final AuthenticationManager authenticationManager;
 
   @Autowired
   UserRepository userRepository;
@@ -53,6 +53,11 @@ public class AuthController {
 
   @Autowired
   JwtUtils jwtUtils;
+
+
+    AuthController(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
   
 
   @PostMapping("/signin")
