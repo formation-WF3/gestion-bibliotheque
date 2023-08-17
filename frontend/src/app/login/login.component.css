@@ -32,3 +32,9 @@
 display: flex;
 justify-content: center;
 }
+
+.invalid-feedback{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

@@ -53,3 +53,8 @@
     padding-right: 10px;
     ;
 }
+.invalid-feedback{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
