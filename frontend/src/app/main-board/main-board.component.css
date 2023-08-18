@@ -26,6 +26,15 @@ border-radius: 30px;
 .side-pannel,
 .content-pannel{
 
-border: 2px solid black;
+}
 
+.side-pannel{
+    width: 25%;
+    border-right: 4px solid #96AFB8;
+    
+}
+
+.content-pannel{
+
+    width: 75%;
 }
