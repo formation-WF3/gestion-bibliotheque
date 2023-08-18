@@ -1,7 +1,7 @@
 package com.formation.gestionbibliotheque.services;
 
 import com.formation.gestionbibliotheque.dtos.UserDto;
-import com.formation.gestionbibliotheque.models.ERole;
+import com.formation.gestionbibliotheque.models.enums.RoleEnum;
 import com.formation.gestionbibliotheque.models.Role;
 import com.formation.gestionbibliotheque.models.User;
 import com.formation.gestionbibliotheque.repositories.RoleRepository;
@@ -35,7 +35,7 @@ public class UserService {
         Role roleModel = null;
 
         if (roleName != null) {
-            roleModel = roleRepository.findByName(ERole.valueOf(roleName))
+            roleModel = roleRepository.findByName(RoleEnum.valueOf(roleName))
                     .orElseThrow(() -> new RuntimeException("Role non trouvée !"));
         }
 
@@ -50,7 +50,7 @@ public class UserService {
         Role roleModel = null;
 
         if (roleName != null) {
-            roleModel = roleRepository.findByName(ERole.valueOf(roleName))
+            roleModel = roleRepository.findByName(RoleEnum.valueOf(roleName))
                 .orElseThrow(() -> new RuntimeException("Role non trouvé !"));
         }
 
