@@ -35,5 +35,5 @@ public class LoanModel {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id")
-    private UserModel user;
+    private User user;
 }

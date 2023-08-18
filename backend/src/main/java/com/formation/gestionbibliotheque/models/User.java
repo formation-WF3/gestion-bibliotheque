@@ -17,6 +17,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,6 +25,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 @Table(name = "user",
  uniqueConstraints = {
         @UniqueConstraint(columnNames = "email"),
@@ -52,6 +54,15 @@ public class User {
     
     @Transient
     private String passwordConfirm;
+    
+    @Column(name = "email_verified", columnDefinition = "boolean default false")
+    private boolean emailVerified;
+
+    @Column(name = "can_borrow", columnDefinition = "boolean default false")
+    private boolean canBorrow;
+
+    @Column(name = "penalty_amount", nullable = false)
+    private double penaltyAmount;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles", 

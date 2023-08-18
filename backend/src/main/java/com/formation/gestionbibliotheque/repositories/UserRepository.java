@@ -1,6 +1,5 @@
 package com.formation.gestionbibliotheque.repositories;
 
-<<<<<<< HEAD
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,11 +14,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
   Boolean existsByUsername(String username);
 
   Boolean existsByEmail(String email);
-  
-=======
-import com.formation.gestionbibliotheque.models.UserModel;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<UserModel, Long> {
->>>>>>> develop
+  User save(User user);
+
 }

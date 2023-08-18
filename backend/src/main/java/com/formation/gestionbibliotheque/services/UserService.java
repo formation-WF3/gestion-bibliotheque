@@ -1,9 +1,9 @@
 package com.formation.gestionbibliotheque.services;
 
 import com.formation.gestionbibliotheque.dtos.UserDto;
-import com.formation.gestionbibliotheque.models.RoleModel;
-import com.formation.gestionbibliotheque.models.UserModel;
-import com.formation.gestionbibliotheque.models.enums.RoleEnum;
+import com.formation.gestionbibliotheque.models.ERole;
+import com.formation.gestionbibliotheque.models.Role;
+import com.formation.gestionbibliotheque.models.User;
 import com.formation.gestionbibliotheque.repositories.RoleRepository;
 import com.formation.gestionbibliotheque.repositories.UserRepository;
 import com.formation.gestionbibliotheque.services.adapters.UserAdapter;
@@ -31,30 +31,30 @@ public class UserService {
     }
 
     public UserDto add(UserDto userDto) {
-        String roleName = userDto.getRoleName();
-        RoleModel roleModel = null;
+        String roleName = userDto.getRole();
+        Role roleModel = null;
 
         if (roleName != null) {
-            roleModel = roleRepository.findByName(RoleEnum.valueOf(roleName))
+            roleModel = roleRepository.findByName(ERole.valueOf(roleName))
                     .orElseThrow(() -> new RuntimeException("Role non trouvée !"));
         }
 
-        UserModel userModel = userAdapter.toModel(userDto, roleModel);
+        User userModel = userAdapter.toModel(userDto, roleModel);
         userModel = userRepository.save(userModel);
         userDto.setId(userModel.getId());
         return userDto;
     }
 
     public UserDto update(UserDto userDto) {
-        String roleName = userDto.getRoleName();
-        RoleModel roleModel = null;
+        String roleName = userDto.getRole();
+        Role roleModel = null;
 
         if (roleName != null) {
-            roleModel = roleRepository.findByName(RoleEnum.valueOf(roleName))
+            roleModel = roleRepository.findByName(ERole.valueOf(roleName))
                 .orElseThrow(() -> new RuntimeException("Role non trouvé !"));
         }
 
-        UserModel userModel = userAdapter.toModel(userDto, roleModel);
+        User userModel = userAdapter.toModel(userDto, roleModel);
         return userRepository.findById(userDto.getId())
                 .map(u -> userAdapter.toDto(userRepository.save(userModel)))
                 .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));

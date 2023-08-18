@@ -1,36 +1,39 @@
 package com.formation.gestionbibliotheque.services.adapters;
 
 import com.formation.gestionbibliotheque.dtos.UserDto;
-import com.formation.gestionbibliotheque.models.RoleModel;
-import com.formation.gestionbibliotheque.models.UserModel;
+import com.formation.gestionbibliotheque.models.Role;
+import com.formation.gestionbibliotheque.models.User;
 import lombok.AllArgsConstructor;
+
+import java.util.Set;
+
 import org.springframework.stereotype.Component;
 
 @AllArgsConstructor
 @Component
 public class UserAdapter {
 
-    public UserDto toDto(UserModel model) {
+    public UserDto toDto(User model) {
         return UserDto.builder()
                 .id(model.getId())
                 .username(model.getUsername())
-                .lastname(model.getLastname())
-                .firstname(model.getFirstname())
+                .lastname(model.getlastname())
+                .firstname(model.getfirstname())
                 .password(model.getPassword())
                 .email(model.getEmail())
                 .emailVerified(model.isEmailVerified())
                 .canBorrow(model.isCanBorrow())
                 .penaltyAmount(model.getPenaltyAmount())
-                .roleName(model.getRole().getName().toString())
+                .role(((Role) model.getRoles()).getName().toString())
                 .build();
     }
 
-    public UserModel toModel(UserDto dto, RoleModel roleModel) {
+    public User toModel(UserDto dto, Set<Role> role) {
         if (dto == null) {
             return null;
         }
 
-        return UserModel.builder()
+        return User.builder()
                 .id(dto.getId())
                 .username(dto.getUsername())
                 .lastname(dto.getLastname())
@@ -39,7 +42,11 @@ public class UserAdapter {
                 .email(dto.getEmail())
                 .canBorrow(dto.isCanBorrow())
                 .penaltyAmount(dto.getPenaltyAmount())
-                .role(roleModel)
+                .roles(role)
                 .build();
+    }
+
+    public User toModel(UserDto userDto, Role roleModel) {
+        return null;
     }
 }

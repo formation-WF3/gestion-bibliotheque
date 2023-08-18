@@ -1,7 +1,7 @@
 package com.formation.gestionbibliotheque.services.adapters;
 
 import com.formation.gestionbibliotheque.dtos.RoleDto;
-import com.formation.gestionbibliotheque.models.RoleModel;
+import com.formation.gestionbibliotheque.models.Role;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class RoleAdapter {
 
-    public RoleDto toDto(RoleModel model) {
+    public RoleDto toDto(Role model) {
         return RoleDto.builder()
                 .id(model.getId())
                 .name(model.getName().toString())

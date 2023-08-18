@@ -1,7 +1,7 @@
 package com.formation.gestionbibliotheque.services;
 
 import com.formation.gestionbibliotheque.dtos.RoleDto;
-import com.formation.gestionbibliotheque.models.enums.RoleEnum;
+import com.formation.gestionbibliotheque.models.ERole;
 import com.formation.gestionbibliotheque.repositories.RoleRepository;
 import com.formation.gestionbibliotheque.services.adapters.RoleAdapter;
 import lombok.AllArgsConstructor;
@@ -32,7 +32,7 @@ public class RoleService {
     }
 
     public RoleDto getByName(String name) {
-        return roleRepository.findByName(RoleEnum.valueOf(name))
+        return roleRepository.findByName(ERole.valueOf(name))
                 .map(roleAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Role non trouvé !"));
     }
