@@ -1,6 +1,7 @@
 .upper-pannel,
 .main-pannel{
 /*TEST*/
+
 background-color:var(--color-primary);
 width: 100%;
 height: 100%;
@@ -20,4 +21,11 @@ border-radius: 30px;
 .main-pannel{
     display: flex;
     height: 60vh;
+}
+
+.side-pannel,
+.content-pannel{
+
+border: 2px solid black;
+
 }
