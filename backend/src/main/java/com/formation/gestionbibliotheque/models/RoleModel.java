@@ -21,7 +21,7 @@ import lombok.ToString;
 @Builder
 @ToString
 @Table(name = "roles")
-public class Role {
+public class RoleModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,9 +31,9 @@ public class Role {
     @Column(unique = true, length = 20, nullable = false)
     private RoleEnum name;
 
-    public Role() {}
+    public RoleModel() {}
     
-    public Role(RoleEnum name) {
+    public RoleModel(RoleEnum name) {
         this.name = name;
     }
 
