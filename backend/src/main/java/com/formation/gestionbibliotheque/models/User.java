@@ -68,7 +68,7 @@ public class User {
     @JoinTable(name = "user_roles", 
              joinColumns = @JoinColumn(name = "user_id"),
              inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
+    private Set<RoleModel> roles = new HashSet<>();
 
     @OneToOne
     private Profile profile;
@@ -86,14 +86,15 @@ public class User {
         this.firstname = firstname;
         this.email = email;
         this.password = password;
-        
     }
     public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
     public String getUsername() {
         return username;
     }
@@ -102,21 +103,22 @@ public class User {
         this.username = username;
     }
 
-    public String getfirstname(){
+    public String getFirstname(){
         return firstname;
     }
 
-    public void setfirstname(String firstname) {
+    public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
-    public String getlastname(){
+    public String getLastname(){
         return lastname;
     }
 
-    public void setlastname(String lastname) {
+    public void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
     public String getEmail() {
         return email;
     }
@@ -133,11 +135,11 @@ public class User {
         this.password = password;
     }
     
-    public Set<Role> getRoles() {
+    public Set<RoleModel> getRoles() {
         return roles;
     }
     
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(Set<RoleModel> roles) {
         this.roles = roles;
     }
 }

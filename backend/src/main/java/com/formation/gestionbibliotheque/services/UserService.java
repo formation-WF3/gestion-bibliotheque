@@ -2,7 +2,7 @@ package com.formation.gestionbibliotheque.services;
 
 import com.formation.gestionbibliotheque.dtos.UserDto;
 import com.formation.gestionbibliotheque.models.enums.RoleEnum;
-import com.formation.gestionbibliotheque.models.Role;
+import com.formation.gestionbibliotheque.models.RoleModel;
 import com.formation.gestionbibliotheque.models.User;
 import com.formation.gestionbibliotheque.repositories.RoleRepository;
 import com.formation.gestionbibliotheque.repositories.UserRepository;
@@ -32,7 +32,7 @@ public class UserService {
 
     public UserDto add(UserDto userDto) {
         String roleName = userDto.getRole();
-        Role roleModel = null;
+        RoleModel roleModel = null;
 
         if (roleName != null) {
             roleModel = roleRepository.findByName(RoleEnum.valueOf(roleName))
@@ -47,7 +47,7 @@ public class UserService {
 
     public UserDto update(UserDto userDto) {
         String roleName = userDto.getRole();
-        Role roleModel = null;
+        RoleModel roleModel = null;
 
         if (roleName != null) {
             roleModel = roleRepository.findByName(RoleEnum.valueOf(roleName))

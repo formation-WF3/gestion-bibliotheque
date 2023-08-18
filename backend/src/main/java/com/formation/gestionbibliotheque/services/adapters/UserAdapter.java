@@ -1,7 +1,7 @@
 package com.formation.gestionbibliotheque.services.adapters;
 
 import com.formation.gestionbibliotheque.dtos.UserDto;
-import com.formation.gestionbibliotheque.models.Role;
+import com.formation.gestionbibliotheque.models.RoleModel;
 import com.formation.gestionbibliotheque.models.User;
 import lombok.AllArgsConstructor;
 
@@ -17,18 +17,18 @@ public class UserAdapter {
         return UserDto.builder()
                 .id(model.getId())
                 .username(model.getUsername())
-                .lastname(model.getlastname())
-                .firstname(model.getfirstname())
+                .lastname(model.getLastname())
+                .firstname(model.getFirstname())
                 .password(model.getPassword())
                 .email(model.getEmail())
                 .emailVerified(model.isEmailVerified())
                 .canBorrow(model.isCanBorrow())
                 .penaltyAmount(model.getPenaltyAmount())
-                .role(((Role) model.getRoles()).getName().toString())
+                .role(((RoleModel) model.getRoles()).getName().toString())
                 .build();
     }
 
-    public User toModel(UserDto dto, Set<Role> role) {
+    public User toModel(UserDto dto, Set<RoleModel> role) {
         if (dto == null) {
             return null;
         }
@@ -46,7 +46,7 @@ public class UserAdapter {
                 .build();
     }
 
-    public User toModel(UserDto userDto, Role roleModel) {
+    public User toModel(UserDto userDto, RoleModel roleModel) {
         return null;
     }
 }
