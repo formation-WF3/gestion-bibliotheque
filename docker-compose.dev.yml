@@ -1,0 +1,65 @@
+version: '3.8'
+# lancer avec : docker compose -f docker-compose.dev.yml --env-file .env up
+services:
+  backend:
+    container_name: backend
+    restart: on-failure
+    depends_on:
+      - db
+    build:
+      context: ./backend
+      target: ${TARGET:-development}
+      args:
+        - JDK_IMAGE=17.0.3_7-jdk-jammy
+        - JRE_VERSION=17-jre-jammy
+        - APP_NAME=gestion-bibliotheque
+    environment:
+      MYSQL_CONNECTION_STRING: ${MYSQL_CONNECTION_STRING}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - ${BACKEND_PORT:-8080}:8080
+      - '35729:35729'
+      - '5005:5005'
+    volumes:
+      - ./backend:/app
+      - ./backend/.m2:/root/.m2
+
+  frontend:
+    container_name: frontend
+    restart: on-failure
+    build:
+      context: ./frontend
+      args:
+        - NODE_VERSION=16.20.1-slim
+        - NG_VERSION=16
+    ports:
+      - ${FRONTEND_PORT:-4200}:4200
+    volumes:
+      - ./frontend:/app
+
+  db:
+    container_name: mysql
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      #- ./init-db:/docker-entrypoint-initdb.d
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    environment:
+      ADMINER_DEFAULT_SERVER: "${ADMINER_DEFAULT_SERVER:-mysql}"
+    ports:
+      - "${ADMINER_PORT:-8080}:8080"
+
+volumes:
+  mysql-data:
