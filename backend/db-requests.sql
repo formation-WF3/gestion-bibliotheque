@@ -22,6 +22,12 @@ INSERT INTO `role` (`name`)
     VALUES  ('MEMBER'),
             ('ADMIN');
 
+/* Insertion des roles */
+INSERT INTO `roles` (`name`)
+VALUES  ('ROLE_USER'),
+        ('ROLE_MODERATOR'),
+        ('ROLE_ADMIN');
+
 /* Insertion d'utilisateurs pour tests */
 INSERT INTO `user` (`username`, `lastname`, `firstname`, `password`, `email`, `email_verified`, `can_borrow`, `penalty_amount`, `role_id`)
     VALUES  ('Gil', 'TEIGNE', 'Gilles', 'graboulli', 'gilles.t@test.fr', true, true, 0, 1),
