@@ -20,7 +20,7 @@ import lombok.ToString;
 @Entity
 @Builder
 @ToString
-@Table(name = "roles")
+@Table(name = "role")
 public class RoleModel {
     
     @Id
