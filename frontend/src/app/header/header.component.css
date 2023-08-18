@@ -1,9 +1,7 @@
 #titleBanner{
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    width: 60% ;
-    border: 2px black;
+    margin-top: 10px;
+
+    height: 15vh;
     background-color: var(--color-secondary-dark);
     border: var(--border-global-dark);
     border-radius: var(--border-radius);
@@ -11,7 +9,10 @@
     
 }
 
- h1{
+.title{
+margin: auto;
+color: white;
 
-    color: white;
 }
+
+
