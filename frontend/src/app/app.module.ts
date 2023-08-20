@@ -18,6 +18,8 @@ import { HeaderComponent } from './header/header.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { MainBoardComponent } from './main-board/main-board.component';
 import { NavBoardComponent } from './nav-board/nav-board.component';
+import { SmallContainerComponent } from './small-container/small-container.component';
+import { ValidationButtonsComponent } from './validation-buttons/validation-buttons.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { NavBoardComponent } from './nav-board/nav-board.component';
     UnderConstructionComponent,
     AdvancedSearchComponent,
     MainBoardComponent,
-    NavBoardComponent
+    NavBoardComponent,
+    SmallContainerComponent,
+    ValidationButtonsComponent
    
   ],
   imports: [

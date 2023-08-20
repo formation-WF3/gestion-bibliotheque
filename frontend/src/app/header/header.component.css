@@ -1,16 +1,17 @@
 #titleBanner{
     margin-top: 10px;
-
+    /*min-width: 85%;*/
     height: 15vh;
-    background-color: var(--color-secondary-dark);
+    background-color: var(--color-secondary);
     border: var(--border-global-dark);
     border-radius: var(--border-radius);
 
 }
 
 .title{
+
 margin: auto;
-color: white;
+color: black;
 
 }
 

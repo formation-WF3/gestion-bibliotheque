@@ -2,13 +2,20 @@
 
 :root {
 
-
+/*
     --color-primary: #c5dac1ff;
     --color-primary-light: #def2c8ff;
     --color-primary-dark: #a9b2acff;
     --color-accent: #bcd0c7ff;
     --color-secondary: #A5CDDB;
     --color-secondary-dark: #96AFB8;
+*/
+    --color-primary: #607d8b;
+    --color-primary-light: #cfd8dc;
+    --color-primary-dark: #455a64;
+    --color-accent: #7c4dff;
+    --color-secondary: #84F9bd;
+    --color-secondary-dark: #48C088;
 
 
     --textColor-primary: #212121;
@@ -17,7 +24,7 @@
 
     --dividerColor-lightGray: #BDBDBD;
 
-    --border-global-dark: 3px solid var(--color-primary-dark);
+    --border-global-dark: 5px solid var(--color-primary-dark);
     --border-global-light: 3px solid var(--color-primary-light);
     --border-secondary-dark: 3px solid var(--color-secondary-dark);
     --color-secondary-light: 3px solid var(--color-secondary);
@@ -27,13 +34,20 @@
     --shadowBoxin-2: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+
+
+
+
+
 * {
+    font-size: 1em;
     margin: 0;
     padding: 0;
 }
 
+
 body {
-    background-color: var(--color-primary-light);
+    background-color: white;
 }
 
 
@@ -47,34 +61,21 @@ app-header {
 
 
 
-#main_container {
-    display: flex;
+.main_container {
+   display: flex;
     flex-direction: column;
     justify-content: center;
-    
-    margin-left: auto;
-    margin-right: auto;
+   
+  
     margin-top: 20px;
-    width: 98vw;
+    
     height: 75vh;
-    background-color: var(--color-secondary-dark);
-    border: 2px solid ;
+    border: var(--border-global-dark);
     border-radius: var(--border-radius);
 
 
 }
 
-.small-container {
-    width: 50%;
-    height:100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    border: var(--border-secondary-dark);
-    border-radius: var(--border-radius);
-    background-color: var(--color-secondary);
-    box-shadow: var(--shadowBoxin-2);
-}
 
 form {
     height: 100%;
@@ -82,46 +83,10 @@ form {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /*TEST
-    background-color: yellow;*/
-}
-
-.validation-buttons {
-    display: flex;
-    justify-content: space-around;
 
 }
 
 
-
-.validation-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-   /* border: none;*/
-    border-radius: 20px;
-    height: 50px;
-    background-color: var(--color-secondary-dark);
-    box-shadow: var(--shadowBoxin-2);
-    color: white;
-    font-size: larger;
-}
-
-
-
-.validation-btn:hover {
-    background-color: var(--color-accent);
-    border: var(--border-secondary-dark);
-    color: black;
-    font-weight: 200;
-}
-
-.validation-btn:active {
-
-    box-shadow: var(--shadowBoxin-2);
-    transform: translateY(2px);
-}
 
 footer {
     position: relative;

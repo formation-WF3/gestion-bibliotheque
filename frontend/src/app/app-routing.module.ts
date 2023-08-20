@@ -10,6 +10,9 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 import { MainBoardComponent } from './main-board/main-board.component';
+import { SmallContainerComponent } from './small-container/small-container.component';
+
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +24,7 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'under-construction', component: UnderConstructionComponent},
   { path: 'main-board', component:MainBoardComponent},
+  { path: 'small-container',component:SmallContainerComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
