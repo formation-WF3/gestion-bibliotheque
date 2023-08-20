@@ -1,6 +1,7 @@
 <div id="login_page" class="row ">
-    <form class="ml-auto mr-auto" *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-      <div class="row " >
+  <form class="ml-auto mr-auto" *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+    novalidate>
+    <div class="row ">
       <div class="form-group col-8">
         <label class="log-label" for="username">Nom d'utilisateur</label>
         <input type="text" class="form-control col-8" name="username" [(ngModel)]="form.user" required #user="ngModel"
@@ -9,8 +10,8 @@
       </div>
       <div class="form-group col-8">
         <label class="log-label" for="password">Mot de passe</label>
-        <input type="password" class="form-control col-8" name="password" [(ngModel)]="form.password" required minlength="8"
-          #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+        <input type="password" class="form-control col-8" name="password" [(ngModel)]="form.password" required
+          minlength="8" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
         <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
           <div *ngIf="password.errors['required']">Champ Obligatoire</div>
           <div *ngIf="password.errors['minlength']">
@@ -20,6 +21,6 @@
         <div id="rpl"> <a [routerLink]="['/under-construction']" id="resetPasswordLink">mot de passe oublié</a></div>
       </div>
     </div>
-<app-validation-buttons class="col-10"></app-validation-buttons>
-    </form>
-  </div>
+    <app-validation-buttons class="col-10"></app-validation-buttons>
+  </form>
+</div>
