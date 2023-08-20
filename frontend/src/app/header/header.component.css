@@ -5,8 +5,7 @@
     background-color: var(--color-secondary-dark);
     border: var(--border-global-dark);
     border-radius: var(--border-radius);
-    box-shadow: var(--shadowBoxin);
-    
+
 }
 
 .title{
