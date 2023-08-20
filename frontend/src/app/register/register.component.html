@@ -1,6 +1,6 @@
 
-<div >
-  <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+<div id="register_page" class="row" >
+  <form  *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
     <div class="line-container inputs">
       <div class="form-group">
         <label for="lastname">Nom</label>
@@ -68,10 +68,7 @@
         </div>
       </div>
   </div>
-          <div  class="line-container validation-buttons  form-group-buttons">
-        <button class="validation-btn col-4 " type="submit">Enregistrer</button>
-        <button class="validation-btn col-4 " type="reset">Annuler</button>
-      </div>
+         <app-validation-buttons class="col-10"></app-validation-buttons>
 
   </form>
 </div>
