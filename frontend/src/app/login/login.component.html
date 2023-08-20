@@ -1,14 +1,13 @@
-
-  <div class="small-container">
-    <form  *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-      <div class=" col-8" >
-      <div class="form-group">
+<div id="login_page" class="row ">
+    <form class="ml-auto mr-auto" *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div class="row " >
+      <div class="form-group col-8">
         <label class="log-label" for="username">Nom d'utilisateur</label>
         <input type="text" class="form-control col-8" name="username" [(ngModel)]="form.user" required #user="ngModel"
           [ngClass]="{ 'is-invalid': f.submitted && user.errors }" />
         <div *ngIf="user.errors && f.submitted" class="invalid-feedback">Champ Obligatoire</div>
       </div>
-      <div class="form-group">
+      <div class="form-group col-8">
         <label class="log-label" for="password">Mot de passe</label>
         <input type="password" class="form-control col-8" name="password" [(ngModel)]="form.password" required minlength="8"
           #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
@@ -21,9 +20,6 @@
         <div id="rpl"> <a [routerLink]="['/under-construction']" id="resetPasswordLink">mot de passe oublié</a></div>
       </div>
     </div>
-      <div class="validation-buttons line-container form-group-buttons">
-        <button class="validation-btn col-4" type="submit">Connexion</button>
-        <button class="validation-btn col-4" type="reset">Annuler</button>
-      </div>
+<app-validation-buttons class="col-10"></app-validation-buttons>
     </form>
   </div>

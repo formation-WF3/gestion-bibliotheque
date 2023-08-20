@@ -1,0 +1,14 @@
+.small-container {
+    /*width: 50%;
+    
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+   
+    border-radius: var(--border-radius);
+    background-color: var(--color-secondary);
+    box-shadow: var(--shadowBoxin-2);*/
+    background-color:red;
+    height:60vh;
+     border: var(--border-global-dark);
+}
