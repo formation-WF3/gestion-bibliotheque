@@ -26,8 +26,8 @@
 
     --border-global-dark: 5px solid var(--color-primary-dark);
     --border-global-light: 3px solid var(--color-primary-light);
-    --border-secondary-dark: 3px solid var(--color-secondary-dark);
-    --color-secondary-light: 3px solid var(--color-secondary);
+    --border-secondary-dark: 2px solid var(--color-primary-dark);
+    --color-secondary-light: 2px solid var(--color-secondary);
     --border-radius: 30px;
 
     --shadowBoxin: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -52,33 +52,29 @@ body {
 
 
 app-header {
-  
     display: flex;
     justify-content: center;
-    
-    
 }
 
-
-
-.main_container {
+app-main-board{
+    width: 99.5%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
+#main_container {
    display: flex;
     flex-direction: column;
-    justify-content: center;
-   
-  
+    justify-content: center; 
     margin-top: 20px;
-    
     height: 75vh;
     border: var(--border-global-dark);
     border-radius: var(--border-radius);
-
-
 }
 
 
 form {
-    
     height: 80%;
     margin-left: auto;
     margin-right: auto;
