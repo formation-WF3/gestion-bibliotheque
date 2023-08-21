@@ -18,7 +18,6 @@ import { HeaderComponent } from './header/header.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { MainBoardComponent } from './main-board/main-board.component';
 import { NavBoardComponent } from './nav-board/nav-board.component';
-import { SmallContainerComponent } from './small-container/small-container.component';
 import { ValidationButtonsComponent } from './validation-buttons/validation-buttons.component';
 
 @NgModule({
@@ -36,7 +35,6 @@ import { ValidationButtonsComponent } from './validation-buttons/validation-butt
     AdvancedSearchComponent,
     MainBoardComponent,
     NavBoardComponent,
-    SmallContainerComponent,
     ValidationButtonsComponent
    
   ],
