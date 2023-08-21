@@ -10,11 +10,9 @@ public class SignupRequest {
     @Size(min = 3, max = 20)
     private String username;
 
-    
     @Size(min = 3, max = 20)
     private String lastname;
 
-    
     @Size(min = 3, max = 20)
     private String firstname;
  
@@ -44,6 +42,7 @@ public class SignupRequest {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
     public String getFirstname() {
         return firstname;
     }
@@ -75,6 +74,5 @@ public class SignupRequest {
     public void setRole(Set<String> role) {
       this.role = role;
     }
-
     
 }

@@ -2,7 +2,7 @@ package com.formation.gestionbibliotheque.services.adapters;
 
 import com.formation.gestionbibliotheque.dtos.UserDto;
 import com.formation.gestionbibliotheque.models.RoleModel;
-import com.formation.gestionbibliotheque.models.User;
+import com.formation.gestionbibliotheque.models.UserModel;
 import lombok.AllArgsConstructor;
 
 import java.util.Set;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserAdapter {
 
-    public UserDto toDto(User model) {
+    public UserDto toDto(UserModel model) {
         return UserDto.builder()
                 .id(model.getId())
                 .username(model.getUsername())
@@ -28,12 +28,12 @@ public class UserAdapter {
                 .build();
     }
 
-    public User toModel(UserDto dto, Set<RoleModel> role) {
+    public UserModel toModel(UserDto dto, Set<RoleModel> role) {
         if (dto == null) {
             return null;
         }
 
-        return User.builder()
+        return UserModel.builder()
                 .id(dto.getId())
                 .username(dto.getUsername())
                 .lastname(dto.getLastname())
@@ -46,7 +46,7 @@ public class UserAdapter {
                 .build();
     }
 
-    public User toModel(UserDto userDto, RoleModel roleModel) {
+    public UserModel toModel(UserDto userDto, RoleModel roleModel) {
         return null;
     }
 }

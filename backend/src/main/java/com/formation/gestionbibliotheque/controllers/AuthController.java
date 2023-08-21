@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.formation.gestionbibliotheque.models.enums.RoleEnum;
 import com.formation.gestionbibliotheque.models.RoleModel;
-import com.formation.gestionbibliotheque.models.User;
+import com.formation.gestionbibliotheque.models.UserModel;
 import com.formation.gestionbibliotheque.payload.request.LoginRequest;
 import com.formation.gestionbibliotheque.payload.request.SignupRequest;
 import com.formation.gestionbibliotheque.payload.response.JwtResponse;
@@ -102,7 +102,7 @@ public class AuthController {
 
 
     // Create new user's account
-    User user = new User(signUpRequest.getUsername(),
+    UserModel userModel = new UserModel(signUpRequest.getUsername(),
                          signUpRequest.getLastname(),
                          signUpRequest.getFirstname(),                       
                          signUpRequest.getEmail(),
@@ -118,28 +118,28 @@ public class AuthController {
       } else {
         strRoles.forEach(role -> {
           switch (role) {
-          case "admin":
-            RoleModel adminRole = roleRepository.findByName(RoleEnum.ROLE_ADMIN)
-                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-            roles.add(adminRole);
+            case "admin":
+              RoleModel adminRole = roleRepository.findByName(RoleEnum.ROLE_ADMIN)
+                  .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+              roles.add(adminRole);
 
-            break;
-          case "mod":
-            RoleModel modRole = roleRepository.findByName(RoleEnum.ROLE_MODERATOR)
-                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-            roles.add(modRole);
+              break;
+            case "mod":
+              RoleModel modRole = roleRepository.findByName(RoleEnum.ROLE_MODERATOR)
+                  .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+              roles.add(modRole);
 
-            break;
-          default:
-            RoleModel userRole = roleRepository.findByName(RoleEnum.ROLE_USER)
-                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-            roles.add(userRole);
+              break;
+            default:
+              RoleModel userRole = roleRepository.findByName(RoleEnum.ROLE_USER)
+                  .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+              roles.add(userRole);
           }
         });
       }
 
-      user.setRoles(roles);
-      userRepository.save(user);
+      userModel.setRoles(roles);
+      userRepository.save(userModel);
 
       return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 	    }
