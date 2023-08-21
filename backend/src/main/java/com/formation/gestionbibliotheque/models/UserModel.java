@@ -16,22 +16,19 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.persistence.UniqueConstraint;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@ToString
 @Builder
+@Entity
 @Table(name = "user",
  uniqueConstraints = {
         @UniqueConstraint(columnNames = "email"),
         
        })
-public class User {
+public class UserModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,13 +62,13 @@ public class User {
     private double penaltyAmount;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "user_roles", 
+    @JoinTable(name = "user_role",
              joinColumns = @JoinColumn(name = "user_id"),
              inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<RoleModel> roles = new HashSet<>();
 
     @OneToOne
-    private Profile profile;
+    private ProfileModel profileModel;
 
     /**
      * @param username
@@ -80,7 +77,7 @@ public class User {
      * @param email
      * @param password
      */
-    public User(String username, String lastname, String firstname, String email, String password) {
+    public UserModel(String username, String lastname, String firstname, String email, String password) {
         this.username = username;
         this.lastname = lastname;
         this.firstname = firstname;
@@ -134,7 +131,31 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
+    public boolean isEmailVerified() {
+        return emailVerified;
+    }
+
+    public void setEmailVerified(boolean emailVerified) {
+        this.emailVerified = emailVerified;
+    }
+
+    public boolean isCanBorrow() {
+        return canBorrow;
+    }
+
+    public void setCanBorrow(boolean canBorrow) {
+        this.canBorrow = canBorrow;
+    }
+
+    public double getPenaltyAmount() {
+        return penaltyAmount;
+    }
+
+    public void setPenaltyAmount(double penaltyAmount) {
+        this.penaltyAmount = penaltyAmount;
+    }
+
     public Set<RoleModel> getRoles() {
         return roles;
     }

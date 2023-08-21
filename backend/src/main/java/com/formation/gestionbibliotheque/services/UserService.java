@@ -3,7 +3,7 @@ package com.formation.gestionbibliotheque.services;
 import com.formation.gestionbibliotheque.dtos.UserDto;
 import com.formation.gestionbibliotheque.models.enums.RoleEnum;
 import com.formation.gestionbibliotheque.models.RoleModel;
-import com.formation.gestionbibliotheque.models.User;
+import com.formation.gestionbibliotheque.models.UserModel;
 import com.formation.gestionbibliotheque.repositories.RoleRepository;
 import com.formation.gestionbibliotheque.repositories.UserRepository;
 import com.formation.gestionbibliotheque.services.adapters.UserAdapter;
@@ -39,7 +39,7 @@ public class UserService {
                     .orElseThrow(() -> new RuntimeException("Role non trouvée !"));
         }
 
-        User userModel = userAdapter.toModel(userDto, roleModel);
+        UserModel userModel = userAdapter.toModel(userDto, roleModel);
         userModel = userRepository.save(userModel);
         userDto.setId(userModel.getId());
         return userDto;
@@ -54,7 +54,7 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("Role non trouvé !"));
         }
 
-        User userModel = userAdapter.toModel(userDto, roleModel);
+        UserModel userModel = userAdapter.toModel(userDto, roleModel);
         return userRepository.findById(userDto.getId())
                 .map(u -> userAdapter.toDto(userRepository.save(userModel)))
                 .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));

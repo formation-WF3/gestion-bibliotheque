@@ -10,16 +10,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
-@Data
 @AllArgsConstructor
-@Entity
-@Builder
 @ToString
+@Builder
+@Entity
 @Table(name = "role")
 public class RoleModel {
     
