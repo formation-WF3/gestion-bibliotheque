@@ -1,22 +1,33 @@
-<div  *ngIf="currentUser; else loggedOut">
- 
-      <h3>
-        <strong>{{ currentUser.username }}</strong> Profile
-      </h3>
-    
-    <p>
-      <strong>Email:</strong>
-      {{ currentUser.email }}
-    </p>
-    <strong>Roles:</strong>
-    <ul>
-      <li *ngFor="let role of currentUser.roles">
-        {{ role }}
-      </li>
-    </ul>
+<div id="profile_container" class="row" *ngIf="currentUser; else loggedOut">
+  <div id="user_container">
+    <div class="user-container ">
+      <div class="col-8">
+        <h3>USER</h3>
+        <p>{{ currentUser.username }}</p>
+      </div>
+      <div class="col-4">
+        <button class="profile-button col-6">Modifier</button>
+      </div>
+    </div>
   </div>
-  
-  <ng-template #loggedOut>
-    Please login.
-  </ng-template>
-  
+  <div class="mail-container">
+    <div class="col-8">
+      <h3>Email:</h3>
+      <p>{{ currentUser.email }}</p>
+    </div>
+
+  </div>
+  <div class="role-container">
+    <div class="col-8">
+      <h3>Roles:</h3>
+      <p *ngFor="let role of currentUser.roles"> {{ role }}</p>
+    </div>
+    <div class="col-4">
+      <button class="profile-button col-6">Choisir</button>
+    </div>
+  </div>
+
+</div>
+<ng-template class="small-container" #loggedOut>
+  Please login.
+</ng-template>
