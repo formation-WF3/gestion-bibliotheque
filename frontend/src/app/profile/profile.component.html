@@ -1,9 +1,9 @@
 <div id="profile_container" class="row" *ngIf="currentUser; else loggedOut">
   <div id="user_container">
     <div class="user-container ">
-      <div class="col-8">
-        <h3>USER</h3>
-        <p>{{ currentUser.username }}</p>
+      <div class="test col-8">
+        <h3 class="test1 col-4">USER</h3>
+        <p class="test2 col-6"><!--{{ currentUser.username }}-->Cliff Burton</p>
       </div>
       <div class="col-4">
         <button class="profile-button col-6">Modifier</button>
@@ -11,16 +11,18 @@
     </div>
   </div>
   <div class="mail-container">
-    <div class="col-8">
-      <h3>Email:</h3>
-      <p>{{ currentUser.email }}</p>
-    </div>
+    <div class="test col-8">
+      <h3 class="test1 col-4" >Email:</h3>
+      <p class="test2 col-6" ><!--{{ currentUser.email }}-->cliff@megaforce.ca</p>
+    
 
+</div>
   </div>
   <div class="role-container">
-    <div class="col-8">
-      <h3>Roles:</h3>
-      <p *ngFor="let role of currentUser.roles"> {{ role }}</p>
+    <div class="test col-8">
+      <h3 class="test1 col-4" >Roles:</h3>
+      <p class="test2 col-6"> Administrateur</p>
+      <!--<p *ngFor="let role of currentUser.roles"> {{ role }}</p>-->
     </div>
     <div class="col-4">
       <button class="profile-button col-6">Choisir</button>
