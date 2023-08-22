@@ -1,0 +1,34 @@
+#profile_container{
+    width: 95%;
+    height: 90%;
+    margin-right: auto;
+    margin-left: auto;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.user-container,
+.role-container{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.button{
+
+}
+
+.user-container{
+   
+}
+
+.mail-container{
+
+
+
+}
+
+
