@@ -11,24 +11,64 @@
 
 
 .user-container,
-.role-container{
+.role-container,
+.mail-container{
     display: flex;
     justify-content: space-between;
     
 }
 
-.button{
+
+.test{
+    background-color: springgreen;
+    display:flex;
 
 }
 
-.user-container{
-   
+.test1{display:flex;
+    flex-direction: column;
+    justify-content: center;
+   background-color: red;
+   height: 100%;
 }
 
-.mail-container{
+.test2{display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+background-color:blue ;
+font-size: x-large;
 
 
+}
 
+
+.profile-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+   /* border: none;*/
+    border-radius: 20px;
+    height: 50px;
+    background-color: var(--color-secondary-dark);
+    box-shadow: var(--shadowBoxin-2);
+    color: white;
+    font-size: larger;
+}
+
+
+.profile-button:hover {
+    background-color: var(--color-secondary);
+    border: var(--border-secondary-dark);
+    color: black;
+    font-weight: 200;
+}
+
+.profile-button:active {
+
+    box-shadow: var(--shadowBoxin-2);
+    transform: translateY(2px);
 }
 
 
