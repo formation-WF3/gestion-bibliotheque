@@ -1,9 +1,9 @@
 package com.formation.gestionbibliotheque.services;
 
 import com.formation.gestionbibliotheque.dtos.UserDto;
+import com.formation.gestionbibliotheque.models.enums.RoleEnum;
 import com.formation.gestionbibliotheque.models.RoleModel;
 import com.formation.gestionbibliotheque.models.UserModel;
-import com.formation.gestionbibliotheque.models.enums.RoleEnum;
 import com.formation.gestionbibliotheque.repositories.RoleRepository;
 import com.formation.gestionbibliotheque.repositories.UserRepository;
 import com.formation.gestionbibliotheque.services.adapters.UserAdapter;
@@ -31,7 +31,7 @@ public class UserService {
     }
 
     public UserDto add(UserDto userDto) {
-        String roleName = userDto.getRoleName();
+        String roleName = userDto.getRole();
         RoleModel roleModel = null;
 
         if (roleName != null) {
@@ -46,7 +46,7 @@ public class UserService {
     }
 
     public UserDto update(UserDto userDto) {
-        String roleName = userDto.getRoleName();
+        String roleName = userDto.getRole();
         RoleModel roleModel = null;
 
         if (roleName != null) {

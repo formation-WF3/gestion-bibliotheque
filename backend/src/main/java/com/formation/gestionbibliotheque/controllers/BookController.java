@@ -4,7 +4,7 @@ import com.formation.gestionbibliotheque.dtos.BookDto;
 import com.formation.gestionbibliotheque.services.BookService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @AllArgsConstructor

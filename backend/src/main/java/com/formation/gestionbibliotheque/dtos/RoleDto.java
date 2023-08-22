@@ -1,6 +1,5 @@
 package com.formation.gestionbibliotheque.dtos;
 
-import com.formation.gestionbibliotheque.models.enums.RoleEnum;
 import lombok.*;
 
 @NoArgsConstructor

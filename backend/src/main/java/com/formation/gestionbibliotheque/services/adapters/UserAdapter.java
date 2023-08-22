@@ -4,6 +4,9 @@ import com.formation.gestionbibliotheque.dtos.UserDto;
 import com.formation.gestionbibliotheque.models.RoleModel;
 import com.formation.gestionbibliotheque.models.UserModel;
 import lombok.AllArgsConstructor;
+
+import java.util.Set;
+
 import org.springframework.stereotype.Component;
 
 @AllArgsConstructor
@@ -21,11 +24,11 @@ public class UserAdapter {
                 .emailVerified(model.isEmailVerified())
                 .canBorrow(model.isCanBorrow())
                 .penaltyAmount(model.getPenaltyAmount())
-                .roleName(model.getRole().getName().toString())
+                .role(((RoleModel) model.getRoles()).getName().toString())
                 .build();
     }
 
-    public UserModel toModel(UserDto dto, RoleModel roleModel) {
+    public UserModel toModel(UserDto dto, Set<RoleModel> role) {
         if (dto == null) {
             return null;
         }
@@ -39,7 +42,11 @@ public class UserAdapter {
                 .email(dto.getEmail())
                 .canBorrow(dto.isCanBorrow())
                 .penaltyAmount(dto.getPenaltyAmount())
-                .role(roleModel)
+                .roles(role)
                 .build();
+    }
+
+    public UserModel toModel(UserDto userDto, RoleModel roleModel) {
+        return null;
     }
 }

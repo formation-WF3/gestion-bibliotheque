@@ -1,12 +1,15 @@
 package com.formation.gestionbibliotheque.repositories;
 
-import com.formation.gestionbibliotheque.models.RoleModel;
-import com.formation.gestionbibliotheque.models.enums.RoleEnum;
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.Optional;
 
-public interface RoleRepository extends JpaRepository<RoleModel, Long> {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-    Optional<RoleModel> findByName(RoleEnum name);
+import com.formation.gestionbibliotheque.models.enums.RoleEnum;
+import com.formation.gestionbibliotheque.models.RoleModel;
+
+@Repository
+public interface RoleRepository extends JpaRepository<RoleModel, Long>{
+    Optional<RoleModel> findByName(RoleEnum roleEnum);
+
 }

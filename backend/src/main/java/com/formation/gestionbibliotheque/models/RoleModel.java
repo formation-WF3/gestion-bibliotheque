@@ -1,23 +1,51 @@
 package com.formation.gestionbibliotheque.models;
 
 import com.formation.gestionbibliotheque.models.enums.RoleEnum;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
-@NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @ToString
 @Builder
 @Entity
 @Table(name = "role")
 public class RoleModel {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     @Enumerated(EnumType.STRING)
-    @Column(unique = true, length = 10, nullable = false)
+    @Column(unique = true, length = 20, nullable = false)
     private RoleEnum name;
+
+    public RoleModel() {}
+    
+    public RoleModel(RoleEnum name) {
+        this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public RoleEnum getName() {
+        return name;
+    }
+
+    public void setName(RoleEnum name) {
+        this.name = name;
+    }
 }
