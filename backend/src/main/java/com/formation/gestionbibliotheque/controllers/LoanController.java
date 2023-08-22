@@ -3,10 +3,7 @@ package com.formation.gestionbibliotheque.controllers;
 import com.formation.gestionbibliotheque.dtos.LoanDto;
 import com.formation.gestionbibliotheque.services.LoanService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +16,21 @@ public class LoanController {
     @GetMapping
     public List<LoanDto> getAll() {
         return loanService.getAll();
+    }
+
+    @PostMapping
+    public LoanDto add(@RequestBody LoanDto loanDto) {
+        return loanService.add(loanDto);
+    }
+
+    @PutMapping
+    public LoanDto update(@RequestBody LoanDto loanDto) {
+        return loanService.update(loanDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable long id) {
+        return loanService.delete(id);
     }
 
     @GetMapping("/{id}")

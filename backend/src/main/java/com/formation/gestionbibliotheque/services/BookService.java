@@ -21,7 +21,6 @@ public class BookService {
 
     private CategoryRepository categoryRepository;
 
-
     public List<BookDto> getAll() {
         List<BookDto> bookDtos = new ArrayList<>();
         bookRepository.findAll().forEach(
@@ -71,6 +70,12 @@ public class BookService {
 
     public BookDto getById(long id) {
         return bookRepository.findById(id)
+                .map(bookAdapter::toDto)
+                .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
+    }
+q
+    public BookDto getByTitle(String title) {
+        return bookRepository.findByTitleIgnoreCase(title)
                 .map(bookAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
     }
