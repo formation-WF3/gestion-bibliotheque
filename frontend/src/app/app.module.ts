@@ -19,6 +19,8 @@ import { MainBoardComponent } from './main-board/main-board.component';
 import { ValidationButtonsComponent } from './validation-buttons/validation-buttons.component';
 import { NavButtonsComponent } from './nav-buttons/nav-buttons.component';
 import { LoanTabComponent } from './loan-tab/loan-tab.component';
+import { PenaltyTabComponent } from './penalty-tab/penalty-tab.component';
+import { BookSearchComponent } from './book-search/book-search.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { LoanTabComponent } from './loan-tab/loan-tab.component';
     MainBoardComponent,
     ValidationButtonsComponent,
     NavButtonsComponent,
-    LoanTabComponent
+    LoanTabComponent,
+    PenaltyTabComponent,
+    BookSearchComponent
    
   ],
   imports: [
