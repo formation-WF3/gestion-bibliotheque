@@ -3,7 +3,7 @@
     <div class="row ">
       <div class="form-group col-8  mr-auto ml-auto">
         <label for="lastname" class="col-4">Nom</label>
-        <input type="text" class="col-4 form-control" name="lastname" [(ngModel)]="form.lastname " required
+        <input type="text" class="col-4 form-control" name="lastname" [(ngModel)]="form.lastname" required
           minlength="3" maxlength="20" #lastname="ngModel"
           [ngClass]="{ 'is-invalid': f.submitted && lastname.errors }" />
         <div class="invalid-feedback col-4" *ngIf="lastname.errors && f.submitted">
@@ -18,7 +18,7 @@
       </div>
       <div class="form-group col-8 mr-auto ml-auto">
         <label for="firstname " class="col-4">Prénom</label>
-        <input type="text" class="col-4 form-control" name="firstname" [(ngModel)]="form.lastname " required
+        <input type="text" class="col-4 form-control" name="firstname" [(ngModel)]="form.firsrname" required
           minlength="3" maxlength="20" #firstname="ngModel"
           [ngClass]="{ 'is-invalid': f.submitted && firstname.errors }" />
         <div class="invalid-feedback col-4" *ngIf="firstname.errors && f.submitted">
