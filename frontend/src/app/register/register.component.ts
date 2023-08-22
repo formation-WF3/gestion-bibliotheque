@@ -27,7 +27,7 @@ username: any;
   onSubmit(): void {
     const {username,lastname, firstname, email, password } = this.form;
 
-    this.authService.register(username,lastname, firstname, email, password).subscribe({
+    this.authService.register(username, lastname, firstname, email, password).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;

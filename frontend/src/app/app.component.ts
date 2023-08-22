@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { StorageService } from './_services/storage.service';
 import { AuthService } from './_services/auth.service';
+import { EventBusService } from './_shared/event-bus.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +10,19 @@ import { AuthService } from './_services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = "gestion bibliotheque";
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
 
-  constructor(private storageService: StorageService, private authService: AuthService) { }
+  eventBusSub?: Subscription;
+
+  constructor(
+    private storageService: StorageService,
+    private authService: AuthService,
+    private eventBusService: EventBusService
+  ) {}
 
   ngOnInit(): void {
     this.isLoggedIn = this.storageService.isLoggedIn();
@@ -29,6 +36,10 @@ export class AppComponent {
 
       this.username = user.username;
     }
+
+    this.eventBusSub = this.eventBusService.on('logout', () => {
+      this.logout();
+    });
   }
 
   logout(): void {
