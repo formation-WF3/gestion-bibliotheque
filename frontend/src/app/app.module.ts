@@ -18,6 +18,7 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
 import { MainBoardComponent } from './main-board/main-board.component';
 import { ValidationButtonsComponent } from './validation-buttons/validation-buttons.component';
 import { NavButtonsComponent } from './nav-buttons/nav-buttons.component';
+import { LoanTabComponent } from './loan-tab/loan-tab.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NavButtonsComponent } from './nav-buttons/nav-buttons.component';
     AdvancedSearchComponent,
     MainBoardComponent,
     ValidationButtonsComponent,
-    NavButtonsComponent
+    NavButtonsComponent,
+    LoanTabComponent
    
   ],
   imports: [
