@@ -21,6 +21,7 @@ import { NavButtonsComponent } from './nav-buttons/nav-buttons.component';
 import { LoanTabComponent } from './loan-tab/loan-tab.component';
 import { PenaltyTabComponent } from './penalty-tab/penalty-tab.component';
 import { BookSearchComponent } from './book-search/book-search.component';
+import { AdminBoardComponent } from './admin-board/admin-board.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BookSearchComponent } from './book-search/book-search.component';
     NavButtonsComponent,
     LoanTabComponent,
     PenaltyTabComponent,
-    BookSearchComponent
+    BookSearchComponent,
+    AdminBoardComponent
    
   ],
   imports: [
