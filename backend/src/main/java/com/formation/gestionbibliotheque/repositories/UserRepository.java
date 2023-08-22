@@ -9,14 +9,13 @@ import com.formation.gestionbibliotheque.models.UserModel;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserModel, Long> {
-    Optional<UserModel> findByUsernameIgnoreCase(String username);
 
-  Optional<UserModel> findByUsername(String username);
+    Optional<UserModel> findByUsername(String username);
 
-  Boolean existsByUsername(String username);
+    Boolean existsByUsername(String username);
 
-  Boolean existsByEmail(String email);
+    Boolean existsByEmail(String email);
 
-  UserModel save(UserModel userModel);
+    UserModel save(UserModel userModel);
 
 }

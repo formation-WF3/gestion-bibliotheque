@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoanAdapter {
 
-    public static LoanDto toDto(LoanModel model) {
+    public LoanDto toDto(LoanModel model) {
         return LoanDto.builder()
                 .id(model.getId())
                 .borrowedAt(model.getBorrowedAt())

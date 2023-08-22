@@ -28,7 +28,7 @@ public class LoanService {
     public List<LoanDto> getAll() {
         List<LoanDto> loanDtos = new ArrayList<>();
         loanRepository.findAll().forEach(
-                model -> loanDtos.add(LoanAdapter.toDto(model))
+                model -> loanDtos.add(loanAdapter.toDto(model))
         );
         return loanDtos;
     }
@@ -43,7 +43,7 @@ public class LoanService {
             bookModel = bookRepository.findByTitleIgnoreCase(bookTitle).orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
         }
         if (userUsername != null) {
-            userModel = userRepository.findByUsernameIgnoreCase(userUsername)
+            userModel = userRepository.findByUsername(userUsername)
                     .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));
         }
 
@@ -63,7 +63,7 @@ public class LoanService {
             bookModel = bookRepository.findByTitleIgnoreCase(bookTitle).orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
         }
         if (userUsername != null) {
-            userModel = userRepository.findByUsernameIgnoreCase(userUsername)
+            userModel = userRepository.findByUsername(userUsername)
                     .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));
         }
 
@@ -84,7 +84,7 @@ public class LoanService {
 
     public LoanDto getById(long id) {
         return loanRepository.findById(id)
-                .map(LoanAdapter::toDto)
+                .map(loanAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Emprunt non trouvé !"));
     }
 }

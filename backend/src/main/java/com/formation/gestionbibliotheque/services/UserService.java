@@ -76,7 +76,7 @@ public class UserService {
     }
 
     public UserDto getByUsername(String username) {
-        return userRepository.findByUsernameIgnoreCase(username)
+        return userRepository.findByUsername(username)
                 .map(userAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));
     }

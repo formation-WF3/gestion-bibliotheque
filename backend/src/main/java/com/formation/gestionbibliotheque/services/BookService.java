@@ -73,7 +73,7 @@ public class BookService {
                 .map(bookAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
     }
-q
+
     public BookDto getByTitle(String title) {
         return bookRepository.findByTitleIgnoreCase(title)
                 .map(bookAdapter::toDto)
