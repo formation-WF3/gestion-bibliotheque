@@ -23,7 +23,7 @@
         <div class="invalid-feedback" *ngIf="username.errors && f.submitted">
           <div *ngIf="username.errors['required']">Username est obligatoire</div>
           <div *ngIf="username.errors['minlength']">
-            Username dois avoir 3 caracteres minimun
+            Username doit avoir 3 caracteres minimun
           </div>
           <div *ngIf="username.errors['maxlength']">
             Username ne doit pas dépasser 20 caracteres

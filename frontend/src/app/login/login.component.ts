@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
-username: any;
 
   constructor(private authService: AuthService, private storageService: StorageService) { }
 
@@ -50,4 +49,3 @@ username: any;
     window.location.reload();
   }
 }
-
