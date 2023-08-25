@@ -36,6 +36,14 @@ INSERT INTO `user` (`username`, `lastname`, `firstname`, `password`, `email`, `e
 
 /* Insertion d'emprunts pour tests */
 INSERT INTO `loan` (`borrowed_at`, `return_date`, `returned_at`, `book_id`, `user_id`)
-    VALUES  ('', '', '', 2, 4),
-            ('', '', '', 1, 6),
-            ('', '', '', 5, 9);
+    VALUES  ('2023-08-18 11:05:15', null, null, 2, 4),
+            ('2023-08-22 12:06:35', null, null, 1, 6),
+            ('2023-07-31 09:52:35', null, null, 5, 3);
+
+INSERT INTO `loan` (`book_id`, `user_id`)
+    VALUES  (2, 10),
+            (1, 12),
+            (4, 14),
+            (9, 15),
+            (4, 17),
+            (6, 9);

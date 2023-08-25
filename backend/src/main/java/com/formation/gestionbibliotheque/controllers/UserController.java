@@ -38,4 +38,9 @@ public class UserController {
         return userService.getById(id);
     }
 
+    @GetMapping("/{username}")
+    public UserDto getByUsername(@PathVariable String username) {
+        return userService.getByUsername(username);
+    }
+
 }
