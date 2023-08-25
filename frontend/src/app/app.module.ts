@@ -22,6 +22,7 @@ import { LoanTabComponent } from './loan-tab/loan-tab.component';
 import { PenaltyTabComponent } from './penalty-tab/penalty-tab.component';
 import { BookSearchComponent } from './book-search/book-search.component';
 import { AdminBoardComponent } from './admin-board/admin-board.component';
+import { RegisterConfirmationComponent } from './register-confirmation/register-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AdminBoardComponent } from './admin-board/admin-board.component';
     LoanTabComponent,
     PenaltyTabComponent,
     BookSearchComponent,
-    AdminBoardComponent
+    AdminBoardComponent,
+    RegisterConfirmationComponent
    
   ],
   imports: [
