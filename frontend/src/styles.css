@@ -56,7 +56,8 @@ app-header {
     justify-content: center;
 }
 
-app-main-board{
+app-main-board,
+app-book-search{
     width: 99.5%;
     height: 100%;
     margin-left: auto;
