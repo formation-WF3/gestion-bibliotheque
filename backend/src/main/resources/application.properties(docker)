@@ -1,0 +1,16 @@
+############ DataSource Config ############
+spring.datasource.url=jdbc:${MYSQL_CONNECTION_STRING}
+spring.datasource.username=${MYSQL_USER}
+spring.datasource.password=${MYSQL_PASSWORD}
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+############ Hibernate Properties ############
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.MySQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.show-sql=true
+
+############ App Properties ############
+formation.app.jwtCookieName= said
+formation.app.jwtSecret= saidSecretKeyBcpPlusLongueSaidSecretKeyBcpPlusLongue
+formation.app.jwtExpirationMs= 840000
