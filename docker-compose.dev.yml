@@ -2,7 +2,7 @@ version: '3.8'
 # lancer avec : docker compose -f docker-compose.dev.yml --env-file .env up
 services:
   backend:
-    container_name: backend
+    container_name: backend-biblio
     restart: on-failure
     depends_on:
       - db
@@ -27,7 +27,7 @@ services:
       - ./backend/.m2:/root/.m2
 
   frontend:
-    container_name: frontend
+    container_name: frontend-biblio
     restart: on-failure
     build:
       context: ./frontend
@@ -40,7 +40,7 @@ services:
       - ./frontend:/app
 
   db:
-    container_name: mysql
+    container_name: mysql-biblio
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -54,7 +54,7 @@ services:
       #- ./init-db:/docker-entrypoint-initdb.d
 
   adminer:
-    container_name: adminer
+    container_name: adminer-biblio
     image: adminer
     environment:
       ADMINER_DEFAULT_SERVER: "${ADMINER_DEFAULT_SERVER:-mysql}"
