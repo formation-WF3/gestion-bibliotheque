@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-board.component.css']
 })
 export class MainBoardComponent {
-items=['profile','loan','penalty']
+items=['PROFILE','LOAN','PENALTY']
 
-buttonSelected ='profile'
+buttonSelected ='PROFILE'
+
 
 
 }
