@@ -6,15 +6,15 @@
     <div class="side-pannel  ">
 <app-nav-buttons></app-nav-buttons>
     </div>
-    <div class="content-pannel ">
+    <div class="content-pannel " (navEvent)="selectComponent(buttonSelected)">
         <!-- 
             ON DOIT ICI FAIRE L AFFICHAGE CONDITIONNEL
             NGIF="variable=PROFIL"
                 
         -->
-<div *ngIf="buttonSelected == 'profile'"> <app-profile ></app-profile></div>
-<div *ngIf="buttonSelected == 'loan'"><app-loan-tab></app-loan-tab></div>
-<div *ngIf="buttonSelected == 'penalty'"><app-penalty-tab></app-penalty-tab></div>
+<div *ngIf="buttonSelected =='PROFILE'"> <app-profile ></app-profile></div>
+<div *ngIf="buttonSelected =='LOAN'"><app-loan-tab></app-loan-tab></div>
+<div *ngIf="buttonSelected =='PENALTY'"><app-penalty-tab></app-penalty-tab></div>
 
     </div>
 </div>
