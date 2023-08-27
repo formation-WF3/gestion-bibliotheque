@@ -11,7 +11,7 @@ export class NavButtonsComponent {
   navEvent = new EventEmitter<string>();
   goToNavEvent(value: string) {
     this.navEvent.emit(value);
-    console.log(value)
+    
   }
 
 }
