@@ -12,6 +12,9 @@
             NGIF="variable=PROFIL"
                 
         -->
-<app-profile></app-profile>
+<div *ngIf="buttonSelected == 'profile'"> <app-profile ></app-profile></div>
+<div *ngIf="buttonSelected == 'loan'"><app-loan-tab></app-loan-tab></div>
+<div *ngIf="buttonSelected == 'penalty'"><app-penalty-tab></app-penalty-tab></div>
+
     </div>
 </div>

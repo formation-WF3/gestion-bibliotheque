@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-board.component.css']
 })
 export class MainBoardComponent {
+items=['profile','loan','penalty']
+
+buttonSelected ='profile'
+
 
 }
