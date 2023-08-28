@@ -7,10 +7,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NavButtonsComponent {
 
-  @Output()
-  navEvent = new EventEmitter<string>();
+  @Output() navEvent:EventEmitter<string> = new EventEmitter<string>();
   goToNavEvent(value: string) {
     this.navEvent.emit(value);
+    console.log(value)
+  
     
   }
 
