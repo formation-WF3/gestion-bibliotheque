@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavButtonsComponent } from '../nav-buttons/nav-buttons.component';
+
 
 @Component({
   selector: 'app-main-board',
@@ -14,9 +14,10 @@ items=['PROFILE','LOAN','PENALTY']
 buttonSelected = 'PROFILE';
 
 selectComponent(navEvent:string){
-  this.buttonSelected=navEvent 
-  console.log(navEvent)
-  return navEvent
+ this.buttonSelected=navEvent 
+  // console.log(navEvent)
+  // console.log('essai')
+
  
 }
 
