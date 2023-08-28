@@ -1,7 +1,8 @@
 #titleBanner{
-    margin-top: 10px;
-    /*min-width: 85%;*/
-    height: 15vh;
+    position: fixed;
+    top: 1rem;
+    width: 70%;
+    height: 6rem;
     background-color: var(--color-secondary);
     border: var(--border-global-dark);
     border-radius: var(--border-radius);
@@ -11,7 +12,7 @@
 .title{
 
 margin: auto;
-color: black;
+
 
 }
 
