@@ -18,14 +18,13 @@ import { NavButtonsComponent } from './nav-buttons/nav-buttons.component';
 import { LoanTabComponent } from './loan-tab/loan-tab.component';
 import { PenaltyTabComponent } from './penalty-tab/penalty-tab.component';
 import { BookSearchComponent } from './book-search/book-search.component';
-
 import { RegisterConfirmationComponent } from './register-confirmation/register-confirmation.component';
 import { BookListComponent } from './book-list/book-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-   HeaderComponent,
+    HeaderComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
@@ -39,8 +38,7 @@ import { BookListComponent } from './book-list/book-list.component';
     PenaltyTabComponent,
     BookSearchComponent,
     RegisterConfirmationComponent,
-    BookListComponent
-   
+    BookListComponent 
   ],
   imports: [
     BrowserModule,

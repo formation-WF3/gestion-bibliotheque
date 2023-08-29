@@ -5,8 +5,6 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
-
-
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 import { MainBoardComponent } from './main-board/main-board.component';
 import { BookSearchComponent } from './book-search/book-search.component';
