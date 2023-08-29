@@ -4,7 +4,7 @@
     <div class="row ">
       <div class="form-group col-8">
         <label class="log-label" for="username">Nom d'utilisateur</label>
-        <input type="text" class="form-control col-10" name="username" [(ngModel)]="form.user" required #user="ngModel"
+        <input type="text" class="form-control col-10" name="username" [(ngModel)]="form.username" required #user="ngModel"
           [ngClass]="{ 'is-invalid': f.submitted && user.errors }" />
         <div *ngIf="user.errors && f.submitted" class="invalid-feedback">Champ Obligatoire</div>
       </div>
@@ -21,6 +21,13 @@
         <div id="rpl"> <a [routerLink]="['/under-construction']" id="resetPasswordLink">mot de passe oublié</a></div>
       </div>
     </div>
-    <app-validation-buttons class="col-10"></app-validation-buttons>
+    <button type="submit" class="btn btn-primary">Register</button>
+    <button
+      type="button"
+      (click)="onReset(f)"
+      class="btn btn-warning float-right"
+    >
+      Reset
+    </button>
   </form>
 </div>
