@@ -1,0 +1,32 @@
+
+.construction-txt{
+
+margin-top: 30px;
+
+}
+
+.back-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    height: 100%;
+    background-color: var(--color-secondary-dark);
+    box-shadow: var(--shadowBoxin-2);
+    color: white;
+    font-size:xx-large;
+    
+}
+
+.back-button:hover{
+    
+    background-color: var(--color-secondary);
+    border: var(--border-secondary-dark);
+    color: black;
+    font-weight: 200;
+}
+.back-button:focus{
+
+    transform: translateY(2px);
+}

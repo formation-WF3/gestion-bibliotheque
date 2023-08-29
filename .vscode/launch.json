@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GestionBibliothequeApplication<gestion-bibliotheque>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.formation.gestionbibliotheque.GestionBibliothequeApplication",
+            "projectName": "gestion-bibliotheque",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

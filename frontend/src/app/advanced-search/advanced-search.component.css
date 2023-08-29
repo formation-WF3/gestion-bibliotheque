@@ -1,47 +1,16 @@
-#profile_container{
-    width: 95%;
-    height: 90%;
-    margin-right: auto;
+#search_zone {
+
+    display: flex;
+    flex-direction: column;
+
+    width: 98%;
+    height: 95%;
     margin-left: auto;
-   
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-
-.user-container,
-.role-container,
-.mail-container{
-    display: flex;
-    justify-content: space-between;
-    
-}
-
-
-.line{
-   
-    display:flex;
+    margin-right: auto;
 
 }
 
-.line1,
-.line2
-{display:flex;
-    flex-direction: column;
-    justify-content: center;
-     height: 100%;
-}
-
-.line2{
-
-font-size: x-large;
-
-
-}
-
-
-.profile-button{
+.search-button{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -53,20 +22,44 @@ font-size: x-large;
     box-shadow: var(--shadowBoxin-2);
     color: white;
     font-size: larger;
+    margin-left: 20px;
 }
 
 
-.profile-button:hover {
+.search-button:hover {
     background-color: var(--color-secondary);
     border: var(--border-secondary-dark);
     color: black;
     font-weight: 200;
 }
 
-.profile-button:active {
+.search-button:active {
 
     box-shadow: var(--shadowBoxin-2);
     transform: translateY(2px);
 }
 
+.input-zone {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    width: 100%;
+}
 
+.input-group {
+    padding: 0px;
+}
+
+.form-control {
+    height: 3em;
+    box-shadow: var(--shadowBoxin-2);
+    border-radius: 20px;
+}
+
+.button-container {
+    width: 100%;
+    justify-content: end;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}

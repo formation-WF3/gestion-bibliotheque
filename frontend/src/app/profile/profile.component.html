@@ -1,22 +1,35 @@
-<div class="container" *ngIf="currentUser; else loggedOut">
-    <header class="jumbotron">
-      <h3>
-        <strong>{{ currentUser.username }}</strong> Profile
-      </h3>
-    </header>
-    <p>
-      <strong>Email:</strong>
-      {{ currentUser.email }}
-    </p>
-    <strong>Roles:</strong>
-    <ul>
-      <li *ngFor="let role of currentUser.roles">
-        {{ role }}
-      </li>
-    </ul>
+<div id="profile_container" class="row" *ngIf="currentUser; else loggedOut">
+  <div id="user_container">
+    <div class="user-container ">
+      <div class="line col-8">
+        <h3 class="line1 col-4">USER</h3>
+        <p class="line2 col-6"><!--{{ currentUser.username }}-->Cliff Burton</p>
+      </div>
+      <div class="col-4">
+        <button class="profile-button col-6">Modifier</button>
+      </div>
+    </div>
   </div>
-  
-  <ng-template #loggedOut>
-    Please login.
-  </ng-template>
-  
+  <div class="mail-container">
+    <div class="line col-8">
+      <h3 class="line1 col-4" >Email:</h3>
+      <p class="line2 col-6" ><!--{{ currentUser.email }}-->cliff@megaforce.ca</p>
+    
+
+</div>
+  </div>
+  <div class="role-container">
+    <div class="line col-8">
+      <h3 class="line1 col-4" >Roles:</h3>
+      <p class="line2 col-6"> Administrateur</p>
+      <!--<p *ngFor="let role of currentUser.roles"> {{ role }}</p>-->
+    </div>
+    <div class="col-4">
+      <button class="profile-button col-6">Choisir</button>
+    </div>
+  </div>
+
+</div>
+<ng-template class="small-container" #loggedOut>
+  Please login.
+</ng-template>
