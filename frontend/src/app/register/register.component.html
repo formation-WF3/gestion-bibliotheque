@@ -1,6 +1,22 @@
 <div id="register_page" class="row">
-  <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+  <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate  
+  >
     <div class="row ">
+      <div class="form-group col-8  mr-auto ml-auto">
+        <label for="username" class="col-4">username</label>
+        <input type="text" class="col-4 form-control" name="username" [(ngModel)]="form.username" required
+          minlength="3" maxlength="20" #username="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && username.errors }" />
+        <div class="invalid-feedback col-4" *ngIf="username.errors && f.submitted">
+          <div *ngIf="username.errors['required']">Nom obligatoire</div>
+          <div *ngIf="username.errors['minlength']">
+            Votre nom doit avoir 3 characteres minimum
+          </div>
+          <div *ngIf="username.errors['maxlength']">
+            Votre nom doit avoir 20 characteres maximum
+          </div>
+        </div>
+      </div>
       <div class="form-group col-8  mr-auto ml-auto">
         <label for="lastname" class="col-4">Nom</label>
         <input type="text" class="col-4 form-control" name="lastname" [(ngModel)]="form.lastname" required
@@ -18,7 +34,7 @@
       </div>
       <div class="form-group col-8 mr-auto ml-auto">
         <label for="firstname " class="col-4">Prénom</label>
-        <input type="text" class="col-4 form-control" name="firstname" [(ngModel)]="form.firsrname" required
+        <input type="text" class="col-4 form-control" name="firstname" [(ngModel)]="form.firstname" required
           minlength="3" maxlength="20" #firstname="ngModel"
           [ngClass]="{ 'is-invalid': f.submitted && firstname.errors }" />
         <div class="invalid-feedback col-4" *ngIf="firstname.errors && f.submitted">
@@ -49,11 +65,19 @@
       </div>
       <div class="form-group col-8 mr-auto ml-auto ">
         <label for="confirm" class="col-4">Confirmez mot de passe</label>
-        <input type="text" class="col-4 form-control" name="confirm">
+        <input type="text" class="col-4 form-control" name="confirmPassword" [(ngModel)]="form.confirmPassword" required
+        #password="ngModel">
       </div>
     </div>
     <div class="line-container  inputs">
     </div>
-    <app-validation-buttons class="col-10"></app-validation-buttons>
+     <button type="submit" class="btn btn-primary">Register</button>
+      <button
+        type="button"
+        (click)="onReset(f)"
+        class="btn btn-warning float-right"
+      >
+        Reset
+      </button>
   </form>
 </div>
