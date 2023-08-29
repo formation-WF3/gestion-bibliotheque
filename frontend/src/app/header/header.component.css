@@ -25,11 +25,29 @@ header{
 .header-button{
 width:4rem;
 height: 4rem;
+border: none;
 border-radius: 50%;
+}
+
+.header-button:hover {
+    background-color: var(--color-secondary);
+
+
+}
+
+.header-button:active {
+
+    box-shadow: var(--shadowBoxin-2);
+    transform: translateY(2px);
 }
 
 .goBack-logo,
 .bookList-logo,
 .connect-logo{
-    padding: 0px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
 }
+
+
