@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { StorageService } from '../_services/storage.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,9 @@ import { StorageService } from '../_services/storage.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form: any = {
-    username: null,
-    password: null
+  form = {
+    username: '',
+    password: ''
   };
   isLoggedIn = false;
   isLoginFailed = false;
@@ -44,7 +45,9 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-
+  onReset(form: NgForm): void {
+    form.reset();
+  }
   reloadPage(): void {
     window.location.reload();
   }
