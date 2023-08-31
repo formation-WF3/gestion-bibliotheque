@@ -13,6 +13,7 @@ header {
     margin: 0 auto;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius:30px ;
+    box-shadow: var(--shadowBoxin-2);
   
 
   /* Wave Color */
@@ -83,11 +84,11 @@ background: linear-gradient(to right,  #7c4dff 0%,#48c088 52%,#84f9bd 100%); /* 
 }
 
 .header-button:hover {
-    background-color: var(--color-secondary);
+    background-color: var(--color-button);
 }
 
 .header-button:active {
-    box-shadow: var(--shadowBoxin-2);
+    box-shadow: var(--shadowBoxin);
     transform: translateY(2px);
 }
 
