@@ -2,8 +2,20 @@
     <h2>{{book.title | uppercase}} Details</h2>
     <div><span>id: </span>{{book.id}}</div>
     <div>
-      <label for="book-title">Book Title: </label>
-      <input id="book-title" [(ngModel)]="book.title" placeholder="Book title"/>
+      <label for="book-title"> Book Title: </label>
+      <input id="book-title" [(ngModel)]=" book.title" placeholder="Book title"/>
+    </div>
+    <div>
+      <label for="book-author"> Book Author: </label>
+      <input id="book-author" [(ngModel)]=" book.author" placeholder="Book author"/>
+    </div>
+    <div>
+      <label for="total_items"> total items: </label>
+      <input id="total_items" [(ngModel)]=" book.totalItems" placeholder="total items"/>
+    </div>
+    <div>
+      <label for="total_items"> total items: </label>
+      <input id="total_items" [(ngModel)]=" book.category" placeholder="total items"/>
     </div>
     <button type="button" (click)="goBack()">go back</button>
     <button type="button" (click)="save()">save</button>
