@@ -9,6 +9,7 @@ import { UnderConstructionComponent } from './under-construction/under-construct
 import { MainBoardComponent } from './main-board/main-board.component';
 import { BookSearchComponent } from './book-search/book-search.component';
 import { BookListComponent } from './book-list/book-list.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'main-board', component:MainBoardComponent},
   { path:'book-search', component:BookSearchComponent },
   { path:'book-list', component:BookListComponent },
+  { path: 'book-detail/:id', component: BookDetailComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

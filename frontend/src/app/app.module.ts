@@ -20,6 +20,7 @@ import { PenaltyTabComponent } from './penalty-tab/penalty-tab.component';
 import { BookSearchComponent } from './book-search/book-search.component';
 import { RegisterConfirmationComponent } from './register-confirmation/register-confirmation.component';
 import { BookListComponent } from './book-list/book-list.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { BookListComponent } from './book-list/book-list.component';
     PenaltyTabComponent,
     BookSearchComponent,
     RegisterConfirmationComponent,
-    BookListComponent 
+    BookListComponent,
+    BookDetailComponent 
   ],
   imports: [
     BrowserModule,

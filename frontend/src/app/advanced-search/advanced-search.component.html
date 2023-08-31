@@ -2,7 +2,7 @@
 <div id="search_zone" class="row">
 <div class="input-zone">
     <div class="input-group col-8">
-        <input type="text" class="form-control " placeholder="Recherche rapide">
+        <input type="text" class="form-control " placeholder="Recherche rapide"  #searchBox id="search-box" (input)="search(searchBox.value)">
     </div>
  
     <form>

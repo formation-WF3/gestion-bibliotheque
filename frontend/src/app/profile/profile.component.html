@@ -6,7 +6,7 @@
         <p class="line2 col-6">{{ currentUser.username }}</p>
       </div>
       <div class="col-4">
-        <button class="profile-button col-6">Modifier</button>
+        <button [routerLink]="['/update-user']" class="profile-button col-6">Modifier</button>
       </div>
     </div>
   </div>
@@ -14,8 +14,6 @@
     <div class="line col-8">
       <h3 class="line1 col-4" >Email:</h3>
       <p class="line2 col-6" >{{ currentUser.email }}</p>
-    
-
 </div>
   </div>
   <div class="role-container">
