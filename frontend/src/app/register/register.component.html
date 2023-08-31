@@ -61,7 +61,8 @@
           <h2>Mot de passe</h2>
         </label>
         <input type="password" class="col-4 form-control" name="password" [(ngModel)]="form.password" required
-          minlength="6" maxlength="20" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+          minlength="6" maxlength="20" #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
         <div class="invalid-feedback col-4" *ngIf="password.errors && f.submitted">
           <div *ngIf="password.errors['required']">Le mot de passe est obligatoire</div>
           <div *ngIf="password.errors['minlength']">Le mot de passe doit comporter 6 caractères minimum </div>
@@ -76,11 +77,10 @@
           #password="ngModel">
       </div>
     </div>
-    <div class="line-container  inputs">
+
+    <div class="validation-buttons col-12 ">
+      <button type="submit" class="validation-btn col-lg-3 col-md-3 col-sm-3  ">Valider</button>
+      <button type="button" (click)="onReset(f)" class="validation-btn col-lg-3 col-md-3 col-sm-3 ">Annuler </button>
     </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-    <button type="button" (click)="onReset(f)" class="btn btn-warning float-right">
-      Reset
-    </button>
   </form>
 </div>
