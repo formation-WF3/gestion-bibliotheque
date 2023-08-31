@@ -1,0 +1,12 @@
+#main_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; ;
+    top:20vh;
+    margin-top: 10px;
+    width: 98vw;
+    height: 75vh;
+    border: var(--border-secondary-light);
+    border-radius: var(--border-radius);
+}
