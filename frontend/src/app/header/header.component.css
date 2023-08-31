@@ -25,10 +25,10 @@ background: linear-gradient(to right,  #7c4dff 0%,#48c088 52%,#84f9bd 100%); /* 
 
 
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#59adeb', endColorstr='#34ce93', GradientType=1);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#7c4dff', endColorstr='#84f9bd', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
   background-size: 350% 350%;
-  animation: waveColors 8s ease infinite;
+  animation: waveColors 15s ease infinite;
   /* End Wave Color */
 
 
@@ -77,8 +77,8 @@ background: linear-gradient(to right,  #7c4dff 0%,#48c088 52%,#84f9bd 100%); /* 
 }
 
 .header-button {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     border: none;
     border-radius: 50%;
 }

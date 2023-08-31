@@ -1,83 +1,86 @@
 <div id="register_page" class="row">
-  <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate  
-  >
+  <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
     <div class="row ">
+
       <div class="form-group col-8  mr-auto ml-auto">
-        <label for="username" class="col-4">username</label>
-        <input type="text" class="col-4 form-control" name="username" [(ngModel)]="form.username" required
-          minlength="3" maxlength="20" #username="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && username.errors }" />
+        <label for="username" class="col-4">
+          <h2>Identifiant</h2>
+        </label>
+        <input type="text" class="col-4 form-control" name="username" [(ngModel)]="form.username" required minlength="3"
+          maxlength="20" #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.errors }" />
         <div class="invalid-feedback col-4" *ngIf="username.errors && f.submitted">
-          <div *ngIf="username.errors['required']">Nom obligatoire</div>
-          <div *ngIf="username.errors['minlength']">
-            Votre nom doit avoir 3 characteres minimum
-          </div>
-          <div *ngIf="username.errors['maxlength']">
-            Votre nom doit avoir 20 characteres maximum
-          </div>
+          <div *ngIf="username.errors['required']">L'identifiant est obligatoire</div>
+          <div *ngIf="username.errors['minlength']">Votre identifiant doit comporter 3 caractères minimum </div>
+          <div *ngIf="username.errors['maxlength']">Votre identifiant doit comporter 20 caractères maximum</div>
         </div>
       </div>
+
       <div class="form-group col-8  mr-auto ml-auto">
-        <label for="lastname" class="col-4">Nom</label>
-        <input type="text" class="col-4 form-control" name="lastname" [(ngModel)]="form.lastname" required
-          minlength="3" maxlength="20" #lastname="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && lastname.errors }" />
+        <label for="lastname" class="col-4">
+          <h2>Nom</h2>
+        </label>
+        <input type="text" class="col-4 form-control" name="lastname" [(ngModel)]="form.lastname" required minlength="3"
+          maxlength="20" #lastname="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastname.errors }" />
         <div class="invalid-feedback col-4" *ngIf="lastname.errors && f.submitted">
-          <div *ngIf="lastname.errors['required']">Nom obligatoire</div>
-          <div *ngIf="lastname.errors['minlength']">
-            Votre nom doit avoir 3 characteres minimum
-          </div>
-          <div *ngIf="lastname.errors['maxlength']">
-            Votre nom doit avoir 20 characteres maximum
-          </div>
+          <div *ngIf="lastname.errors['required']">Le nom est obligatoire</div>
+          <div *ngIf="lastname.errors['minlength']">Votre nom doit comporter 3 caractères minimum</div>
+          <div *ngIf="lastname.errors['maxlength']">Votre nom doit comporter 20 caractères maximum</div>
         </div>
       </div>
+
       <div class="form-group col-8 mr-auto ml-auto">
-        <label for="firstname " class="col-4">Prénom</label>
+        <label for="firstname " class="col-4">
+          <h2>Prénom</h2>
+        </label>
         <input type="text" class="col-4 form-control" name="firstname" [(ngModel)]="form.firstname" required
           minlength="3" maxlength="20" #firstname="ngModel"
           [ngClass]="{ 'is-invalid': f.submitted && firstname.errors }" />
         <div class="invalid-feedback col-4" *ngIf="firstname.errors && f.submitted">
-          <div *ngIf="firstname.errors['required']">Prénom obligatoire</div>
-          <div *ngIf="firstname.errors['minlength']">3 Caractéres minimum</div>
-          <div *ngIf="firstname.errors['maxlength']">20 Caractéres maximum</div>
+          <div *ngIf="firstname.errors['required']">Le prénom est obligatoire</div>
+          <div *ngIf="firstname.errors['minlength']">Votre prénom doit comporter 3 caractères minimum</div>
+          <div *ngIf="firstname.errors['maxlength']">Votre prénom doit comporter 20 caractères maximum</div>
         </div>
       </div>
+
       <div class="form-group col-8 mr-auto ml-auto">
         <div class="input-container mail-field">
-          <label for="email" class="col-4">Email</label>
+          <label for="email" class="col-4">
+            <h2>Email</h2>
+          </label>
           <input type="email" class="col-4 form-control" name="email" [(ngModel)]="form.email" required email
             #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.errors }" />
           <div class="invalid-feedback col-4" *ngIf="email.errors && f.submitted">
-            <div *ngIf="email.errors['required']">Email obligatoire</div>
+            <div *ngIf="email.errors['required']">L' email est obligatoire</div>
             <div *ngIf="email.errors['email']">Email invalide</div>
           </div>
         </div>
       </div>
+
       <div class="form-group col-8 mr-auto ml-auto">
-        <label for="password" class="col-4">Mot de passe</label>
+        <label for="password" class="col-4">
+          <h2>Mot de passe</h2>
+        </label>
         <input type="password" class="col-4 form-control" name="password" [(ngModel)]="form.password" required
-          minlength="6" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+          minlength="6" maxlength="20" #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
         <div class="invalid-feedback col-4" *ngIf="password.errors && f.submitted">
-          <div *ngIf="password.errors['required']">Mot de passe obligatoire</div>
-          <div *ngIf="password.errors['minlength']">Le mot de passe doit avoir 8 caractères minimum </div>
+          <div *ngIf="password.errors['required']">Le mot de passe est obligatoire</div>
+          <div *ngIf="password.errors['minlength']">Le mot de passe doit comporter 6 caractères minimum </div>
+          <div *ngIf="password.errors['maxlength']">Le mot de passe doit comporter 20 caractères maximum</div>
         </div>
       </div>
       <div class="form-group col-8 mr-auto ml-auto ">
-        <label for="confirm" class="col-4">Confirmez mot de passe</label>
+        <label for="confirm" class="col-4">
+          <h2>Confirmez mot de passe</h2>
+        </label>
         <input type="text" class="col-4 form-control" name="confirmPassword" [(ngModel)]="form.confirmPassword" required
-        #password="ngModel">
+          #password="ngModel">
       </div>
     </div>
-    <div class="line-container  inputs">
+
+    <div class="validation-buttons col-12 ">
+      <button type="submit" class="validation-btn col-lg-3 col-md-3 col-sm-3  ">Valider</button>
+      <button type="button" (click)="onReset(f)" class="validation-btn col-lg-3 col-md-3 col-sm-3 ">Annuler </button>
     </div>
-     <button type="submit" class="btn btn-primary">Register</button>
-      <button
-        type="button"
-        (click)="onReset(f)"
-        class="btn btn-warning float-right"
-      >
-        Reset
-      </button>
   </form>
 </div>
