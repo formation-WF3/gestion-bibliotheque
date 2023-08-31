@@ -5,7 +5,15 @@ header {
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    background-color: var(--color-primary-light);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius:30px ;
+  
 
   /* Wave Color */
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7c4dff+0,48c088+52,84f9bd+100 */
@@ -21,12 +29,7 @@ background: linear-gradient(to right,  #7c4dff 0%,#48c088 52%,#84f9bd 100%); /* 
   background-size: 350% 350%;
   animation: waveColors 8s ease infinite;
   /* End Wave Color */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
+
 
 }
 
