@@ -31,8 +31,6 @@ border-radius: 50%;
 
 .header-button:hover {
     background-color: var(--color-secondary);
-
-
 }
 
 .header-button:active {
