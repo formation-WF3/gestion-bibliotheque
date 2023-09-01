@@ -4,8 +4,8 @@ import { FormGroup, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/
 import Validation from '../utils/validation';
 
 @Directive({
-  selector: '[appMatchPassword]',
-  providers: [{ provide: NG_VALIDATORS, useExisting: MatchPasswordDirective, multi: true }]
+  selector: '[appMatchPassword]'
+  // providers: [{ provide: NG_VALIDATORS, useExisting: MatchPasswordDirective, multi: true }
 })
 export class MatchPasswordDirective implements Validator {
   @Input('appMatchPassword') matchPassword: string[] = [];

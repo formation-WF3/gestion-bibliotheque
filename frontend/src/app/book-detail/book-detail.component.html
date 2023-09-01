@@ -1,10 +1,28 @@
 <div *ngIf="book">
-    <h2>{{book.title | uppercase}} Details</h2>
-    <div><span>id: </span>{{book.id}}</div>
-    <div>
-      <label for="book-title">Book Title: </label>
-      <input id="book-title" [(ngModel)]="book.title" placeholder="Book title"/>
-    </div>
-    <button type="button" (click)="goBack()">go back</button>
-    <button type="button" (click)="save()">save</button>
+  <h2>{{book.title | uppercase}} Details</h2>
+
+  <div><span>Id: </span>{{book.id}}</div>
+
+  <div>
+    <label for="title"> Title: </label>
+    <input id="title" [(ngModel)]="book.title" placeholder="Title"/>
   </div>
+
+  <div>
+    <label for="author"> Author: </label>
+    <input id="author" [(ngModel)]="book.author" placeholder="Author"/>
+  </div>
+
+  <div>
+    <label for="total"> Total: </label>
+    <input id="total" [(ngModel)]="book.totalItems" placeholder="Total"/>
+  </div>
+
+  <div>
+    <label for="remaining"> Remaining: </label>
+    <input id="remaining" [(ngModel)]="book.remainingItems" placeholder="Remaining"/>
+  </div>
+
+  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="save()">save</button>
+</div>

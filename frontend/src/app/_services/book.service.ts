@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Book } from '../models/book';
+
 import { MessageService } from './MessageService';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Book } from '../models/book';
 
 const API_URL = "http://localhost:8080/api/";
 
@@ -20,19 +21,20 @@ export class BookService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor( private http: HttpClient,  private messageService: MessageService) { 
-
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService
+  ) {
   }
 
 
-  getAll(): Observable<any[]>{ 
-
+  getAll(): Observable<any[]>{
     return this.http.get<Book[]>(API_URL + 'books')
-    
   }
 
   getById(id: number): Observable<Book> {
     const url = `${API_URL}books/${id}`;
+
     // équivalent  const url = (API_URL + 'books/' + id);
     return this.http.get<Book>(url).pipe(
       tap(_ => this.log(`fetched book id=${id}`)),
@@ -40,16 +42,16 @@ export class BookService {
     );
   }
 
-
   getByTitle(): Observable<any>{
     return this.http.get<Book>(API_URL + 'books/{title}')
-    
   }
+
   searchbooks(term: string): Observable<Book[]> {
     if (!term.trim()) {
       // if not search term, return empty hero array.
       return of([]);
     }
+
     return this.http.get<Book[]>(`${this.booksUrl}/?title=${term}`).pipe(
       tap(x => x.length ?
          this.log(`found heroes matching "${term}"`) :
@@ -57,12 +59,14 @@ export class BookService {
       catchError(this.handleError<Book[]>('searchHeroes', []))
     );
   }
+
   updateBook(book: Book): Observable<any> {
     return this.http.put(this.booksUrl, book, this.httpOptions).pipe(
       tap(_ => this.log(`updated book id=${book.id}`)),
       catchError(this.handleError<any>('updateBook'))
     );
   }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

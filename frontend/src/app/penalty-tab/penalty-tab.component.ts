@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./penalty-tab.component.css']
 })
 export class PenaltyTabComponent {
-
 }

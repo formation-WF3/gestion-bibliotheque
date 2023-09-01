@@ -1,34 +1,33 @@
-.form-group {
-    margin: auto;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
+q.form-group {
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .log-label {
-    align-self: center;
-    font-size: x-large;
+  align-self: center;
+  font-size: x-large;
 }
 
 .form-control {
-    min-height: 50px;
-    align-self: center;
-    box-shadow: var(--shadowBoxin-2);
-    border-radius: 20px;
+  min-height: 50px;
+  align-self: center;
+  box-shadow: var(--shadowBoxin-2);
+  border-radius: 20px;
 }
 
-
 .rpl {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .invalid-feedback {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.subscribe-text{
-    margin-top: 5px;
+.subscribe-text {
+  margin-top: 5px;
 }

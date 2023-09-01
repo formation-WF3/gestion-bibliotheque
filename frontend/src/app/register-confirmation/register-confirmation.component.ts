@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./register-confirmation.component.css']
 })
 export class RegisterConfirmationComponent {
-
 }

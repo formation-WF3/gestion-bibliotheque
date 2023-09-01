@@ -5,6 +5,8 @@ import { AuthService } from './_services/auth.service';
 import { EventBusService } from './_shared/event-bus.service';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import Validation from './utils/validation';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,6 +22,7 @@ export class AppComponent {
     confirmPassword: new FormControl(''),
     acceptTerms: new FormControl(false),
   });
+
   submitted = false;
 
   private roles: string[] = [];
@@ -35,7 +38,8 @@ export class AppComponent {
     private authService: AuthService,
     private eventBusService: EventBusService,
     private formBuilder: FormBuilder
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group(
@@ -50,18 +54,18 @@ export class AppComponent {
           Validators.minLength(6),
           Validators.maxLength(20)
         ]],
-        username: [
-          '',
-          [
+        username: ['', [
             Validators.required,
             Validators.minLength(6),
             Validators.maxLength(20)
           ]
         ],
-        email: ['', [Validators.required, Validators.email]],
-        password: [
-          '',
-          [
+        email: ['', [
+            Validators.required,
+            Validators.email
+          ]
+        ],
+        password: ['', [
             Validators.required,
             Validators.minLength(6),
             Validators.maxLength(40)
@@ -75,6 +79,7 @@ export class AppComponent {
       }
     );
   }
+
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }

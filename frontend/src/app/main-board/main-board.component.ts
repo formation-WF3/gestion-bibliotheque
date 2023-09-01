@@ -8,18 +8,12 @@ import { Component } from '@angular/core';
 })
 
 export class MainBoardComponent {
+  items=['PROFILE','LOAN','PENALTY']
+    buttonSelected = 'PROFILE';
 
-items=['PROFILE','LOAN','PENALTY']
-
-buttonSelected = 'PROFILE';
-
-selectComponent(navEvent:string){
- this.buttonSelected=navEvent 
-  // console.log(navEvent)
-  // console.log('essai')
-
- 
-}
-
-
+  selectComponent(navEvent:string){
+    this.buttonSelected=navEvent
+    // console.log(navEvent)
+    // console.log('essai')
+  }
 }

@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { Book } from '../models/book';
-import { ActivatedRoute } from '@angular/router';
-import { BookService } from '../_services/book.service';
-import { Location } from '@angular/common';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import {Component} from '@angular/core';
+import {Book} from '../models/book';
+import {ActivatedRoute} from '@angular/router';
+import {BookService} from '../_services/book.service';
+import {Location} from '@angular/common';
+import {HttpClient} from '@angular/common/http';
+
 @Component({
   selector: 'app-book-detail',
   templateUrl: './book-detail.component.html',
@@ -18,7 +18,8 @@ export class BookDetailComponent {
     private route: ActivatedRoute,
     private bookService: BookService,
     private location: Location
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.getBook();
@@ -29,7 +30,7 @@ export class BookDetailComponent {
     this.bookService.getById(id)
       .subscribe(book => this.book = book);
   }
-  
+
   goBack(): void {
     this.location.back();
   }
@@ -37,7 +38,9 @@ export class BookDetailComponent {
   save(): void {
     if (this.book) {
       this.bookService.updateBook(this.book)
-        .subscribe(() => this.goBack());
+        .subscribe(
+          () => this.goBack()
+        );
     }
   }
 }
