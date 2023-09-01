@@ -1,7 +1,36 @@
 <div class="upper-pannel ">
     <app-advanced-search></app-advanced-search>
 </div>
-<div class="main-pannel row ">
-        
+<div class="main-pannel row">
+    <div class="side-pannel card">
+        <div class="card-body">
+            <div class="card-header">
+                <h2 class="card-title">Recherche par</h2>
+            </div>
+            <div class="searchBook-inputs ">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <p>Titre: </p>
+                        <div>
+                        <input type="text">
+                    </div>
+                        <button class="go-btn">GO</button>
+                    </li>
+                    <li class="list-group-item">
+                        <p>Auteur: </p>
+                        <input type="text" name="" id=""><button class="go-btn">GO</button>
+                    </li>
+                    <li class="list-group-item">
+                        <p>Genre: </p>
+                        <input type="text" name="" id=""><button class="go-btn">GO</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="content-pannel">
+        <app-book-search-results></app-book-search-results>
+    </div>
 
 </div>

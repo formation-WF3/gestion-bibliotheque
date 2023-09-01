@@ -1,24 +1,7 @@
-
-<div id="search_zone" class="row">
-<div class="input-zone">
-    <div class="input-group col-8">
-        <input type="text" class="form-control " placeholder="Recherche rapide"  #searchBox id="search-box" (input)="search(searchBox.value)">
-    </div>
- 
-    <form>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="Titre" id="ck1">
-        <label class="form-check-label" for="ck1">Titre</label>
+<div class="input-zone" >
+    <div class="input-group row">
+        <input type="text" class="search-input col-6  " placeholder="Recherche rapide"  #searchBox id="search-box" (input)="search(searchBox.value)">
+    <button class="go-btn" >GO</button>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="Auteur" id="ck2">
-        <label class="form-check-label" for="ck2">Auteur</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="Genre" id="ck2">
-        <label class="form-check-label" for="ck2">Genre</label>
-      </div>
-      </form> 
-     
 </div>
 
