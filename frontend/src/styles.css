@@ -129,52 +129,9 @@ footer {
   border: none;
     border-radius: 20px;
     height: 50px;
-    
-    /* background-color: var(--color-accent); */
+    background-color: var(--color-secondary-dark)
 
-  /* Wave Color */
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7c4dff+0,48c088+52,84f9bd+100 */
-background: #7c4dff; /* Old browsers */
-background: -moz-linear-gradient(bottom,  #7c4dff 0%, #48c088 52%, #84f9bd 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(bottom,  #7c4dff 0%,#48c088 52%,#84f9bd 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #7c4dff 0%,#48c088 52%,#84f9bd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#7c4dff', endColorstr='#84f9bd', GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
-  background-size: 350% 350%;
-  animation: waveColors 15s ease infinite;
-  /* End Wave Color */
-
-
-}
-
-/* Animation Wave Color */
-
-@-webkit-keyframes waveColors {
-    0% {
-      background-position: 0% 7%;
-    }
-    50% {
-      background-position: 100% 94%;
-    }
-    100% {
-      background-position: 0% 7%;
-    }
-  }
-  
-  @keyframes waveColors {
-    0% {
-      background-position: 0% 7%;
-    }
-    50% {
-      background-position: 100% 94%;
-    }
-    100% {
-      background-position: 0% 7%;
-    }
-
-
+ 
 }
 
   
