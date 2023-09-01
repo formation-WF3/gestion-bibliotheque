@@ -7,14 +7,28 @@
 
     
   }
+.title-container{
 
+width: 4rem;
 
+}
+.input-container{
 
-  .list-group-item input{
+  display: flex;
+  justify-content: center;
 
+}
+
+  .search-input{
+    width: 100%;
+   
     height: 3rem;
     border-radius: 30px;
 
+  }
+
+  ::placeholder{
+    padding: 1rem;
   }
 
   .go-btn {
