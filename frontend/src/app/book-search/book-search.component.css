@@ -1,36 +1,4 @@
-.upper-pannel {
-  
-    height: 20%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    border: black 2px solid;
-    border-radius: 30px;
-  }
-  
-  .main-pannel {
-  
-    height: 75%;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  
-  
-  .side-pannel {
-    width: 24%;
-    border: var(--border-secondary-dark);
-    border-radius: 30px;
-  }
-  
-  .content-pannel {
-    width: 75.6%;
-    margin-left: auto;
-    border: var(--border-secondary-dark);
-    border-radius: 30px;
-  }
-  
+
   .list-group-item{
     
     height: 5rem;
