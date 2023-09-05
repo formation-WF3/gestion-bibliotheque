@@ -49,6 +49,6 @@ export class LoginComponent implements OnInit {
     form.reset();
   }
   reloadPage(): void {
-    window.location.reload();
+    window.location.replace("/home");
   }
 }

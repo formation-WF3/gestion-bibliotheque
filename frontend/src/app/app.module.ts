@@ -21,6 +21,7 @@ import { BookSearchComponent } from './book-search/book-search.component';
 import { RegisterConfirmationComponent } from './register-confirmation/register-confirmation.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookSearchResultsComponent } from './book-search-results/book-search-results.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     BookSearchComponent,
     RegisterConfirmationComponent,
     BookListComponent,
-    BookDetailComponent 
+    BookDetailComponent,
+    BookSearchResultsComponent 
   ],
   imports: [
     BrowserModule,
