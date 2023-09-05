@@ -74,7 +74,7 @@ public class WebSecurityConfig {
         .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/api/auth/**","/api/books/**","/api/books/id/**","/api/books/title/**","/api/books/term/{term}").permitAll()
+            .requestMatchers("/api/auth/**","/api/books/**","/api/books/id/**","/api/books/title/{title}**","/api/books/term/{term}").permitAll()
             .requestMatchers("/api/books/id/{id}","/api/books/title/{title}","/api/books/term/{term}").hasAnyRole("USER")
             .requestMatchers("/api/test/**").permitAll()
             

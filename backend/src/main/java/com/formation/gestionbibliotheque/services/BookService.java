@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @AllArgsConstructor
@@ -81,9 +82,15 @@ public class BookService {
                 .map(bookAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
     }
-    public BookDto getByTerm(String term) {
-        return bookRepository.findBysearch(term)
-                .map(bookAdapter::toDto)
-                .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
+   
+    public List<BookModel> getByTerm(String term) {
+        if (!term.isEmpty()) {
+           List<BookModel> listBook =  bookRepository.findBysearch(term);
+           if(listBook.isEmpty()) {
+               throw new RuntimeException("Pas de livre trouvé");
+           }
+           return listBook;
+        }
+        return bookRepository.findAll();
     }
 }
