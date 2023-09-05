@@ -19,7 +19,8 @@ public class UserDetailsImpl implements UserDetails{
 	  private Long id;
 
 	  private String username;
-
+	  private String firstname;
+	  private String lastname;
 	  private String email;
 
 	  @JsonIgnore
@@ -27,10 +28,12 @@ public class UserDetailsImpl implements UserDetails{
 
 	  private Collection<? extends GrantedAuthority> authorities;
 
-	  public UserDetailsImpl(Long id, String username, String email, String password,
+	  public UserDetailsImpl(Long id, String username, String firstname, String lastname, String email, String password,
 	      Collection<? extends GrantedAuthority> authorities) {
 	    this.id = id;
 	    this.username = username;
+		this.firstname = firstname;
+		this.lastname = lastname;
 	    this.email = email;
 	    this.password = password;
 	    this.authorities = authorities;
@@ -44,6 +47,8 @@ public class UserDetailsImpl implements UserDetails{
 	    return new UserDetailsImpl(
 	        user.getId(), 
 	        user.getUsername(), 
+			user.getfirstname(),
+			user.getLastname(),
 	        user.getEmail(),
 	        user.getPassword(), 
 	        authorities);
@@ -82,7 +87,23 @@ public class UserDetailsImpl implements UserDetails{
 	    return true;
 	  }
 
-	  @Override
+	  public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	@Override
 	  public boolean isCredentialsNonExpired() {
 	    return true;
 	  }
@@ -101,5 +122,13 @@ public class UserDetailsImpl implements UserDetails{
 	    UserDetailsImpl user = (UserDetailsImpl) o;
 	    return Objects.equals(id, user.id);
 	  }
+
+	public String getfirstname() {
+		return null;
+	}
+
+    public String getlastname() {
+        return null;
+    }
 
 }

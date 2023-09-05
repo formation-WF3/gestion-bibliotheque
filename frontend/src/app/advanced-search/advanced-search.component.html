@@ -2,9 +2,17 @@
 <div id="search_zone" class="row">
 <div class="input-zone">
     <div class="input-group col-8">
-        <input type="text" class="form-control " placeholder="Recherche rapide"  #searchBox id="search-box" (input)="search(searchBox.value)">
+        <input  class="form-control "   #searchBox id="search-box" (input)="search(searchBox.value)" th:value="${term}">
+       <!--<input type="submit" value="Search" />
+        &nbsp;>--> 
     </div>
- 
+    <ul class="search-result">
+    <li *ngFor="let book of books$ | async" >
+      <a routerLink="/detail/{{book.id}}">
+        {{book.title}} - {{book.author}}
+      </a>
+    </li>
+  </ul>
     <form>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="Titre" id="ck1">

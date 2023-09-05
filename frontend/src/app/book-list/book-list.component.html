@@ -4,7 +4,7 @@
 <div class="main-pannel row search-result">
    <ul>
     <li *ngFor="let book of books"> 
-        <a  routerLink="/book-detail/{{book.id}}">{{book.title}}; {{book.author}}; {{book.category}}</a>
+        <a routerLink="/book-detail/{{book.id}}">{{book.title}}; {{book.author}}; {{book.category}}</a>
     </li>
    </ul>
 </div>
