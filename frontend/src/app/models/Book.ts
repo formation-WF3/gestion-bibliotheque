@@ -1,4 +1,5 @@
 export interface Book{
+    length: any;
     id?: number,
     title?: string,
     author?: string,

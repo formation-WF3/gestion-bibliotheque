@@ -15,7 +15,6 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class BookService {
-  private booksUrl = 'api/books';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -33,7 +32,7 @@ export class BookService {
   }
 
   getById(id: number): Observable<Book> {
-    const url = `${API_URL}books/${id}`;
+    const url = `${API_URL}books/id/${id}`;
     // équivalent  const url = (API_URL + 'books/' + id);
     return this.http.get<Book>(url).pipe(
       tap(_ => this.log(`fetched book id=${id}`)),
@@ -41,25 +40,25 @@ export class BookService {
     );
   }
 
-
-  getByTitle(): Observable<any>{
-    return this.http.get<Book>(API_URL + 'books/{title}')
-    
+  getByTitle(title: string): Observable<any>{
+    return this.http.get<Book>(`${API_URL}books/title/${title}`);
   }
+  
   searchbooks(term: string): Observable<Book[]> {
     if (!term.trim()) {
-      // if not search term, return empty hero array.
+      // if not search term, return empty book array.
       return of([]);
     }
-    return this.http.get<Book[]>(`${this.booksUrl}/?title=${term}`).pipe(
+    return this.http.get<Book[]>(`${API_URL}books/term/${term}`).pipe(
       tap(x => x.length ?
-         this.log(`found heroes matching "${term}"`) :
-         this.log(`no heroes matching "${term}"`)),
-      catchError(this.handleError<Book[]>('searchHeroes', []))
+         this.log(`found books matching "${term}"`) :
+         this.log(`no books matching "${term}"`)),
+      catchError(this.handleError<Book[]>('searchbooks', []))
     );
   }
+
   updateBook(book: Book): Observable<any> {
-    return this.http.put(this.booksUrl, book, this.httpOptions).pipe(
+    return this.http.put(`${API_URL}books/${book}`, book, this.httpOptions).pipe(
       tap(_ => this.log(`updated book id=${book.id}`)),
       catchError(this.handleError<any>('updateBook'))
     );

@@ -8,18 +8,21 @@ import com.formation.gestionbibliotheque.repositories.CategoryRepository;
 import com.formation.gestionbibliotheque.services.adapters.BookAdapter;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 
 @AllArgsConstructor
 @Service
 public class BookService {
+
     private BookRepository bookRepository;
 
     private BookAdapter bookAdapter;
 
     private CategoryRepository categoryRepository;
+
 
     public List<BookDto> getAll() {
         List<BookDto> bookDtos = new ArrayList<>();
@@ -78,5 +81,16 @@ public class BookService {
         return bookRepository.findByTitleIgnoreCase(title)
                 .map(bookAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
+    }
+   
+    public List<BookModel> getByTerm(String term) {
+        if (!term.isEmpty()) {
+           List<BookModel> listBook =  bookRepository.findBysearch(term);
+           if(listBook.isEmpty()) {
+               throw new RuntimeException("Pas de livre trouvé");
+           }
+           return listBook;
+        }
+        return bookRepository.findAll();
     }
 }

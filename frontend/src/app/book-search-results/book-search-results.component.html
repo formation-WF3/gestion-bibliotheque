@@ -1,1 +1,11 @@
+<div *ngIf="!books$">
+    <p> Aucun resultat</p>
+</div>
 <p>book-search-results works!</p>
+<ul class="search-result">
+    <li *ngFor="let book of books$ | async" >
+      <a routerLink="/detail/{{book.id}}">
+        {{book.title}} - {{book.author}}
+      </a>
+    </li>
+</ul>

@@ -14,8 +14,12 @@
       <input id="total_items" [(ngModel)]=" book.totalItems" placeholder="total items"/>
     </div>
     <div>
-      <label for="total_items"> total items: </label>
-      <input id="total_items" [(ngModel)]=" book.category" placeholder="total items"/>
+      <label for="book-author">Book Author: </label>
+      <input id="book-author" [(ngModel)]="book.author" placeholder="Book author"/>
+    </div>
+    <div>
+      <label for="book-items">Book Items: </label>
+      <input id="book-items" [(ngModel)]="book.totalItems" placeholder="Book items"/>
     </div>
     <button type="button" (click)="goBack()">go back</button>
     <button type="button" (click)="save()">save</button>

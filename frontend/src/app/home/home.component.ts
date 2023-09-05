@@ -11,8 +11,7 @@ import { AuthService } from '../_services/auth.service';
 export class HomeComponent implements OnInit {
   content?: string;
   isLoggedIn = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
+  showUser = false;
   username?: string;
   private roles: string[] = [];
   constructor(private storageService: StorageService, private authService: AuthService,private userService: UserService) { }
@@ -24,7 +23,7 @@ export class HomeComponent implements OnInit {
       const user = this.storageService.getUser();
       this.roles = user.roles;
 
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showUser = this.roles.includes('ROLE_USER');
       this.userService.getPublicContent().subscribe({
       next: data => {
         this.content = data;
@@ -45,7 +44,7 @@ export class HomeComponent implements OnInit {
         console.log(res);
         this.storageService.clean();
 
-        window.location.reload();
+        window.location.replace("/login");
       },
       error: err => {
         console.log(err);

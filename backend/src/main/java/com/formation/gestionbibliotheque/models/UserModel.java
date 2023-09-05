@@ -163,4 +163,7 @@ public class UserModel {
     public void setRoles(Set<RoleModel> roles) {
         this.roles = roles;
     }
+    public String getfirstname() {
+        return null;
+    }
 }
