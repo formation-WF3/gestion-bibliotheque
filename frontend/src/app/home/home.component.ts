@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
       const user = this.storageService.getUser();
       this.roles = user.roles;
 
-      this.showUser = this.roles.includes('ROLE_User');
+      this.showUser = this.roles.includes('ROLE_USER');
       this.userService.getPublicContent().subscribe({
       next: data => {
         this.content = data;

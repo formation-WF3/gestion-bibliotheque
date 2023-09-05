@@ -40,11 +40,10 @@ export class BookService {
     );
   }
 
-
-  getByTitle(): Observable<any>{
-    return this.http.get<Book>(`${API_URL}books/title/{title}`);
-    
+  getByTitle(title: string): Observable<any>{
+    return this.http.get<Book>(`${API_URL}books/title/${title}`);
   }
+  
   searchbooks(term: string): Observable<Book[]> {
     if (!term.trim()) {
       // if not search term, return empty book array.
