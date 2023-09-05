@@ -1,8 +1,12 @@
 package com.formation.gestionbibliotheque.controllers;
 
 import com.formation.gestionbibliotheque.dtos.BookDto;
+import com.formation.gestionbibliotheque.models.BookModel;
 import com.formation.gestionbibliotheque.services.BookService;
+import org.springframework.ui.Model;
 import lombok.AllArgsConstructor;
+
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,15 +37,21 @@ public class BookController {
         return bookService.delete(id);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public BookDto getById(@PathVariable long id) {
         // long idLong = Long.parseLong(id);
         return bookService.getById(id);
     }
 
-    /*@GetMapping("/{title}")
-    public BookDto getByTitle(@PathVariable(value="title") String title) {
+    @GetMapping("/title/{title}")
+    public BookDto getByTitle(@PathVariable String title) {
         return bookService.getByTitle(title);
-    }*/
+    }
+    @GetMapping("/term/{term}")
+    public String getByTerm(@PathVariable String term) {
+       return bookService.listAll(term);
+          
+       
+    }
 
 }

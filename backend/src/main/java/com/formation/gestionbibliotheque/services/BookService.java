@@ -7,19 +7,24 @@ import com.formation.gestionbibliotheque.repositories.BookRepository;
 import com.formation.gestionbibliotheque.repositories.CategoryRepository;
 import com.formation.gestionbibliotheque.services.adapters.BookAdapter;
 import lombok.AllArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @Service
 public class BookService {
+
     private BookRepository bookRepository;
 
     private BookAdapter bookAdapter;
 
     private CategoryRepository categoryRepository;
+
 
     public List<BookDto> getAll() {
         List<BookDto> bookDtos = new ArrayList<>();
@@ -29,6 +34,13 @@ public class BookService {
         return bookDtos;
     }
 
+    public List<BookDto> listAll(String term) {
+        List<BookDto> bookDtos = new ArrayList<>();
+        bookRepository.findAll().forEach(
+                model -> bookDtos.add(bookAdapter.toDto(model))
+        );
+        return bookDtos;
+    }
     public BookDto add(BookDto bookDto) {
         String categoryName = bookDto.getCategoryName();
         CategoryModel categoryModel = null;
@@ -76,6 +88,11 @@ public class BookService {
 
     public BookDto getByTitle(String title) {
         return bookRepository.findByTitleIgnoreCase(title)
+                .map(bookAdapter::toDto)
+                .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
+    }
+    public BookDto getByTerm(String term) {
+        return bookRepository.findBysearch(term)
                 .map(bookAdapter::toDto)
                 .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
     }

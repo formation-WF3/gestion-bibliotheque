@@ -31,4 +31,6 @@ public class BookModel {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private CategoryModel category;
+
+    private String search;
 }
