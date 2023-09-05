@@ -48,8 +48,8 @@ public class BookController {
         return bookService.getByTitle(title);
     }
     @GetMapping("/term/{term}")
-    public String getByTerm(@PathVariable String term) {
-       return bookService.listAll(term);
+    public BookDto getByTerm(@PathVariable String term) {
+       return bookService.getByTerm(term);
           
        
     }

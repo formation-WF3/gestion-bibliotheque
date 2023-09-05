@@ -7,13 +7,10 @@ import com.formation.gestionbibliotheque.repositories.BookRepository;
 import com.formation.gestionbibliotheque.repositories.CategoryRepository;
 import com.formation.gestionbibliotheque.services.adapters.BookAdapter;
 import lombok.AllArgsConstructor;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 
 @AllArgsConstructor
 @Service
@@ -34,13 +31,6 @@ public class BookService {
         return bookDtos;
     }
 
-    public List<BookDto> listAll(String term) {
-        List<BookDto> bookDtos = new ArrayList<>();
-        bookRepository.findAll().forEach(
-                model -> bookDtos.add(bookAdapter.toDto(model))
-        );
-        return bookDtos;
-    }
     public BookDto add(BookDto bookDto) {
         String categoryName = bookDto.getCategoryName();
         CategoryModel categoryModel = null;
