@@ -2,19 +2,35 @@
     <app-advanced-search></app-advanced-search>
 </div>
 
-<div class="main-pannel row ">
-    <div class="left-pannel col-6">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">Liste des livres</h2>
-                <p  class="card-text" *ngFor="let book of books">{{book.title}} - {{book.author}} - {{book.category}}</p>
-            </div>
-        </div>
-    </div>
-    <div class="right-pannel col-6" >
+<div class="main-pannel ">
+    <!-- <h2 class="bookList-title">Liste des livres</h2>
+    <div class="booklist" >
+        <ul class="bookList-container "  *ngFor="let book of books">
+        <li class="bookList-details">{{book.title}} - {{book.author}}
+           <span class="badge badge-primary ">{{ book.totalItems }}</span> 
+        </li>
         
-    </div>
+    </ul>
+
+</div> -->
+<table class="booklist">
+    <thead>
+      <tr>
+        <th colspan="4" class="bookList-title">Liste des Livres</th>
+      </tr>
+    </thead>
+    <tbody class="bookList-container" >
+        <tr>
+            <th class="bookList-details">Titre</th>
+            <th class="bookList-details">Auteur</th>
+            <th class="bookList-details">Exemplaires</th>
+        </tr>
+      <tr  *ngFor="let book of books">
+        <td class="bookList-details">{{book.title}}</td>
+        <td class="bookList-details">{{book.author}}</td>
+        <td class="bookList-details"><span class="badge badge-primary ">{{ book.totalItems }}</span></td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>
-
-
-
