@@ -4,16 +4,16 @@
 
 <div class="main-pannel row ">
     <div class="left-pannel col-6">
- <ul>
-    <li *ngFor="let book of books"> 
-        <a  routerLink="/book-detail/{{book.id}}">{{book.title}} - {{book.author}} - {{book.category}}</a>
-  
-    </li>
-   </ul>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Liste des livres</h2>
+                <p  class="card-text" *ngFor="let book of books">{{book.title}} - {{book.author}} - {{book.category}}</p>
+            </div>
+        </div>
     </div>
-    <div class="right-pannel col-6" ></div>
-
-
+    <div class="right-pannel col-6" >
+        <app-book-detail></app-book-detail>
+    </div>
 </div>
 
 
