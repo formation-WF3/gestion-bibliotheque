@@ -1,13 +1,12 @@
-<div class="input-zone" >
-  <form th:action="@{/}">
-    <div class="input-group row">
-      Filter: <input type="text" class="search-input col-6" placeholder="Recherche rapide" 
-         #searchBox id="search-box" (input)="search(searchBox.value)" th:value="${term}" name="term">
-    <button class="go-btn" type="submit" value="Search">GO</button>
-    </div>
+<div class="input-zone">
+  <form th:action="@{/}" class="search-form row ">
+    <input type="text" class="search-input input-lg col-8 " placeholder="Recherche rapide (titre, auteur, genre)" #searchBox id="search-box"
+      (input)="search(searchBox.value)" th:value="${term}" name="term">
+<button class="go-btn " type="submit" value="Search">GO</button>
   </form>
+  
 </div>
-    <!-- <div *ngIf="!books$">
+<!-- <div *ngIf="!books$">
       <p> Aucun resultat</p>
     </div>
     <ul class="search-result">

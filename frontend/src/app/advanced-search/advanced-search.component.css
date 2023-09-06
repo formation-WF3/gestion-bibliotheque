@@ -1,27 +1,33 @@
 .input-zone {
-
-    padding: 2rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
     width: 98%;
     height: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
 
+
+    
+}
+
+.search-form{
+    width: 100%;
+    align-content: center;
+    
 }
 
 .input-group{
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
 
 }
 
+
 .search-input {
-    height: 3rem;
+    font-size: 2rem;
     border-radius: 30px;
     align-self: center;
 }
+
+
 
 .go-btn {
     align-self: center;
@@ -31,7 +37,7 @@
     justify-content: space-around;
     align-items: center;
     border: none;
-    width: 4rem;
+    width:4rem;
     height: 4rem;
     border-radius: 50%;
     background-color: var(--color-secondary-dark);
