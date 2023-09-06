@@ -18,11 +18,11 @@ export class BookListComponent implements OnInit {
     this.bookService.getAll().subscribe((books) => (this.books = books));
   }
 
-  @Output() selectEvent:EventEmitter<string> = new EventEmitter<string>();
-  goToSelectEvent(value:string ) {
+  // @Output() selectEvent:EventEmitter<string> = new EventEmitter<string>();
+  // goToSelectEvent(value:string ) {
 
-    this.selectEvent.emit(value);
-    console.log(value)
+  //   this.selectEvent.emit(value);
+  //   console.log(value)
 
-  }
+  // }
 }
