@@ -2,14 +2,7 @@
 
 :root {
 
-    /*
-    --color-primary: #c5dac1ff;
-    --color-primary-light: #def2c8ff;
-    --color-primary-dark: #a9b2acff;
-    --color-accent: #bcd0c7ff;
-    --color-secondary: #A5CDDB;
-    --color-secondary-dark: #96AFB8;
-*/
+
     --color-primary: #607d8b;
     --color-primary-light: #cfd8dc;
     --color-primary-dark: #455a64;
@@ -82,9 +75,6 @@ app-advanced-search{
     margin-top: auto;
     margin-bottom: auto;
 }
-
-
-
 
 form {
     height: 80%;
