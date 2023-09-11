@@ -33,6 +33,7 @@ username: any;
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        this.reloadPage();
       },
       error: err => {
         this.errorMessage = err.error.message;
@@ -42,6 +43,9 @@ username: any;
   }
   onReset(form: NgForm): void {
     form.reset();
+  }
+  reloadPage(): void {
+    window.location.replace("/home");
   }
 }
 

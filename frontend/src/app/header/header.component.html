@@ -28,5 +28,8 @@
                     </svg>
                 </button></a>
         </div>
+        <div *ngIf="isLoggedIn">
+             <a href class="nav-link btn btn-danger" (click)="logout()" type="button" >Deconnexion</a>
+        </div>
     </div>
 </header>

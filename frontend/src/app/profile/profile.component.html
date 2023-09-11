@@ -1,5 +1,4 @@
 <div id="profile_container" class="row" *ngIf="currentUser; else loggedOut">
-
   <div class="user-container ">
     <div class="line col-4">
       <h4 class="line1 col-4">User :</h4>
@@ -9,28 +8,23 @@
       <button [routerLink]="['/update-user']" class="profile-button col-6">Modifier</button>
     </div>
   </div>
-
   <div class="lastname-container">
     <div class="line col-4">
       <h4 class="line1 col-4">Nom :</h4>
       <p class="line2 col-6">{{ currentUser.lastname }}</p>
     </div>
   </div>
-
   <div class="firstname-container">
     <div class="line col-4">
       <h4 class="line1 col-4">Prénom :</h4>
       <p class="line2 col-6">{{ currentUser.firstname }}</p>
     </div>
   </div>
-
   <div class="mail-container">
     <div class="line col-4">
       <h4 class="line1 col-4">Email :</h4>
       <p class="line2 col-6">{{ currentUser.email }}</p>
     </div>
-
-    
   </div>
   <div class="role-container">
     <div class="line col-4">
@@ -38,9 +32,7 @@
       <p class="line2 col-6">{{ currentUser.roles }}</p>
       <!--<p *ngFor="let role of currentUser.roles"> {{ role }}</p>-->
     </div>
-
   </div>
-
 </div>
 <ng-template class="small-container" #loggedOut>
   Please login.
