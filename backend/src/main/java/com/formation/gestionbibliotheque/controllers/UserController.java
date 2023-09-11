@@ -28,17 +28,17 @@ public class UserController {
         return userService.update(userDto);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("delete/{id}")
     public String delete(@PathVariable long id) {
         return userService.delete(id);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("id/{id}")
     public UserDto getById(@PathVariable long id) {
         return userService.getById(id);
     }
 
-    @GetMapping("/{username}")
+    @GetMapping("username/{username}")
     public UserDto getByUsername(@PathVariable String username) {
         return userService.getByUsername(username);
     }

@@ -4,7 +4,7 @@
 <p>book-search-results works!</p>
 <ul class="search-result">
     <li *ngFor="let book of books$ | async" >
-      <a routerLink="/detail/{{book.id}}">
+      <a routerLink="/book-detail/{{book.id}}">
         {{book.title}} - {{book.author}}
       </a>
     </li>
