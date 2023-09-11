@@ -69,11 +69,18 @@ app-header {
 }
 
 app-main-board,
-app-book-search {
+app-book-search,
+app-book-list {
     width: 99.5%;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
+}
+
+app-advanced-search{
+
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 
@@ -104,11 +111,11 @@ form {
 }
 
 .upper-pannel {
-
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     height: 20%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
+    margin: auto;
     border: black 2px solid;
     border-radius: 30px;
 }
@@ -118,6 +125,8 @@ form {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    border: black 2px solid;
+    border-radius: 30px;
 }
 
 .side-pannel {

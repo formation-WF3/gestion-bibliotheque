@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { BookService } from '../_services/book.service';
 import { Book } from '../models/book';
 
@@ -17,4 +17,12 @@ export class BookListComponent implements OnInit {
   ngOnInit() {
     this.bookService.getAll().subscribe((books) => (this.books = books));
   }
+
+  // @Output() selectEvent:EventEmitter<string> = new EventEmitter<string>();
+  // goToSelectEvent(value:string ) {
+
+  //   this.selectEvent.emit(value);
+  //   console.log(value)
+
+  // }
 }

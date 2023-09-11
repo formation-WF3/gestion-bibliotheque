@@ -24,6 +24,7 @@ const routes: Routes = [
   { path:'book-search', component:BookSearchComponent },
   { path:'book-list', component:BookListComponent },
   { path: 'book-detail/:id', component: BookDetailComponent },
+  { path: 'book-detail', component: BookDetailComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
