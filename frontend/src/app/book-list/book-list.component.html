@@ -1,8 +1,8 @@
-<div class="upper-pannel">
+<!-- <div class="upper-pannel">
     <app-advanced-search></app-advanced-search>
 </div>
-<div class="main-pannel ">
-    <!-- <h2 class="bookList-title">Liste des livres</h2>
+
+    <h2 class="bookList-title">Liste des livres</h2>
     <div class="booklist" >
         <ul class="bookList-container "  *ngFor="let book of books">
         <li class="bookList-details">{{book.title}} - {{book.author}}
@@ -12,6 +12,7 @@
     </ul>
 
 </div> -->
+<div class="main-pannel ">
 <table class="booklist">
     <thead>
       <tr>
@@ -25,7 +26,7 @@
             <th class="bookList-details">Exemplaires</th>
         </tr>
       <tr  *ngFor="let book of books">
-        <td class="bookList-details">{{book.title}}</td>
+        <td class="bookList-details"><a  routerLink="/book-detail/{{book.id}}">{{book.title}}</a></td>
         <td class="bookList-details">{{book.author}}</td>
         <td class="bookList-details"><span class="badge badge-primary ">{{ book.totalItems }}</span></td>
       </tr>
