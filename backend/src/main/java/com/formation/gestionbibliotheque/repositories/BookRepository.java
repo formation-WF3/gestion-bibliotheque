@@ -13,7 +13,6 @@ public interface BookRepository extends JpaRepository<BookModel, Long> {
     // Optional<BookModel> findByTermIgnoreCase(String term);
 
     @Query(value = "SELECT * FROM book  WHERE CONCAT(id, title, author) LIKE %?1%", nativeQuery = true)
-
     List<BookModel> findBysearch(String term);
    
 }

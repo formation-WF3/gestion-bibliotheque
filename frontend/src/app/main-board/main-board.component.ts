@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Book } from '../models/book';
 
 
 @Component({
@@ -8,7 +10,7 @@ import { Component } from '@angular/core';
 })
 
 export class MainBoardComponent {
-
+  @Input() title: Observable<Book[]> | undefined;
 items=['PROFILE','LOAN','PENALTY']
 
 buttonSelected = 'PROFILE';

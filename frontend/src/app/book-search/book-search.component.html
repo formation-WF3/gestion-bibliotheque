@@ -37,7 +37,15 @@
         </div>
     </div>
     <div class="content-pannel">
-        
+            <div *ngIf="title">
+              <ul class="search-result">
+                <li *ngFor="let book of title | async" >
+                  <a routerLink="/book-detail/{{book.id}}">
+                    {{book.title}} - {{book.author}}
+                  </a>
+                </li>
+              </ul>
+            </div>
     </div>
 
 </div>

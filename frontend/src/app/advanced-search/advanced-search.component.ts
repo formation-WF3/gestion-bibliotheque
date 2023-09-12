@@ -11,6 +11,10 @@ import { Book } from '../models/book';
 })
 export class AdvancedSearchComponent implements OnInit{
   books$!: Observable<Book[]>;
+  getbooks$(): string {
+    return "get " + this.books$;
+}
+
   private searchTerms = new Subject<string>();
 
   isLoggedIn = false;
@@ -31,7 +35,9 @@ export class AdvancedSearchComponent implements OnInit{
   
         // switch to new search observable each time the term changes
         switchMap((term: string) => this.bookService.searchbooks(term)),
+        
         );
+    
     }
   }
   

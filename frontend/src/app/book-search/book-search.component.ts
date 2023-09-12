@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Book } from '../models/book';
 
 @Component({
   selector: 'app-book-search',
@@ -7,5 +9,5 @@ import { Component } from '@angular/core';
 })
 export class BookSearchComponent {
 
-
+  @Input() title: Observable<Book[]> | undefined;
 }
