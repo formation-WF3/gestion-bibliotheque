@@ -3,10 +3,8 @@ package com.formation.gestionbibliotheque.controllers;
 import com.formation.gestionbibliotheque.dtos.BookDto;
 import com.formation.gestionbibliotheque.models.BookModel;
 import com.formation.gestionbibliotheque.services.BookService;
-import org.springframework.ui.Model;
+import jakarta.annotation.security.RolesAllowed;
 import lombok.AllArgsConstructor;
-
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,8 +29,7 @@ public class BookController {
     public BookDto update(@RequestBody BookDto bookDto) {
         return bookService.update(bookDto);
     }
-
-    @DeleteMapping("/{id}")
+    @DeleteMapping("delete/{id}")
     public String delete(@PathVariable long id) {
         return bookService.delete(id);
     }
@@ -47,6 +44,7 @@ public class BookController {
     public BookDto getByTitle(@PathVariable String title) {
         return bookService.getByTitle(title);
     }
+
     @GetMapping("/term/{term}")
     public List<BookModel> getByTerm( @PathVariable String term) {
        return bookService.getByTerm(term);

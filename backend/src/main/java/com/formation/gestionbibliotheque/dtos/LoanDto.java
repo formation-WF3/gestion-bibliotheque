@@ -1,11 +1,7 @@
 package com.formation.gestionbibliotheque.dtos;
-
-
-import com.formation.gestionbibliotheque.models.BookModel;
 import lombok.*;
-
 import java.time.Instant;
-import java.util.Date;
+
 
 @NoArgsConstructor
 @AllArgsConstructor

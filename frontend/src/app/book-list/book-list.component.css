@@ -31,7 +31,17 @@ overflow: hidden;
 .bookList-details{
 
 list-style-type: none;
-font-size: 2rem;
+font-size: 1rem;
 
-
+}
+a{
+  color:blueviolet;
+  text-decoration: none;
+}
+a:hover{
+  color: var(--color-button);
+}
+a:active{
+  box-shadow: var(--shadowBoxin);
+  transform: translateY(2px);
 }

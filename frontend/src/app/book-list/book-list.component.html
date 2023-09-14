@@ -1,35 +1,25 @@
-<!-- <div class="upper-pannel">
-    <app-advanced-search></app-advanced-search>
-</div>
-
-    <h2 class="bookList-title">Liste des livres</h2>
-    <div class="booklist" >
-        <ul class="bookList-container "  *ngFor="let book of books">
-        <li class="bookList-details">{{book.title}} - {{book.author}}
-           <span class="badge badge-primary ">{{ book.totalItems }}</span> 
-        </li>
-        
-    </ul>
-
-</div> -->
-<div class="main-pannel ">
-<table class="booklist">
-    <thead>
-      <tr>
-        <th colspan="4" class="bookList-title">Liste des Livres</th>
-      </tr>
-    </thead>
-    <tbody class="bookList-container" >
-        <tr>
-            <th class="bookList-details">Titre</th>
-            <th class="bookList-details">Auteur</th>
-            <th class="bookList-details">Exemplaires</th>
-        </tr>
-      <tr  *ngFor="let book of books">
-        <td class="bookList-details"><a  routerLink="/book-detail/{{book.id}}">{{book.title}}</a></td>
-        <td class="bookList-details">{{book.author}}</td>
-        <td class="bookList-details"><span class="badge badge-primary ">{{ book.totalItems }}</span></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="main-pannel container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="booklist table">
+          <thead class="thead-light">
+            <tr>
+              <th colspan="4" class="bookList-title" scope="col">Liste des Livres</th>
+            </tr>
+          </thead>
+          <tbody class="bookList-container" >
+              <tr>
+                  <th class="bookList-details" scope="row">Titre</th>
+                  <th class="bookList-details">Auteur</th>
+                  <th class="bookList-details">Exemplaires</th>
+              </tr>
+            <tr  *ngFor="let book of books">
+              <td class="bookList-details"><a routerLink="/book-detail/{{book.id}}">{{book.title}}</a></td>
+              <td class="bookList-details">{{book.author}}</td>
+              <td class="bookList-details"><span class="badge badge-primary ">{{ book.totalItems }}</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 </div>
