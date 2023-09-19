@@ -10,6 +10,7 @@ import { MainBoardComponent } from './main-board/main-board.component';
 import { BookSearchComponent } from './book-search/book-search.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { LoanTabComponent } from './loan-tab/loan-tab.component';
 
 
 
@@ -22,9 +23,11 @@ const routes: Routes = [
   { path: 'under-construction', component: UnderConstructionComponent},
   { path: 'main-board', component:MainBoardComponent},
   { path:'book-search', component:BookSearchComponent },
-  { path:'book-list', component:BookListComponent },
+  { path:'books', component:BookListComponent },
   { path: 'book-detail/:id', component: BookDetailComponent },
-  { path: 'book-detail', component: BookDetailComponent },
+  { path: 'loans/:id', component: LoanTabComponent },
+  { path: 'loan/list', component: LoanTabComponent },
+  { path: 'loan-book/:id', component: LoanTabComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

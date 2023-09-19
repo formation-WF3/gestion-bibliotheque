@@ -13,6 +13,6 @@ public class LoanDto {
     private Instant borrowedAt;
     private Instant returnDate;
     private Instant returnedAt;
-    private String bookTitle;
-    private String userUsername;
+    private Long book_id;
+    private Long user_id;
 }

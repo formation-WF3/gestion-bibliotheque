@@ -12,11 +12,13 @@
                   <th class="bookList-details" scope="row">Titre</th>
                   <th class="bookList-details">Auteur</th>
                   <th class="bookList-details">Exemplaires</th>
+                  <th class="bookList-details">Action</th>
               </tr>
             <tr  *ngFor="let book of books">
               <td class="bookList-details"><a routerLink="/book-detail/{{book.id}}">{{book.title}}</a></td>
               <td class="bookList-details">{{book.author}}</td>
               <td class="bookList-details"><span class="badge badge-primary ">{{ book.totalItems }}</span></td>
+              <td class="bookList-details"><a routerLink="/loans/{{book.id}}">Emprunter</a></td>
             </tr>
           </tbody>
         </table>

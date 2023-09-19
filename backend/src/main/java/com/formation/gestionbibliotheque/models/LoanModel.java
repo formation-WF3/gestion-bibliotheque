@@ -15,6 +15,7 @@ import java.time.Instant;
 @Entity
 @Table(name = "loan")
 public class LoanModel {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -36,4 +37,11 @@ public class LoanModel {
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id")
     private UserModel user;
+
+    public void setUser_id(Long user_id2) {
+    }
+
+    public void setBook_id(Long book_id2) {
+    }
+
 }

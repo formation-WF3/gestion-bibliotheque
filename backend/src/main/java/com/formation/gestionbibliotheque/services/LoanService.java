@@ -4,6 +4,7 @@ import com.formation.gestionbibliotheque.dtos.LoanDto;
 import com.formation.gestionbibliotheque.models.BookModel;
 import com.formation.gestionbibliotheque.models.LoanModel;
 import com.formation.gestionbibliotheque.models.UserModel;
+import com.formation.gestionbibliotheque.payload.request.LoanRequest;
 import com.formation.gestionbibliotheque.repositories.BookRepository;
 import com.formation.gestionbibliotheque.repositories.LoanRepository;
 import com.formation.gestionbibliotheque.repositories.UserRepository;
@@ -32,18 +33,27 @@ public class LoanService {
         );
         return loanDtos;
     }
+    public void createLoan(LoanRequest requestLoan) {
+        // Créez une instance de l'entité Loan et enregistrez-la en base de données
+        LoanModel loan = new LoanModel();
+        loan.setUser_id(requestLoan.getUser_id());
+        loan.setBook_id(requestLoan.getBook_id());
+        loan.setBorrowedAt(requestLoan.getBorrowedAt());
+        loan.setReturnDate(requestLoan.getReturnDate());
+        loanRepository.save(loan);
+    }
 
     public LoanDto add(LoanDto loanDto) {
-        String bookTitle = loanDto.getBookTitle();
-        String userUsername = loanDto.getUserUsername();
+        Long book_id = loanDto.getBook_id();
+        Long user_id = loanDto.getUser_id();
         BookModel bookModel = null;
         UserModel userModel = null;
 
-        if (bookTitle != null) {
-            bookModel = bookRepository.findByTitleIgnoreCase(bookTitle).orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
+        if (book_id != null) {
+            bookModel = bookRepository.findById(book_id).orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
         }
-        if (userUsername != null) {
-            userModel = userRepository.findByUsername(userUsername)
+        if (user_id != null) {
+            userModel = userRepository.findById(user_id)
                     .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));
         }
 
@@ -52,18 +62,18 @@ public class LoanService {
         loanDto.setId(loanModel.getId());
         return loanDto;
     }
-
+   
     public LoanDto update(LoanDto loanDto) {
-        String bookTitle = loanDto.getBookTitle();
-        String userUsername = loanDto.getUserUsername();
+        Long book_id = loanDto.getBook_id();
+        Long user_id = loanDto.getUser_id();
         BookModel bookModel = null;
         UserModel userModel = null;
 
-        if (bookTitle != null) {
-            bookModel = bookRepository.findByTitleIgnoreCase(bookTitle).orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
+        if (book_id != null) {
+            bookModel = bookRepository.findById(book_id).orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
         }
-        if (userUsername != null) {
-            userModel = userRepository.findByUsername(userUsername)
+        if (user_id != null) {
+            userModel = userRepository.findById(user_id)
                     .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));
         }
 

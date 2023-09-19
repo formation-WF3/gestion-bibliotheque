@@ -14,9 +14,14 @@ export class HttpRequestInterceptor implements HttpInterceptor {
   constructor(private storageService: StorageService, private eventBusService: EventBusService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    req = req.clone({
-      withCredentials: true,
-    });
+        const account = this.storageService.getUser();
+        const isLoggedIn = account?.accessToken;
+        console.log(account.accessToken);
+        if (isLoggedIn) {
+          req = req.clone({
+              setHeaders: { Authorization: `Bearer ${account.accessToken}` }
+          });
+      }
 
     return next.handle(req).pipe(
       catchError((error) => {

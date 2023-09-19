@@ -22,7 +22,7 @@ import { RegisterConfirmationComponent } from './register-confirmation/register-
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookSearchResultsComponent } from './book-search-results/book-search-results.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +48,8 @@ import { BookSearchResultsComponent } from './book-search-results/book-search-re
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

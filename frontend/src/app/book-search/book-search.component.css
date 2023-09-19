@@ -88,3 +88,15 @@ ul.search-result {
   margin-top: 0;
   padding-left: 0;
 }
+.linkdetail{
+  color:blueviolet;
+  text-decoration: none;
+}
+.linkdetail:hover{
+  color: var(--color-button);
+}
+.linkdetail:active{
+  box-shadow: var(--shadowBoxin);
+  transform: translateY(2px);
+}
+

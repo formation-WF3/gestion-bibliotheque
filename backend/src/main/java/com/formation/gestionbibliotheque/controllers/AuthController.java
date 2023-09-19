@@ -81,6 +81,7 @@ public class AuthController {
                          userDetails.getLastname(),
                          userDetails.getEmail(), 
                          roles));
+                         
   }
 
   @GetMapping("/testing")
