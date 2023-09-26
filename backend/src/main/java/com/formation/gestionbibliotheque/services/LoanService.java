@@ -9,10 +9,14 @@ import com.formation.gestionbibliotheque.repositories.BookRepository;
 import com.formation.gestionbibliotheque.repositories.LoanRepository;
 import com.formation.gestionbibliotheque.repositories.UserRepository;
 import com.formation.gestionbibliotheque.services.adapters.LoanAdapter;
+
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @AllArgsConstructor
@@ -33,14 +37,18 @@ public class LoanService {
         );
         return loanDtos;
     }
-    public void createLoan(LoanRequest requestLoan) {
-        // Créez une instance de l'entité Loan et enregistrez-la en base de données
+    
+   public LoanModel emprunt(Long userId, Long bookId) {
+        UserModel user = userRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));
+        BookModel book = bookRepository.findById(bookId).orElseThrow(() -> new EntityNotFoundException("Livre introuvable"));
+
         LoanModel loan = new LoanModel();
-        loan.setUser_id(requestLoan.getUser_id());
-        loan.setBook_id(requestLoan.getBook_id());
-        loan.setBorrowedAt(requestLoan.getBorrowedAt());
-        loan.setReturnDate(requestLoan.getReturnDate());
-        loanRepository.save(loan);
+        loan.setUser(user);
+        loan.setBook(book);
+        loan.setBorrowedAt(LocalDate.now());
+        loan.setReturnDate(LocalDate.now().plusDays(14));
+
+        return loanRepository.save(loan);
     }
 
     public LoanDto add(LoanDto loanDto) {

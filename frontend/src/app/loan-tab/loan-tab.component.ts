@@ -6,6 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 import { StorageService } from '../_services/storage.service';
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 const API_URL = "http://localhost:8080/api/";
 
 @Component({
@@ -15,23 +17,24 @@ const API_URL = "http://localhost:8080/api/";
 })
 export class LoanTabComponent {
   user_id!: number;
-  book_id!: Book;
-  startDate!: Date;
-  endDate!: Date;
+  book!: Book;
+  book_id = Observable<Book>;
   currentUser: any;
   currentUserID: number;
 
+  
   constructor(
     private http: HttpClient,
     private loanService: LoanService,
     private bookService: BookService,
     private route: ActivatedRoute,
     private storageService: StorageService,
-    private location: Location)
-   {this.currentUserID = this.bookService.getCurrentUserID();}
+    private location: Location
+)
+   {this.currentUserID = this.bookService.getCurrentUserID();this.book_id}
 
    ngOnInit(): void {
-    //this.getBook();
+    this.getBook();
     this.currentUser = this.storageService.getUser();
   }
 
@@ -47,20 +50,22 @@ export class LoanTabComponent {
   getBook():undefined {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.bookService.getById(id)
-      .subscribe(book_id => this.book_id = book_id);
+      .subscribe(book => this.book = book);
   }
+
   goBack(): void {
     this.location.back();
   }
+
   enregistrerEmprunt() {
     const url = `${API_URL}loans/create`;
     const empruntData = {
       userID: this.currentUserID,
-      bookID: this.getBook,
-      startDate: this.startDate,
-      endDate: this.endDate,
+      bookID: this.book_id,
   };
+ 
   this.http.post(url, empruntData).subscribe(
+   
     (response) => {
       console.log('Emprunt enregistré avec succès :', response);
     },

@@ -74,10 +74,9 @@ export class AppComponent {
         validators: [Validation.match('password', 'confirmPassword')]
       }
     );
+    
   }
-  get f(): { [key: string]: AbstractControl } {
-    return this.form.controls;
-  }
+ 
 
   onSubmit(): void {
     this.submitted = true;

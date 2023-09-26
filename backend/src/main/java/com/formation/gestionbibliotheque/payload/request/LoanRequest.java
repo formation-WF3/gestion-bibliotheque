@@ -1,6 +1,8 @@
 package com.formation.gestionbibliotheque.payload.request;
 
+import java.sql.Date;
 import java.time.Instant;
+import java.time.LocalDate;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -24,13 +26,13 @@ public class LoanRequest {
 
     @CreationTimestamp
     @Column(name = "borrowed_at", nullable = false)
-    private Instant borrowedAt;
+    private LocalDate borrowedAt;
 
     @Column(name = "return_date")
-    private Instant returnDate;
+    private LocalDate returnDate;
 
     @Column(name = "returned_at")
-    private Instant returnedAt;
+    private LocalDate returnedAt;
 
    public LoanRequest(@NotBlank Long user_id, @NotBlank Long book_id) {
 		super();
@@ -40,5 +42,5 @@ public class LoanRequest {
 
 public LoanRequest() {
 }
-    
+   
 }

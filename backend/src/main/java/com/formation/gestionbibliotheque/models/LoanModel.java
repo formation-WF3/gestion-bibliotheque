@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.sql.Date;
 import java.time.Instant;
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,13 +24,13 @@ public class LoanModel {
 
     @CreationTimestamp
     @Column(name = "borrowed_at", nullable = false)
-    private Instant borrowedAt;
+    private LocalDate borrowedAt;
 
     @Column(name = "return_date")
-    private Instant returnDate;
+    private LocalDate returnDate;
 
     @Column(name = "returned_at")
-    private Instant returnedAt;
+    private LocalDate returnedAt;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "book_id")
@@ -38,10 +40,11 @@ public class LoanModel {
     @JoinColumn(name = "user_id")
     private UserModel user;
 
-    public void setUser_id(Long user_id2) {
+    public void setUser(Object user_id) {
     }
 
-    public void setBook_id(Long book_id2) {
+    public void setBook(Object book_id) {
     }
+
 
 }

@@ -9,7 +9,7 @@
             </form>
         </div>
     </div>
-    <div class="main-pannel row">
+    <!-- <div class="main-pannel row">
         <div class="side-pannel card">
             <div class="card-body">
                 <div class="card-header">
@@ -43,14 +43,14 @@
 
                 </div>
             </div>
-        </div>
-        <div class="content-pannel">
-            <div *ngIf="!books$">
+        </div> -->
+        <div class="container">
+            <div *ngIf="!books$ || false">
                 <p> Aucun resultat</p>
             </div>
             <div class="container">
-            <ul class="search-result">
-                <li *ngFor="let book of books$ | async" >
+            <ul class="search-result list-group">
+                <li *ngFor="let book of books$ | async" class="list-group-item">
                 <a routerLink="/book-detail/{{book.id}}">
                     {{book.title}} - {{book.author}}
                 </a>
@@ -58,7 +58,6 @@
             </ul>
             </div>
         </div>
-    </div>
 </div>
 <div *ngIf="!isLoggedIn" class="p-5 bg-light mb-4">
     <nav class="d-flex">

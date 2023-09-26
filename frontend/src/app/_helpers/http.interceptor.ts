@@ -16,7 +16,6 @@ export class HttpRequestInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const account = this.storageService.getUser();
         const isLoggedIn = account?.accessToken;
-        console.log(account.accessToken);
         if (isLoggedIn) {
           req = req.clone({
               setHeaders: { Authorization: `Bearer ${account.accessToken}` }
@@ -40,7 +39,7 @@ export class HttpRequestInterceptor implements HttpInterceptor {
 
   private handle401Error(request: HttpRequest<any>, next: HttpHandler) {
     if (!this.isRefreshing) {
-      this.isRefreshing = true;
+      this.isRefreshing = false;
 
       if (this.storageService.isLoggedIn()) {
         this.eventBusService.emit(new EventData('logout', null));

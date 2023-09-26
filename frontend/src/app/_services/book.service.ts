@@ -29,7 +29,7 @@ getCurrentUserID(): number {
     return this.currentUser; // Exemple d'ID d'utilisateur
   }
 ngOnInit(): void {
-  this.getCurrentUserID();
+  
   }
   
 getAll(): Observable<any[]>{ 

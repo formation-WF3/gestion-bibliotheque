@@ -11,6 +11,10 @@ import org.springframework.stereotype.Component;
 public class BookAdapter {
 
     public BookDto toDto(BookModel model) {
+         if (model == null) {
+            return null;
+        }
+
         return BookDto.builder()
                 .id(model.getId())
                 .title(model.getTitle())

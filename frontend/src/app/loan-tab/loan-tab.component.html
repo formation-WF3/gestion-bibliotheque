@@ -1,23 +1,16 @@
 <div class="container justify-content-center">
     <div class="row">
-        <div *ngIf="book_id" class="col-md-12">
+        <div *ngIf="book" class="col-md-12">
             <form >
-                <H1> Emprunt du livre {{book_id.title}}</H1>
+                <H1> Emprunt du livre {{book.title}}</H1>
                 <p>Bienvenue  {{currentUser.username }} </p>
                 <label for="userId">ID de l'utilisateur:</label>
-                <input type="text" id="userId" [(ngModel)]="currentUser.id" name="currentUser.id" class="form-control" required>
-        
-                <label for="book-title"> Book id: </label>
-                <input id="book-title" [(ngModel)]=" book_id.id" placeholder="{{book_id.id}}" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [ngModelOptions]="{standalone: true}" />
+                <input type="text" id="userId" [(ngModel)]="currentUser.id" name="currentUser.id" class="form-control" required disabled="disabled">
+                
+                <label for="book-title"> Book : {{book.title}}</label>
+                <input id="book-title" [(ngModel)]=" book.id" placeholder="{{book.id}}" name="{{book.id}}" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" disabled="disabled"/>
             
-                <label for="startDate">Date de début:</label>
-                <input type="datetime-local" id="startDate" [(ngModel)]="startDate" name="startDate" class="form-control" required>
-            
-                <label for="endDate">Date de fin:</label>
-                <input type="datetime-local" id="endDate" [(ngModel)]="endDate" name="endDate" class="form-control"  required>
-            
-                <button type="submit" (click)="enregistrerEmprunt()">Emprunter</button>
-               
+                <button type="submit" (click)="enregistrerEmprunt()">Emprunter</button>               
             </form>
             <button type="button" (click)="goBack()"  class="btn btn-info btn-sm m-1">go back </button>
         </div>

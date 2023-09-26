@@ -11,6 +11,9 @@ import com.formation.gestionbibliotheque.repositories.UserRepository;
 import com.formation.gestionbibliotheque.services.LoanService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,35 +23,28 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/loans")
 public class LoanController {
-     private final UserRepository userRepository;
-    private final BookRepository bookRepository;
-    private final LoanRepository loanRepository;
+   
     private LoanService loanService;
 
+    // @GetMapping("/list")
+    // public List<LoanDto> getAll() {
+    //     return loanService.getAll();
+    // }
     @GetMapping("/list")
-    public List<LoanDto> getAll() {
-        return loanService.getAll();
+    public ResponseEntity<List<LoanDto>> getAll() {
+        List<LoanDto> loans = loanService.getAll();
+        return new ResponseEntity<>(loans, HttpStatus.OK);
     }
     @PostMapping("/create")
-    public ResponseEntity<String> emprunterLivre(@RequestBody LoanRequest empruntRequest) {
-        UserModel user = userRepository.findById(empruntRequest.getUser_id())
-            .orElseThrow(() -> new EntityNotFoundException("Utilisateur non trouvé"));
+    public ResponseEntity<LoanModel> emprunterLivre(@RequestBody LoanRequest empruntRequest) {
+        LoanModel loan = loanService.emprunt(
+            empruntRequest.getUser_id(),
+            empruntRequest.getBook_id()   
+        );
 
-        BookModel book = bookRepository.findById(empruntRequest.getBook_id())
-            .orElseThrow(() -> new EntityNotFoundException("Livre non trouvé"));
-
-        LoanModel emprunt = new LoanModel();
-        emprunt.setUser(user);
-        emprunt.setBook(book);
-        emprunt.setBorrowedAt(empruntRequest.getBorrowedAt());
-        emprunt.setReturnDate(empruntRequest.getReturnDate());
-
-        loanRepository.save(emprunt);
-
-        return ResponseEntity.ok("Emprunt créé avec succès");
+        return new ResponseEntity<>(loan, HttpStatus.CREATED);
     }
 
-   
     @PostMapping
     public LoanDto add(@RequestBody LoanDto loanDto) {
         return loanService.add(loanDto);

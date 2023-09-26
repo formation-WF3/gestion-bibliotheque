@@ -11,6 +11,7 @@ import { BookSearchComponent } from './book-search/book-search.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { LoanTabComponent } from './loan-tab/loan-tab.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -25,9 +26,9 @@ const routes: Routes = [
   { path:'book-search', component:BookSearchComponent },
   { path:'books', component:BookListComponent },
   { path: 'book-detail/:id', component: BookDetailComponent },
+  { path: 'loans/list', component: LoanTabComponent },
   { path: 'loans/:id', component: LoanTabComponent },
-  { path: 'loan/list', component: LoanTabComponent },
-  { path: 'loan-book/:id', component: LoanTabComponent },
+  { path: 'error', component: ErrorComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
