@@ -1,1 +1,20 @@
-<p>loan-tab works!</p>
+<div class="container justify-content-center">
+    <div class="row">
+        <div *ngIf="book" class="col-md-12">
+            <form >
+                <H1> Emprunt du livre {{book.title}}</H1>
+                <p>Bienvenue  {{currentUser.username }} </p>
+                <label for="userId">ID de l'utilisateur:</label>
+                <input type="text" id="userId" [(ngModel)]="currentUser.id" name="currentUser.id" class="form-control" required disabled="disabled">
+                
+                <label for="book-title"> Book : {{book.title}}</label>
+                <input id="book-title" [(ngModel)]=" book.id" placeholder="{{book.id}}" name="{{book.id}}" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" disabled="disabled"/>
+            
+                <button type="submit" (click)="enregistrerEmprunt()">Emprunter</button>               
+            </form>
+            <button type="button" (click)="goBack()"  class="btn btn-info btn-sm m-1">go back </button>
+        </div>
+    </div>
+</div>
+
+  

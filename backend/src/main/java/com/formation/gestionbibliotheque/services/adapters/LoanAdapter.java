@@ -17,8 +17,8 @@ public class LoanAdapter {
                 .borrowedAt(model.getBorrowedAt())
                 .returnDate(model.getReturnDate())
                 .returnedAt(model.getReturnedAt())
-                .bookTitle(model.getBook().getTitle())
-                .userUsername(model.getUser().getUsername())
+                .book_id(model.getBook().getId())
+                .user_id(model.getUser().getId())
                 .build();
     }
 

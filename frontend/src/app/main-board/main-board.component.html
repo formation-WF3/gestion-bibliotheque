@@ -1,14 +1,23 @@
-<div class="upper-pannel">
+<!-- <div class="upper-pannel">
     <app-advanced-search></app-advanced-search>
-</div>
-<div class="main-pannel row ">
-    <div class="side-pannel  ">
-        <app-nav-buttons (navEvent)="selectComponent($event)"></app-nav-buttons>
-    </div>
-    <div class="content-pannel">
-        <div *ngIf="buttonSelected =='PROFILE'"><app-profile></app-profile></div>
-        <div *ngIf="buttonSelected =='LOAN'"><app-loan-tab></app-loan-tab></div>
-        <div *ngIf="buttonSelected =='PENALTY'"><app-penalty-tab></app-penalty-tab></div>
-    </div>
+</div> -->
+<div *ngIf="isLoggedIn">
+    <div class="main-pannel row ">
+        <div class="side-pannel  ">
+            <app-nav-buttons (navEvent)="selectComponent($event)"></app-nav-buttons>
+        </div>
+        <div class="content-pannel">
+            <div *ngIf="buttonSelected =='PROFILE'"><app-profile></app-profile></div>
+            <div *ngIf="buttonSelected =='LOAN'"><app-loan-tab></app-loan-tab></div>
+            <div *ngIf="buttonSelected =='PENALTY'"><app-penalty-tab></app-penalty-tab></div>
+        </div>
 
+    </div>
+</div>
+<div *ngIf="!isLoggedIn" class="p-5 bg-light mb-4">
+    <nav class="d-flex">
+        <a [routerLink]="['/login']" id="login_link" class="text-reset p-1">Login page</a>
+          <span class="p-1"> / </span>
+        <a [routerLink]="['/register']" id="register_link" class="text-reset p-1">Register page</a>
+  </nav>
 </div>

@@ -32,5 +32,4 @@ public class BookModel {
     @JoinColumn(name = "category_id")
     private CategoryModel category;
 
-    private String search;
 }

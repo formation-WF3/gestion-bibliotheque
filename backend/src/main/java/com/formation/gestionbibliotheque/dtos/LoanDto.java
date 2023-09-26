@@ -1,11 +1,10 @@
 package com.formation.gestionbibliotheque.dtos;
-
-
-import com.formation.gestionbibliotheque.models.BookModel;
 import lombok.*;
 
+import java.sql.Date;
 import java.time.Instant;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,9 +13,9 @@ import java.util.Date;
 @Builder
 public class LoanDto {
     private long id;
-    private Instant borrowedAt;
-    private Instant returnDate;
-    private Instant returnedAt;
-    private String bookTitle;
-    private String userUsername;
+    private LocalDate borrowedAt;
+    private LocalDate returnDate;
+    private LocalDate returnedAt;
+    private Long book_id;
+    private Long user_id;
 }

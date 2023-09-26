@@ -13,10 +13,13 @@ export class HeaderComponent {
   isLoggedIn = false;
   showUser = false;
   username?: string;
+  currentUser: any;
   private roles: string[] = [];
   constructor(private storageService: StorageService, private authService: AuthService,private userService: UserService) { }
 
   ngOnInit(): void {
+    
+    this.currentUser = this.storageService.getUser();
     this.isLoggedIn = this.storageService.isLoggedIn();
 
     if (this.isLoggedIn) {

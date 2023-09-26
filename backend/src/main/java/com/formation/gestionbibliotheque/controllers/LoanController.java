@@ -1,8 +1,20 @@
 package com.formation.gestionbibliotheque.controllers;
 
 import com.formation.gestionbibliotheque.dtos.LoanDto;
+import com.formation.gestionbibliotheque.models.BookModel;
+import com.formation.gestionbibliotheque.models.LoanModel;
+import com.formation.gestionbibliotheque.models.UserModel;
+import com.formation.gestionbibliotheque.payload.request.LoanRequest;
+import com.formation.gestionbibliotheque.repositories.BookRepository;
+import com.formation.gestionbibliotheque.repositories.LoanRepository;
+import com.formation.gestionbibliotheque.repositories.UserRepository;
 import com.formation.gestionbibliotheque.services.LoanService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,11 +23,26 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/loans")
 public class LoanController {
+   
     private LoanService loanService;
 
-    @GetMapping
-    public List<LoanDto> getAll() {
-        return loanService.getAll();
+    // @GetMapping("/list")
+    // public List<LoanDto> getAll() {
+    //     return loanService.getAll();
+    // }
+    @GetMapping("/list")
+    public ResponseEntity<List<LoanDto>> getAll() {
+        List<LoanDto> loans = loanService.getAll();
+        return new ResponseEntity<>(loans, HttpStatus.OK);
+    }
+    @PostMapping("/create")
+    public ResponseEntity<LoanModel> emprunterLivre(@RequestBody LoanRequest empruntRequest) {
+        LoanModel loan = loanService.emprunt(
+            empruntRequest.getUser_id(),
+            empruntRequest.getBook_id()   
+        );
+
+        return new ResponseEntity<>(loan, HttpStatus.CREATED);
     }
 
     @PostMapping
@@ -33,7 +60,7 @@ public class LoanController {
         return loanService.delete(id);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public LoanDto getById(@PathVariable long id) {
         return loanService.getById(id);
     }
