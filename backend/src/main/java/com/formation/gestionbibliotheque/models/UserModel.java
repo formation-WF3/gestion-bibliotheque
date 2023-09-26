@@ -67,8 +67,7 @@ public class UserModel {
              inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<RoleModel> roles = new HashSet<>();
 
-    @OneToOne
-    private ProfileModel profileModel;
+
 
     /**
      * @param username

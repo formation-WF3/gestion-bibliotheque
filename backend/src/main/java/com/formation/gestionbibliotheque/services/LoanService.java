@@ -38,17 +38,14 @@ public class LoanService {
         return loanDtos;
     }
     
-   public LoanModel emprunt(Long userId, Long bookId) {
-        UserModel user = userRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));
-        BookModel book = bookRepository.findById(bookId).orElseThrow(() -> new EntityNotFoundException("Livre introuvable"));
+   public LoanDto emprunt(LoanDto loanDto) {
+        UserModel user = userRepository.findById(loanDto.getUser_id()).orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));
+        BookModel book = bookRepository.findById(loanDto.getBook_id()).orElseThrow(() -> new EntityNotFoundException("Livre introuvable"));
 
-        LoanModel loan = new LoanModel();
-        loan.setUser(user);
-        loan.setBook(book);
-        loan.setBorrowedAt(LocalDate.now());
-        loan.setReturnDate(LocalDate.now().plusDays(14));
+        LoanModel loan = loanAdapter.toModel(loanDto, book, user);
+        loan = loanRepository.save(loan);
 
-        return loanRepository.save(loan);
+        return loanAdapter.toDto(loan);
     }
 
     public LoanDto add(LoanDto loanDto) {

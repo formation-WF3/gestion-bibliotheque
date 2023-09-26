@@ -12,6 +12,9 @@ import org.springframework.stereotype.Component;
 public class LoanAdapter {
 
     public LoanDto toDto(LoanModel model) {
+        if (model == null) {
+            return null;
+        }
         return LoanDto.builder()
                 .id(model.getId())
                 .borrowedAt(model.getBorrowedAt())

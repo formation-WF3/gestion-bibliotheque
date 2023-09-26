@@ -36,11 +36,8 @@ public class LoanController {
         return new ResponseEntity<>(loans, HttpStatus.OK);
     }
     @PostMapping("/create")
-    public ResponseEntity<LoanModel> emprunterLivre(@RequestBody LoanRequest empruntRequest) {
-        LoanModel loan = loanService.emprunt(
-            empruntRequest.getUser_id(),
-            empruntRequest.getBook_id()   
-        );
+    public ResponseEntity<LoanDto> emprunterLivre(@RequestBody LoanDto loanDto) {
+        LoanDto loan = loanService.emprunt(loanDto);
 
         return new ResponseEntity<>(loan, HttpStatus.CREATED);
     }
