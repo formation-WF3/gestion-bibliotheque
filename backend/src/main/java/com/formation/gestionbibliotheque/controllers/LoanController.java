@@ -42,10 +42,10 @@ public class LoanController {
         return new ResponseEntity<>(loan, HttpStatus.CREATED);
     }
 
-    @PostMapping
-    public LoanDto add(@RequestBody LoanDto loanDto) {
-        return loanService.add(loanDto);
-    }
+    // @PostMapping
+    // public LoanDto add(@RequestBody LoanDto loanDto) {
+    //     return loanService.add(loanDto);
+    // }
 
     @PutMapping
     public LoanDto update(@RequestBody LoanDto loanDto) {

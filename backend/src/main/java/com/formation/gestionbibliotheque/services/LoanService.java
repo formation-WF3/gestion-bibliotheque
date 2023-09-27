@@ -48,25 +48,25 @@ public class LoanService {
         return loanAdapter.toDto(loan);
     }
 
-    public LoanDto add(LoanDto loanDto) {
-        Long book_id = loanDto.getBook_id();
-        Long user_id = loanDto.getUser_id();
-        BookModel bookModel = null;
-        UserModel userModel = null;
+    // public LoanDto add(LoanDto loanDto) {
+    //     Long book_id = loanDto.getBook_id();
+    //     Long user_id = loanDto.getUser_id();
+    //     BookModel bookModel = null;
+    //     UserModel userModel = null;
 
-        if (book_id != null) {
-            bookModel = bookRepository.findById(book_id).orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
-        }
-        if (user_id != null) {
-            userModel = userRepository.findById(user_id)
-                    .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));
-        }
+    //     if (book_id != null) {
+    //         bookModel = bookRepository.findById(book_id).orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
+    //     }
+    //     if (user_id != null) {
+    //         userModel = userRepository.findById(user_id)
+    //                 .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));
+    //     }
 
-        LoanModel loanModel = loanAdapter.toModel(loanDto, bookModel, userModel);
-        loanModel = loanRepository.save(loanModel);
-        loanDto.setId(loanModel.getId());
-        return loanDto;
-    }
+    //     LoanModel loanModel = loanAdapter.toModel(loanDto, bookModel, userModel);
+    //     loanModel = loanRepository.save(loanModel);
+    //     loanDto.setId(loanModel.getId());
+    //     return loanDto;
+    // }
    
     public LoanDto update(LoanDto loanDto) {
         Long book_id = loanDto.getBook_id();

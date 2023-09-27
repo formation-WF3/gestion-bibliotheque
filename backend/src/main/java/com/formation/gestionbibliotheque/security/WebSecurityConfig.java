@@ -1,9 +1,6 @@
 package com.formation.gestionbibliotheque.security;
 
 import java.util.Arrays;
-
-import javax.management.relation.Role;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
