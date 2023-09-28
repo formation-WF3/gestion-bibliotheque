@@ -10,7 +10,6 @@ import { BookSearchComponent } from './book-search/book-search.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { LoanTabComponent } from './loan-tab/loan-tab.component';
-import { ErrorComponent } from './error/error.component';
 import { ListLoanComponent } from './list-loan/list-loan.component';
 
 
@@ -29,7 +28,7 @@ const routes: Routes = [
   { path: 'book-detail/:id', component: BookDetailComponent },
   { path: 'loans/list', component: ListLoanComponent },
   { path: 'loans/:id', component: LoanTabComponent },
-  { path: 'error', component: ErrorComponent},
+
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 @NgModule({

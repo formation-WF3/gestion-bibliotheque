@@ -4,11 +4,12 @@ import { Injectable } from '@angular/core';
 import { MessageService } from './MessageService';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Book } from '../models/book';
+// import { Book } from '../models/book';
 import { StorageService } from './storage.service';
 import { identifierName } from '@angular/compiler';
 
 import { ActivatedRoute } from '@angular/router';
+import { Book } from '../models/book';
 
 const API_URL = "http://localhost:8080/api/";
 
