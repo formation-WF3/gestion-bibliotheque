@@ -30,7 +30,7 @@ export class LoanService {
     return this.currentUser; // Exemple d'ID d'utilisateur
   }
   getAll(): Observable<any[]>{ 
-    return this.http.get<Loan[]>(API_URL + 'loans/list/{id}')
+    return this.http.get<Loan[]>(API_URL + 'loans/list')
   }
 //   createBorrow(utilisateur:StorageService,book: Book) {
     
