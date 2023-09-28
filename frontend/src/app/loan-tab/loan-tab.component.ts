@@ -70,19 +70,5 @@ export class LoanTabComponent {
     }
   );
   
-
-      userID: this.currentUserID,
-      bookID: this.book_id,
-  };
- 
-  this.http.post(url, empruntData).subscribe(
-   
-    (response) => {
-      console.log('Emprunt enregistré avec succès :', response);
-    },
-    (error) => {
-      console.error('Erreur lors de l\'enregistrement de l\'emprunt :', error);
-    }
-  );
 }
 }
