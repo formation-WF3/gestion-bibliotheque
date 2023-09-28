@@ -31,13 +31,23 @@ export class LoanService {
     return this.currentUser; // Exemple d'ID d'utilisateur
   }
   getAll(): Observable<any[]>{ 
-    return this.http.get<Loan[]>(API_URL + 'loans/list/{id}')
+
+    return this.http.get<Loan[]>(API_URL + 'loans/list')
   }
+//   createBorrow(utilisateur:StorageService,book: Book) {
+    
+//     return this.http.post(`${this.baseUrl}/create`, {
+//       utilisateur,
+//       book,
+//     });
+//   }
+
 //Trouver les emprunts pour un user specifique 
 getLoanByUser(): Observable<Loan[]>{
   const token = this.storageService.getToken();
   const headers = new HttpHeaders().set('Authorization','Bearer '+token);
 return this.http.get<Loan[]>(API_URL + 'loans/my-loans', { headers:headers});
 }
+
 
 }
