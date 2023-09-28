@@ -25,7 +25,7 @@ export class LoanTabComponent {
   
   constructor(
     private http: HttpClient,
-    private loanService: LoanService,
+    // private loanService: LoanService,
     private bookService: BookService,
     private route: ActivatedRoute,
     private storageService: StorageService,
