@@ -76,8 +76,13 @@ public class UserService {
     }
 
     public UserDto getByUsername(String username) {
-        return userRepository.findByUsername(username)
-                .map(userAdapter::toDto)
-                .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));
+        // return userRepository.findByUsername(username)
+        //         .map(userAdapter::toDto)
+        //         .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));
+
+        UserModel userModel =userRepository.findByUsername(username);
+        // .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé !"));
+        return userAdapter.toDto(userModel);
+
     }
 }

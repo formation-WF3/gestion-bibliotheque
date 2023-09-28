@@ -18,9 +18,11 @@ constructor(
 
   ngOnInit(): void {
   
-    this.loanService.getAll().subscribe(listLoans => this.listLoans = listLoans );
-    console.log(this.listLoans);
+    this.loanList();
+    console.log(this.loanList);
   }
-  
+  loanList(){
+    this.loanService.getLoanByUser().subscribe(data => {this.listLoans = data});
+  }
 
 }

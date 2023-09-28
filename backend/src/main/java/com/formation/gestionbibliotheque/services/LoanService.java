@@ -12,12 +12,16 @@ import com.formation.gestionbibliotheque.services.adapters.LoanAdapter;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
+
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Service
@@ -37,13 +41,12 @@ public class LoanService {
         );
         return loanDtos;
     }
-    public List<LoanDto> getAllByUser(Long user_id) {
-        UserModel user = userRepository.findById(user_id).orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));
-        List<LoanDto> loanDtos = new ArrayList<>();
-        loanRepository.findByUser(user_id).forEach(
-                model -> loanDtos.add(loanAdapter.toDto(model))
-        );
-        return loanDtos;
+    public List<LoanDto> getAllByUser() {
+
+        UserModel currentUser = userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        Optional<LoanModel> loanList = loanRepository.findById(currentUser.getId()); 
+        return loanList.stream().map(loanAdapter::toDto)
+        .collect(Collectors.toList());
     }
     public LoanDto emprunt(LoanDto loanDto) {
         UserModel user = userRepository.findById(loanDto.getUser_id()).orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));

@@ -34,5 +34,11 @@ export class StorageService {
     }
     return false;
   }
+
+  public getToken(): string | null {
+
+    return localStorage.getItem("token");
+
+  }
 }
 
