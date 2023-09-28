@@ -29,7 +29,9 @@ export class LoanService {
     this.currentUser = this.storageService.getUser();
     return this.currentUser; // Exemple d'ID d'utilisateur
   }
-
+  getAll(): Observable<any[]>{ 
+    return this.http.get<Loan[]>(API_URL + 'loans/list/{id}')
+  }
 //   createBorrow(utilisateur:StorageService,book: Book) {
     
 //     return this.http.post(`${this.baseUrl}/create`, {

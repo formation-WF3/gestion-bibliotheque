@@ -57,6 +57,7 @@ export class LoanTabComponent {
 
       user_id: this.currentUser.id,
       book_id: this.book?.id
+
   };
   this.http.post(url, empruntData).subscribe(
    
@@ -70,19 +71,5 @@ export class LoanTabComponent {
     }
   );
   
-
-      userID: this.currentUserID,
-      bookID: this.book_id,
-  };
- 
-  this.http.post(url, empruntData).subscribe(
-   
-    (response) => {
-      console.log('Emprunt enregistré avec succès :', response);
-    },
-    (error) => {
-      console.error('Erreur lors de l\'enregistrement de l\'emprunt :', error);
-    }
-  );
 }
 }
