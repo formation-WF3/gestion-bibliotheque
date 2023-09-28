@@ -8,6 +8,9 @@ import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { Loan } from '../models/Loan';
+
+
 const API_URL = "http://localhost:8080/api/";
 
 @Component({
@@ -16,12 +19,11 @@ const API_URL = "http://localhost:8080/api/";
   styleUrls: ['./loan-tab.component.css']
 })
 export class LoanTabComponent {
-  user_id!: number;
-  book!: Book;
-  book_id = Observable<Book>;
+ 
+  book: Book | undefined;
   currentUser: any;
-  currentUserID: number;
-
+  message: string = '';
+  messageError: string = '';
   
   constructor(
     private http: HttpClient,
@@ -31,23 +33,15 @@ export class LoanTabComponent {
     private storageService: StorageService,
     private location: Location
 )
-   {this.currentUserID = this.bookService.getCurrentUserID();this.book_id}
+   {}
 
    ngOnInit(): void {
     this.getBook();
     this.currentUser = this.storageService.getUser();
   }
 
-  // submitLoan() {
-  //   // Envoyer les données au service pour les traiter et les envoyer au backend
-  //   this.loanService.createLoan({
-  //     userId: this.currentUser,
-  //     bookId: this.getBook(),
-  //     startDate: this.startDate,
-  //     endDate: this.endDate,
-  //   });
-  // }
-  getBook():undefined {
+  getBook():void {
+
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.bookService.getById(id)
       .subscribe(book => this.book = book);
@@ -60,6 +54,23 @@ export class LoanTabComponent {
   enregistrerEmprunt() {
     const url = `${API_URL}loans/create`;
     const empruntData = {
+
+      user_id: this.currentUser.id,
+      book_id: this.book?.id
+  };
+  this.http.post(url, empruntData).subscribe(
+   
+    (response) => {
+      // console.log('Emprunt enregistré avec succès :', response);
+      this.message = 'Emprunt enregistré avec succès :';
+    },
+    (error) => {
+      // console.error('Erreur lors de l\'enregistrement de l\'emprunt :', error);
+      this.messageError = 'Erreur lors de l\'enregistrement de l\'emprunt  :';
+    }
+  );
+  
+
       userID: this.currentUserID,
       bookID: this.book_id,
   };

@@ -8,6 +8,8 @@ import { Book } from '../models/book';
 import { StorageService } from './storage.service';
 import { identifierName } from '@angular/compiler';
 
+import { ActivatedRoute } from '@angular/router';
+
 const API_URL = "http://localhost:8080/api/";
 
 const httpOptions = {
@@ -19,10 +21,14 @@ const httpOptions = {
 export class BookService {
   currentUser: any;
 
+  book: Book | undefined;
+
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  constructor( private http: HttpClient,  private messageService: MessageService,private storageService: StorageService) { 
+
+  constructor( private http: HttpClient,  private messageService: MessageService,private storageService: StorageService, private route: ActivatedRoute,) { 
   }
 getCurrentUserID(): number {
     this.currentUser = this.storageService.getUser();
@@ -60,6 +66,12 @@ searchbooks(term: string): Observable<Book[]> {
          this.log(`no books matching "${term}"`)),
       catchError(this.handleError<Book[]>('searchbooks', []))
   );
+}
+
+getBook(): void {
+  const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+  this.getById(id)
+    .subscribe(book => this.book = book);
 }
 
 updateBook(book: Book): Observable<any> {
