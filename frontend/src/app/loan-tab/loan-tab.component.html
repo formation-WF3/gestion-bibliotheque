@@ -1,6 +1,8 @@
 <div class="container justify-content-center">
     <div class="row">
         <div *ngIf="book" class="col-md-12">
+            <div *ngIf="message" class="alert alert-success">{{message}}</div>
+            <div *ngIf="messageError" class="alert alert-danger">{{message}}</div>
             <form >
                 <H1> Emprunt du livre {{book.title}}</H1>
                 <p>Bienvenue  {{currentUser.username }} </p>
@@ -16,5 +18,4 @@
         </div>
     </div>
 </div>
-
   

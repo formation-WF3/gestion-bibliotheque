@@ -1,6 +1,9 @@
 package com.formation.gestionbibliotheque.controllers;
 
 import com.formation.gestionbibliotheque.dtos.LoanDto;
+
+import com.formation.gestionbibliotheque.dtos.UserDto;
+
 import com.formation.gestionbibliotheque.models.BookModel;
 import com.formation.gestionbibliotheque.models.LoanModel;
 import com.formation.gestionbibliotheque.models.UserModel;
@@ -9,6 +12,7 @@ import com.formation.gestionbibliotheque.repositories.BookRepository;
 import com.formation.gestionbibliotheque.repositories.LoanRepository;
 import com.formation.gestionbibliotheque.repositories.UserRepository;
 import com.formation.gestionbibliotheque.services.LoanService;
+import com.formation.gestionbibliotheque.services.UserService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 
@@ -25,7 +29,9 @@ import java.util.List;
 public class LoanController {
    
     private LoanService loanService;
+    private UserService userService;
 
+ 
     // @GetMapping("/list")
     // public List<LoanDto> getAll() {
     //     return loanService.getAll();
@@ -41,6 +47,7 @@ public class LoanController {
             empruntRequest.getUser_id(),
             empruntRequest.getBook_id()   
         );
+
 
         return new ResponseEntity<>(loan, HttpStatus.CREATED);
     }
