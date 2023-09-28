@@ -45,6 +45,7 @@ public class LoanController {
     public ResponseEntity<LoanDto> emprunterLivre(@RequestBody LoanDto loanDto) {
         LoanDto loan = loanService.emprunt(loanDto);
 
+
         return new ResponseEntity<>(loan, HttpStatus.CREATED);
     }
 

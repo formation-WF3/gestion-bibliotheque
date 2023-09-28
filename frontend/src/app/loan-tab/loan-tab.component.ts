@@ -27,7 +27,7 @@ export class LoanTabComponent {
   
   constructor(
     private http: HttpClient,
-    private loanService: LoanService,
+    // private loanService: LoanService,
     private bookService: BookService,
     private route: ActivatedRoute,
     private storageService: StorageService,
@@ -57,6 +57,7 @@ export class LoanTabComponent {
 
       user_id: this.currentUser.id,
       book_id: this.book?.id
+
   };
   this.http.post(url, empruntData).subscribe(
    

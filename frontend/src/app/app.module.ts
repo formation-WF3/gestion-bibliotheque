@@ -24,6 +24,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookSearchResultsComponent } from './book-search-results/book-search-results.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
+
 import { ListLoanComponent } from './list-loan/list-loan.component';
 @NgModule({
   declarations: [
