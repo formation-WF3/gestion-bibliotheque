@@ -37,20 +37,24 @@ public class LoanService {
         );
         return loanDtos;
     }
-    
-   public LoanModel emprunt(Long userId, Long bookId) {
-        UserModel user = userRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));
-        BookModel book = bookRepository.findById(bookId).orElseThrow(() -> new EntityNotFoundException("Livre introuvable"));
-
-        LoanModel loan = new LoanModel();
-        loan.setUser(user);
-        loan.setBook(book);
-        loan.setBorrowedAt(LocalDate.now());
-        loan.setReturnDate(LocalDate.now().plusDays(14));
-
-        return loanRepository.save(loan);
+    public List<LoanDto> getAllByUser(Long user_id) {
+        UserModel user = userRepository.findById(user_id).orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));
+        List<LoanDto> loanDtos = new ArrayList<>();
+        loanRepository.findByUser(user_id).forEach(
+                model -> loanDtos.add(loanAdapter.toDto(model))
+        );
+        return loanDtos;
     }
+    public LoanDto emprunt(LoanDto loanDto) {
+        UserModel user = userRepository.findById(loanDto.getUser_id()).orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));
+        BookModel book = bookRepository.findById(loanDto.getBook_id()).orElseThrow(() -> new EntityNotFoundException("Livre introuvable"));
 
+        LoanModel loan = loanAdapter.toModel(loanDto, book, user);
+        loan.setReturnDate(LocalDate.now().plusDays(14));
+        loan = loanRepository.save(loan);
+
+        return loanAdapter.toDto(loan);
+    }
     public LoanDto add(LoanDto loanDto) {
         Long book_id = loanDto.getBook_id();
         Long user_id = loanDto.getUser_id();

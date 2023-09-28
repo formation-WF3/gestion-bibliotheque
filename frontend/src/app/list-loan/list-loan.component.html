@@ -1,0 +1,29 @@
+<div *ngIf="listLoans == []" class="content-panel">
+    <div class="col-md-12">
+        <table class="booklist table">
+            <thead class="thead-light">
+              <tr>
+                <th colspan="4" class="bookList-title" scope="col">Liste des Livres</th>
+              </tr>
+            </thead>
+            <tbody class="bookList-container" >
+                <tr>
+                    <th class="bookList-details" scope="row">Id</th>
+                    <th class="bookList-details">Book id</th>
+                    <th class="bookList-details">Date d'emprunt</th>
+                    <th class="bookList-details">Date de retour</th>
+                </tr>
+              <tr  *ngFor="let loan of listLoans">
+                <td class="bookList-details"><a routerLink="/loan-detail/{{loan.id}}">{{loan.id}}</a></td>
+                <td class="bookList-details">Book{{loan.book_id }}</td>
+                <td class="bookList-details"><span class="badge badge-primary ">{{ loan.borrowed_at }}</span></td>
+                <td class="bookList-details"><a routerLink="/loans/{{loan.return_date}}">Emprunter</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+</div>
+<div *ngIf="listLoans != []">
+    <h3 class="text-center">Pas d'Emprunt existant</h3>
+</div>
+
