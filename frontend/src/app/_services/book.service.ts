@@ -7,9 +7,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 // import { Book } from '../models/book';
 import { StorageService } from './storage.service';
 import { identifierName } from '@angular/compiler';
-
 import { ActivatedRoute } from '@angular/router';
-
 import { Book } from '../models/book';
 
 
@@ -78,7 +76,7 @@ getBook(): void {
 }
 
 updateBook(book: Book): Observable<any> {
-  return this.http.put(`${API_URL}books/${book}`, book, this.httpOptions).pipe(
+  return this.http.put(`${API_URL}books/update/${book.id}`, book, this.httpOptions).pipe(
     tap(_ => this.log(`updated book id=${book.id}`)),
     catchError(this.handleError<any>('updateBook'))
   );

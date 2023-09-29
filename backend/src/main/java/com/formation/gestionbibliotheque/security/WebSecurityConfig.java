@@ -80,8 +80,12 @@ public class WebSecurityConfig {
         .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/api/**").permitAll()
-            .anyRequest().authenticated());
+        .requestMatchers("/api/auth/**").permitAll()
+        .requestMatchers("/api/books/create","/api/books/update","/api/books/delete","/api/users/**").hasAnyAuthority("ROLE_ADMIN")
+        // .requestMatchers("/api/books/**","/api/loans/**").hasAnyAuthority("ROLE_USER")
+        .requestMatchers("/api/test/**").permitAll()
+        
+        .anyRequest().authenticated());
             
 
     http.authenticationProvider(authenticationProvider());

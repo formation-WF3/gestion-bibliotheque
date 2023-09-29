@@ -15,18 +15,20 @@ const API_URL = "http://localhost:8080/api/";
 })
 export class BookDetailComponent {
   book: Book | undefined;
-  currentUserID: number;
-  startDate!: Date;
-  endDate!: Date;
+  currentUser: any;
+  message: string = '';
+  messageError: string = '';
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
     private bookService: BookService,
     private location: Location,
+    private storageService: StorageService
     
-  ) {this.currentUserID = this.bookService.getCurrentUserID();}
+  ) {}
 
   ngOnInit(): void {
+    this.currentUser = this.storageService.getUser();
     this.getBook();
   }
 
@@ -49,18 +51,27 @@ export class BookDetailComponent {
     enregistrerEmprunt() {
       const url = `${API_URL}loans/create`;
       const empruntData = {
-        userID: this.currentUserID,
-        bookID: this.getBook,
-        startDate: this.startDate,
-        endDate: this.endDate,
+
+        user_id: this.currentUser.id,
+        book_id: this.book?.id
+
     };
     this.http.post(url, empruntData).subscribe(
+    
       (response) => {
-        console.log('Emprunt enregistré avec succès :', response);
+        // console.log('Emprunt enregistré avec succès :', response);
+        this.message = 'Emprunt enregistré avec succès :';
+        this.reloadPage();
       },
       (error) => {
-        console.error('Erreur lors de l\'enregistrement de l\'emprunt :', error);
+        // console.error('Erreur lors de l\'enregistrement de l\'emprunt :', error);
+        this.messageError = 'Erreur lors de l\'enregistrement de l\'emprunt  :';
       }
     );
+  
+  }
+
+  reloadPage(): void {
+    window.location.replace("/main-board");
   }
 }

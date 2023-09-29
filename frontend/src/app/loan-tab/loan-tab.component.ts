@@ -64,6 +64,7 @@ export class LoanTabComponent {
     (response) => {
       // console.log('Emprunt enregistré avec succès :', response);
       this.message = 'Emprunt enregistré avec succès :';
+      this.reloadPage();
     },
     (error) => {
       // console.error('Erreur lors de l\'enregistrement de l\'emprunt :', error);
@@ -71,5 +72,9 @@ export class LoanTabComponent {
     }
   );
   
+}
+
+reloadPage(): void {
+  window.location.replace("/main-board");
 }
 }

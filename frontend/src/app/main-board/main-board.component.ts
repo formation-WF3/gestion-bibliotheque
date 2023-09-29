@@ -11,7 +11,8 @@ import { StorageService } from '../_services/storage.service';
 export class MainBoardComponent implements OnInit {
 isLoggedIn = false;
 items=['PROFILE','LOAN','PENALTY']
-
+message: string = '';
+messageError: string = '';
 buttonSelected = 'PROFILE';
 constructor(private storageService: StorageService) { }
 

@@ -24,7 +24,7 @@ public class BookController {
         return bookService.add(bookDto);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{id}")
     public BookDto update(@RequestBody BookDto bookDto) {
         return bookService.update(bookDto);
     }

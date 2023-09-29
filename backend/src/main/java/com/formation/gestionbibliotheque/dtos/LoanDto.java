@@ -17,5 +17,6 @@ public class LoanDto {
     private LocalDate returnDate;
     private LocalDate returnedAt;
     private Long book_id;
+    private String title;
     private Long user_id;
 }

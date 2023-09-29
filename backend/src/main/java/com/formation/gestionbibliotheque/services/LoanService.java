@@ -44,7 +44,7 @@ public class LoanService {
     public List<LoanDto> getAllByUser() {
 
         UserModel currentUser = userRepository.findByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
-        Optional<LoanModel> loanList = loanRepository.findById(currentUser.getId()); 
+        List<LoanModel> loanList = loanRepository.findByUser(currentUser); 
         return loanList.stream().map(loanAdapter::toDto)
         .collect(Collectors.toList());
     }
