@@ -12,6 +12,7 @@ justify-content: center;
 .search-form{
     width: 100%;
     align-content: center;
+    height: 50px;;
     
 }
 
@@ -25,6 +26,7 @@ justify-content: center;
     font-size: 2rem;
     border-radius: 30px;
     align-self: center;
+    height: 40px;
 }
 
 

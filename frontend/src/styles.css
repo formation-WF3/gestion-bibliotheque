@@ -112,9 +112,9 @@ form {
     display: flex;
     flex-direction: column;
     align-content: center;
-    height: 20%;
+    height: 50px;
     margin: auto;
-    border: black 2px solid;
+    border: gray 1px solid;
     border-radius: 30px;
 }
 
@@ -123,8 +123,8 @@ form {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    border: black 2px solid;
-    border-radius: 30px;
+    /* border: black 2px solid;
+    border-radius: 30px; */
 }
 
 .side-pannel {

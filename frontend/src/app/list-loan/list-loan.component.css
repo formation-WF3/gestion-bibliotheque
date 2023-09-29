@@ -1,0 +1,16 @@
+a{
+    color:blueviolet;
+    text-decoration: none;
+  }
+  a:hover{
+    color: var(--color-button);
+  }
+  a:active{
+    box-shadow: var(--shadowBoxin);
+    transform: translateY(2px);
+  }
+  .bookList-title{
+    font-size: 2rem;
+    text-align: center;
+    
+  }
