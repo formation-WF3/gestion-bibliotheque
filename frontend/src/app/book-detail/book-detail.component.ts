@@ -15,7 +15,6 @@ const API_URL = "http://localhost:8080/api/";
 })
 export class BookDetailComponent {
   book: Book | undefined;
-  currentUserID: number;
   currentUser: any;
   message: string = '';
   messageError: string = '';
@@ -26,7 +25,7 @@ export class BookDetailComponent {
     private location: Location,
     private storageService: StorageService
     
-  ) {this.currentUserID = this.bookService.getCurrentUserID();}
+  ) {}
 
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
@@ -69,8 +68,9 @@ export class BookDetailComponent {
         this.messageError = 'Erreur lors de l\'enregistrement de l\'emprunt  :';
       }
     );
-    
+  
   }
+
   reloadPage(): void {
     window.location.replace("/main-board");
   }
