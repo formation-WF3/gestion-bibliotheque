@@ -22,6 +22,11 @@ public class LoanController {
         List<LoanDto> loans = loanService.getAllByUser();
         return new ResponseEntity<>(loans, HttpStatus.OK);
     }
+    @GetMapping("/list")
+    public ResponseEntity<List<LoanDto>> getAll2() {
+        List<LoanDto> loans = loanService.getAll();
+        return new ResponseEntity<>(loans, HttpStatus.OK);
+    }
     @PostMapping("/create")
     public ResponseEntity<LoanDto> emprunterLivre(@RequestBody LoanDto loanDto) {
         LoanDto loan = loanService.emprunt(loanDto);

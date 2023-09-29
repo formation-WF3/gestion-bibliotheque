@@ -1,8 +1,8 @@
 export interface Loan{
 id?: number,
 book_id?: number,
-borrowed_at?: Date,
-return_date?: Date,
-returned_at?: Date,
+borrowedAt?: Date,
+returnDate?: Date,
+returnedAt?: Date,
 user_id ?:number
 }
