@@ -9,7 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
-import { UnderConstructionComponent } from './under-construction/under-construction.component';
+
 import { HeaderComponent } from './header/header.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { MainBoardComponent } from './main-board/main-board.component';
@@ -34,7 +34,6 @@ import { ListLoanComponent } from './list-loan/list-loan.component';
     RegisterComponent,
     HomeComponent,
     ProfileComponent,
-    UnderConstructionComponent,
     AdvancedSearchComponent,
     MainBoardComponent,
     ValidationButtonsComponent,

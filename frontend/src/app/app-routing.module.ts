@@ -4,7 +4,6 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
-import { UnderConstructionComponent } from './under-construction/under-construction.component';
 import { MainBoardComponent } from './main-board/main-board.component';
 import { BookSearchComponent } from './book-search/book-search.component';
 import { BookListComponent } from './book-list/book-list.component';
@@ -23,7 +22,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'under-construction', component: UnderConstructionComponent},
   { path: 'main-board', component:MainBoardComponent},
   { path:'book-search', component:BookSearchComponent },
   { path:'books', component:BookListComponent },
