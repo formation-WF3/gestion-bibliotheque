@@ -24,7 +24,5 @@ selectComponent(navEvent:string){
   }
   ngOnInit(): void {
     this.isLoggedIn = this.storageService.isLoggedIn();
-
-   
     }
 }

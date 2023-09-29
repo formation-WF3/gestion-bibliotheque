@@ -74,4 +74,11 @@ export class BookDetailComponent {
   reloadPage(): void {
     window.location.replace("/main-board");
   }
+
+  get isAdmin(): boolean {
+    const userRole = this.storageService.hasRole("ROLE_ADMIN");
+    console.log(userRole);
+    return userRole;
+    
+  }
 }
