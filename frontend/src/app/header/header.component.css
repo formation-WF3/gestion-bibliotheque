@@ -4,27 +4,45 @@ header{
   position: fixed;
   top: 0;
   right: 0;
-  width: 83vw;
   background-color: aqua;
 }
 .head-text{
   background-color: blueviolet;
-  width: 100%;
-  display: flex;
+    display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin-left: 2em;
-  margin-right: 2em;
 
 }
+.title{
+  font-size: 2em;
+}
+
+.log-info{
+display: flex;
+justify-content: right;
+
+}
+
 
 }
 @media(min-width:768px){
   header{
-    position: fixed;
+    
     top: 11vh;
     right: 0;
     width: 100vw;
     background-color: aqua;
   }
+
+  .head-text{
+    background-color: blueviolet;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2em;
+    margin-right: 2em;
+  
+  }
+
 }
 @media(min-width:992px){}

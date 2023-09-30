@@ -1,11 +1,11 @@
-<header class="row m-0 p-0">
-      <div class="head-text">
-        <h1 class="title m-0 p-0 ">LivroScope</h1>
-        <!-- <div *ngIf="isLoggedIn"><p class="user m-0 p-0">bienvenue <br> {{ currentUser.firstname }} {{ currentUser.lastname }}</p></div>
-        <ng-template #contenu_pas_bon><p class="user m-0 p-0">bienvenue <br> Veuillez vous connecter</p></ng-template>
-      </div> -->
-      <div *ngIf="isLoggedIn;then logged_text else notLogged_text">Le contenu saisi ici sera ignoré.</div>
-      <ng-template #logged_text><p>bienvenue <br> {{ currentUser.firstname }} {{ currentUser.lastname }}</p></ng-template>
-      <ng-template #notLogged_text>Veuillez vous connecter</ng-template>
+<header class="col-10 col-mp-12 m-0 p-0">
+      <div class="head-text col-12 col-mp-12 ml-1 p-0">
+        <h1 class="title m-0 p-0 col-11">LivroScope</h1>
+        <div class="log-info m-0 p-0 col-11">
+        <p class="log-text">Bienvenue, </p>
+      <div *ngIf="isLoggedIn;then logged_text else notLogged_text"></div>
+      <ng-template #logged_text><p class="log-text" >{{ currentUser.firstname }} {{ currentUser.lastname }}</p></ng-template>
+      <ng-template #notLogged_text><p class="log-text" >Veuillez vous connecter</p></ng-template>
       </div>
+    </div>
 </header>
