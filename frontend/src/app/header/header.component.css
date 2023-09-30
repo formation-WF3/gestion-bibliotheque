@@ -1,101 +1,30 @@
-header {
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius:30px ;
-    box-shadow: var(--shadowBoxin-2);
-  
+@media(max-width:767px){
 
-  /* Wave Color */
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7c4dff+0,48c088+52,84f9bd+100 */
-background: #7c4dff; /* Old browsers */
-background: -moz-linear-gradient(left,  #7c4dff 0%, #48c088 52%, #84f9bd 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  #7c4dff 0%,#48c088 52%,#84f9bd 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  #7c4dff 0%,#48c088 52%,#84f9bd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#7c4dff', endColorstr='#84f9bd', GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
-  background-size: 350% 350%;
-  animation: waveColors 15s ease infinite;
-  /* End Wave Color */
-
+header{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 83vw;
+  background-color: aqua;
+}
+.head-text{
+  background-color: blueviolet;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2em;
+  margin-right: 2em;
 
 }
 
-/* Animation Wave Color */
-
-@-webkit-keyframes waveColors {
-    0% {
-      background-position: 0% 7%;
-    }
-    50% {
-      background-position: 100% 94%;
-    }
-    100% {
-      background-position: 0% 7%;
-    }
+}
+@media(min-width:768px){
+  header{
+    position: fixed;
+    top: 11vh;
+    right: 0;
+    width: 100vw;
+    background-color: aqua;
   }
-  
-  @keyframes waveColors {
-    0% {
-      background-position: 0% 7%;
-    }
-    50% {
-      background-position: 100% 94%;
-    }
-    100% {
-      background-position: 0% 7%;
-    }
-  }
-  
-  
-  /* End Animation Wave Color */
-
-
-.title-banner {
-    display: flex;
-    justify-content: center;
 }
-
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.header-button {
-    width: 3rem;
-    height: 3rem;
-    border: none;
-    border-radius: 50%;
-}
-
-.header-button:hover {
-    background-color: var(--color-button);
-}
-
-.header-button:active {
-    box-shadow: var(--shadowBoxin);
-    transform: translateY(2px);
-}
-
-.goBack-logo,
-.bookList-logo,
-.connect-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@media(min-width:992px){}
