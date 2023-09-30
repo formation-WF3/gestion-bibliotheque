@@ -1,17 +1,28 @@
-
-  <div *ngIf="!isLoggedIn" class="p-5 bg-light mb-4">
-    <nav class="d-flex">
-        <a [routerLink]="['/login']" id="login_link" class="text-reset p-1">Login page</a>
-          <span> / </span>
-        <a [routerLink]="['/register']" id="register_link" class="text-reset p-1">Register page</a>
-  </nav>
+<div *ngIf="!isLoggedIn">
+  <div class="button-container">
+    <div>
+      <a [routerLink]="['/login']"> <button type="button" class="button">login
+        </button></a>
+    </div>
+    <div>
+      <a [routerLink]="['/register']"> <button type="button" class="button">register
+        </button></a>
+    </div>
+  </div>
 </div>
   <div *ngIf="isLoggedIn">
-    <nav class="d-flex">
-        <a [routerLink]="['/book-search']" id="bookSearch_link" class="text-reset p-1">Rechercher un livre</a>
-        <span class="p-1"> / </span>
-        <a [routerLink]="['/main-board']" id="board_link" class="text-reset p-1">Page profil</a>
-        <span class="p-1"> / </span>
-        <a [routerLink]="['/books']" id="bookList_link" class="text-reset p-1">Liste des livres </a>
-    </nav>
-</div> 
+    
+    <div class="button-container">
+      <a [routerLink]="['/book-search']" > <button type="button" class="button">recherche
+      </button></a>
+   
+      <a [routerLink]="['/main-board']" > <button type="button" class="button">profil
+      </button></a>
+     
+      <a [routerLink]="['/books']"> <button type="button" class="button">liste des livres
+      </button></a>
+    </div>
+  </div>
+  <!-- 
+          <a [routerLink]="['/home']"></a>
+ -->

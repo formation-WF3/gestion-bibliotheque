@@ -61,10 +61,7 @@ body {
 }
 
 
-app-header {
-    display: flex;
-    justify-content: center;
-}
+
 
 app-main-board,
 app-book-search,
