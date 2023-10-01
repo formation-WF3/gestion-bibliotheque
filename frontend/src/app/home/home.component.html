@@ -1,16 +1,17 @@
 <div *ngIf="!isLoggedIn">
 <app-connect-frame></app-connect-frame>
 </div>
-  <div *ngIf="isLoggedIn">
+  <div *ngIf="isLoggedIn" >
     
-    <div class="button-container">
-      <a [routerLink]="['/book-search']" > <button type="button" class="validation-btn">recherche
+    <div class="validation-buttons ">
+      
+      <a [routerLink]="['/book-search']" ><button type="button" class="validation-btn col-12">recherche
       </button></a>
    
-      <a [routerLink]="['/main-board']" > <button type="button" class="validation-btn">profil
+      <a [routerLink]="['/main-board']" > <button type="button" class="validation-btn col-12">profil
       </button></a>
      
-      <a [routerLink]="['/books']"> <button type="button" class="validation-btn">liste des livres
+      <a [routerLink]="['/books']"> <button type="button" class="validation-btn col-12">liste des livres
       </button></a>
     </div>
   </div>
