@@ -1,3 +1,8 @@
+<div class="to-center" >
+<div *ngIf="!isLoggedIn" >
+    <app-connect-frame></app-connect-frame>
+</div>
+</div>
 <div *ngIf="isLoggedIn">
     <div class="upper-pannel">
         <!-- <app-advanced-search></app-advanced-search> -->
@@ -58,7 +63,4 @@
             </ul>
             </div>
         </div>
-</div>
-<div *ngIf="!isLoggedIn">
-<app-home></app-home>
 </div>

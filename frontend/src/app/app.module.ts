@@ -24,6 +24,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ListLoanComponent } from './list-loan/list-loan.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MainComponent } from './main/main.component';
+import { ConnectFrameComponent } from './connect-frame/connect-frame.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MainComponent } from './main/main.component';
     ListLoanComponent,
     NavbarComponent,
     MainComponent,
+    ConnectFrameComponent,
 
 
   ],

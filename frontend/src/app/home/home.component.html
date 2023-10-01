@@ -1,14 +1,5 @@
 <div *ngIf="!isLoggedIn">
-  <div class="button-container">
-    <div>
-      <a [routerLink]="['/login']"> <button type="button" class="validation-btn">login
-        </button></a>
-    </div>
-    <div>
-      <a [routerLink]="['/register']"> <button type="button" class="validation-btn">register
-        </button></a>
-    </div>
-  </div>
+<app-connect-frame></app-connect-frame>
 </div>
   <div *ngIf="isLoggedIn">
     

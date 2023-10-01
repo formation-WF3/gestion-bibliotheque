@@ -1,4 +1,9 @@
 
+.to-center{
+margin-top: 13.4vh;
+
+}
+
 .list-group-item{   
     height: 5rem;
     display: flex;
@@ -100,3 +105,14 @@ ul.search-result {
   transform: translateY(2px);
 }
 
+@media(min-width:768px) {
+  .to-center {
+      margin-top: 10vh;
+  }
+}
+
+@media(min-width:992px) {
+  .to-center {
+    margin-top: 5vh;
+}
+}

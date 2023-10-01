@@ -1,0 +1,16 @@
+.to-center {
+    margin-top: 13.4vh;
+}
+
+@media(min-width:768px) {
+    .to-center {
+        margin-top: 10vh;
+    }
+}
+
+@media(min-width:992px) {
+    
+  .to-center {
+    margin-top: 5vh;
+}
+}
