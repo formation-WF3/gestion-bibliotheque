@@ -1,11 +1,53 @@
-.button-container{
-    width: 80%;
-    height: 60vh;
-    margin: auto;
-    background-color: blanchedalmond;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+  .button-container{
+        width: 70vw;
+        height: 60vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        border:var(--border-global-light);
+        border-radius: 4vw;
+        }
     
+    .validation-btn {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 4vw;
+        background-color: var(--color-secondary-dark);
+        box-shadow: var(--shadowBoxin-2);
+        color: white;
+        font-size: 1em;
+    }
+    
+@media(min-width:768px){
+
+
+.validation-btn {
+    width: 40vw;
+    height: 10vh;
+    background-color: var(--color-secondary-dark);
+    box-shadow: var(--shadowBoxin-2);
+    color: white;
+    font-size:2em;
+}
+
+
+
+}
+@media(min-width:992px){}
+.validation-btn:hover {
+    background-color: var(--color-secondary);
+    border: var(--border-secondary-dark);
+    color: black;
+    font-weight: 200;
+}
+
+.validation-btn:active {
+
+    box-shadow: var(--shadowBoxin-2);
+    transform: translateY(2px);
 }

@@ -1,11 +1,15 @@
-<header class="col-10  col-md-12 p-0">
-      <div class="head-text   ml-1 p-0">
-        <h1 class="title ml-1 p-0 col-5 col-md-6   ">LivroScope</h1>
-        <div class="log-info mr-1 p-0 col-md-6 ">
-        
+<header class="col-12  col-md-12 p-0">
+  <div class="head-text  ">
+    <div class="head-title">
+    <h1 class="title m-0 p-0 col-6 ">LivroScope</h1></div>
+    <div class="log-info m-0 p-0  ">
       <div *ngIf="isLoggedIn;then logged_text else notLogged_text"></div>
-      <ng-template #logged_text><p class="log-text col-md-12" >Bonjour {{ currentUser.firstname }} {{ currentUser.lastname }} !</p></ng-template>
-      <ng-template #notLogged_text><p class="log-text col-md-12 " >Bonjour veuillez vous connecter</p></ng-template>
-      </div>
+      <ng-template #logged_text>
+        <p class="log-text m-0 p-0 col-md-12">Bonjour {{ currentUser.firstname }} {{ currentUser.lastname }}</p>
+      </ng-template>
+      <ng-template #notLogged_text>
+        <p class="log-text m-0 p-0 col-md-12 ">Bonjour veuillez vous connecter</p>
+      </ng-template>
     </div>
+  </div>
 </header>

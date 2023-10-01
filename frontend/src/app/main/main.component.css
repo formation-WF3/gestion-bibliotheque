@@ -1,0 +1,28 @@
+#main_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 11vh;
+    right: 1vw;
+    width: 81vw;
+    height: 87vh;
+}
+
+@media(min-width:768px) {
+    #main_container {
+        top: 18vh;
+        right: 2vw;
+        width: 96vw;
+        height: 80vh;
+    }
+}
+
+@media(min-width:992px) {
+    #main_container {
+        top: 26vh;
+        right: 2vw;
+        width: 96vw;
+        height: 70vh;
+    }
+}

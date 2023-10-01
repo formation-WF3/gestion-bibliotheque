@@ -23,6 +23,7 @@ import { BookSearchResultsComponent } from './book-search-results/book-search-re
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ListLoanComponent } from './list-loan/list-loan.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     BookSearchResultsComponent,
     ListLoanComponent,
     NavbarComponent,
+    MainComponent,
 
 
   ],

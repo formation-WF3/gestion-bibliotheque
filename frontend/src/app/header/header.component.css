@@ -1,57 +1,120 @@
-@media(max-width:767px){
+@media(max-width:767px) {
 
-header{
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: aqua;
-}
-.head-text{
-  background-color: blueviolet;
-    display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-}
-.title{
-  font-size: 2em;
-}
-
-.log-info{
-display: flex;
-justify-content: right;
-
-}
-
-
-}
-@media(min-width:768px){
-  header{
+  header {
     position: fixed;
-    top:6vh;
-    
-    
-    background-color: aqua;
+    top: 0;
+    right: 0;
+    height: 10vh;
+
+    background: #7c4dff;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #7c4dff 0%, #48c088 52%, #84f9bd 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #7c4dff 0%, #48c088 52%, #84f9bd 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #7c4dff 0%, #48c088 52%, #84f9bd 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#7c4dff', endColorstr='#84f9bd', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    background-size: 350% 350%;
+    animation: waveColors 15s ease infinite;
+    /* End Wave Color */
+
   }
 
-  .head-text{
-    background-color: blueviolet;
-    width: 100%;
-    height: 5vh;
-    display: flex;
-    justify-content: space-around;
-
+  /* Animation Wave Color */
+  @-webkit-keyframes waveColors {
+    0% {
+      background-position: 0% 7%;
     }
 
-    .title{
-      font-size: 2em;
+    50% {
+      background-position: 100% 94%;
     }
-    
-    .log-info{
+
+    100% {
+      background-position: 0% 7%;
+    }
+  }
+
+  @keyframes waveColors {
+    0% {
+      background-position: 0% 7%;
+    }
+
+    50% {
+      background-position: 100% 94%;
+    }
+
+    100% {
+      background-position: 0% 7%;
+    }
+
+    /* End Animation Wave Color */
+  }
+
+  .head-text {
     display: flex;
-    justify-content: left;
-    
-    
-    }
+    flex-direction: column;
+    align-items: end;
+  }
+  .head-title{
+    margin-right: 1rem;
+  }
+
+  .title {
+    font-size: 2em;
+    text-align: end;
+  }
+
+  .log-info {
+    text-align: end;
+
+  }
+
+
 }
-@media(min-width:992px){}
+
+@media(min-width:768px) {
+  header {
+    position: fixed;
+    top: 10vh;
+  }
+
+  .head-text {
+
+    width: 90vw;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .title {
+    font-size: 4em;
+  }
+
+  .log-info {
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+  }
+  .log-text{
+    font-size: 1.5em;
+  }
+}
+
+@media(min-width:992px) {
+
+  header {
+   
+    top: 15vh;
+  }
+
+  .log-text{
+    font-size: 2em;
+  }
+
+}
