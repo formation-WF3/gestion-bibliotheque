@@ -1,4 +1,5 @@
 .validation-buttons {
+   
     width: 70vw;
     height: 60vh;
     margin: auto;
@@ -18,6 +19,7 @@
     border: none;
     border-radius: 3vh;
     height: 3rem;
+    width: 10rem;
     background-color: var(--color-secondary-dark)
 }
 
@@ -32,4 +34,23 @@
 
     box-shadow: var(--shadowBoxin-2);
     transform: translateY(2px);
+}
+@media(min-width:768px){
+    .validation-btn {
+
+        height: 5rem;
+        width: 15rem;
+        font-size: 1.5em;
+
+    }
+
+}
+@media(min-width:992px){
+    .validation-btn {
+
+        height: 10rem;
+        width: 30rem;
+        font-size: 3em;
+
+    }
 }
