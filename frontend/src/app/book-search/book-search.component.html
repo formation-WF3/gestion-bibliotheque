@@ -5,50 +5,15 @@
 </div>
 <div *ngIf="isLoggedIn">
     <div class="upper-pannel">
-        <!-- <app-advanced-search></app-advanced-search> -->
-        <div class="input-zone">
+               <div class="input-zone">
             <form th:action="@{/}" class="search-form row ">
             <input type="text" class="search-input input-lg col-8 " placeholder="Recherche rapide (titre, auteur, genre)" #searchBox id="search-box"
                 (input)="search(searchBox.value)" th:value="${term}" name="term">
-        <!-- <button class="go-btn " type="submit" value="Search">GO</button> -->
+        <button class="go-btn " type="submit" value="Search">GO</button> 
             </form>
         </div>
     </div>
-    <!-- <div class="main-pannel row">
-        <div class="side-pannel card">
-            <div class="card-body">
-                <div class="card-header">
-                    <h2 class="card-title">Recherche par</h2>
-                </div>
-                <div class="searchBook-inputs">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item row">
-                            <div class="title-container">
-                            <p>Titre: </p></div>
-                            <div class="input-container">
-                                <input class="search-input" type="text" placeholder="insérez un titre">
-                            </div>
-                            <button class="go-btn">GO</button>
-                        </li>
-                        <li class="list-group-item row">
-                            <div class="title-container">
-                            <p>Auteur: </p></div>
-                            <div class="input-container">
-                                <input class="search-input" type="text" placeholder="insérez un auteur">
-                            </div><button class="go-btn">GO</button>
-                        </li>
-                        <li class="list-group-item row">
-                            <div class="title-container">
-                            <p>Genre: </p></div>
-                            <div class="input-container">
-                                <input class="search-input" type="text" placeholder="insérez un genre">
-                            </div><button class="go-btn">GO</button>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </div> -->
+    
         <div class="container">
             <div *ngIf="!books$ || false">
                 <p> Aucun resultat</p>
