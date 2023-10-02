@@ -83,7 +83,7 @@
 @media(min-width:768px) {
 
     .form-group {
-       
+       justify-content: space-evenly;
         margin-top: 1em;
         width: 70vh;
         height: 4em;
@@ -109,14 +109,16 @@
     }
 }
 
-@media(min-width:1900px) {
+@media(min-width:1000px) {
     .form-group {
 
         width: 95vh;
         height: 5rem;
 
     }
-  
+  .form-control{
+    width: 20vw;
+  }
 
     .input-text p {
         font-size: 1.8em;
