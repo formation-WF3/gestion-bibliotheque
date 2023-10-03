@@ -105,15 +105,7 @@ form {
     height: 50vh;
 }
 
-.upper-pannel {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    height: 20%;
-    margin: auto;
-    border: black 2px solid;
-    border-radius: 30px;
-}
+
 
 .main-pannel {
     height: 75%;

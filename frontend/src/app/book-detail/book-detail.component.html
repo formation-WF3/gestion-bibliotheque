@@ -22,6 +22,7 @@
           <label for="book-items">Book Items: </label>
           <input id="book-items" [(ngModel)]="book.totalItems" placeholder="Book items" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
         
+          <a routerLink="/loans/{{book.id}}">Emprunter</a>
           <div  *ngIf="isAdmin">
             <button type="button" (click)="save()" class="btn btn-outline-dark btn-sm m-1"> save</button>  
         </div>

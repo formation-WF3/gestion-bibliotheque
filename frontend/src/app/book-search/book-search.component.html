@@ -3,30 +3,19 @@
         <app-connect-frame></app-connect-frame>
     </div>
 </div>
-<div *ngIf="isLoggedIn">
-    <div class="upper-pannel">
-        <div class="input-zone">
-            <form th:action="@{/}" class="search-form row ">
-             
-                <input type="text" class="search-input col-10 "
-                    placeholder="Recherche rapide (titre, auteur, genre)" #searchBox id="search-box"
-                    (input)="search(searchBox.value)" th:value="${term}" name="term">
-                <button class="go-btn " type="submit" value="Search">GO</button>
 
-            </form>
-        </div>
+<div *ngIf="isLoggedIn" >
+    <div class="input-zone row">
+        <form th:action="@{/}" class="search-form col-12">
+            <input type="text" class="search-input" placeholder="Recherche rapide"
+                #searchBox id="search-box" (input)="search(searchBox.value)" th:value="${term}" name="term">
 
-
-    </div>
-    <div class="down-pannel">
-        <ul  class="search-result">
-            <li>Votre recherche</li>
-            <li *ngFor="let book of books$ | async">
-                
-                <a routerLink="/book-detail/{{book.id}}">
-                    {{book.title}} - {{book.author}}
-                </a>
-            </li>
-       </ul>
+                <div class="btn-container">
+            <button class="go-btn " type="submit" value="Search">GO</button></div> 
+        </form>
     </div>
 </div>
+    <div class="down-pannel">
+<app-book-search-results></app-book-search-results>
+        
+    </div>
