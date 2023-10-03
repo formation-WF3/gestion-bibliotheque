@@ -12,7 +12,6 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { HeaderComponent } from './header/header.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { MainBoardComponent } from './main-board/main-board.component';
-import { ValidationButtonsComponent } from './validation-buttons/validation-buttons.component';
 import { NavButtonsComponent } from './nav-buttons/nav-buttons.component';
 import { LoanTabComponent } from './loan-tab/loan-tab.component';
 import { PenaltyTabComponent } from './penalty-tab/penalty-tab.component';
@@ -36,7 +35,6 @@ import { ConnectFrameComponent } from './connect-frame/connect-frame.component';
     ProfileComponent,
     AdvancedSearchComponent,
     MainBoardComponent,
-    ValidationButtonsComponent,
     NavButtonsComponent,
     LoanTabComponent,
     PenaltyTabComponent,
