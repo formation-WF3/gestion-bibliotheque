@@ -48,11 +48,35 @@ public class LoanService {
     public LoanDto emprunt(LoanDto loanDto) {
         UserModel user = userRepository.findById(loanDto.getUser_id()).orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));
         BookModel book = bookRepository.findById(loanDto.getBook_id()).orElseThrow(() -> new EntityNotFoundException("Livre introuvable"));
-
+        if (book.getTotalItems() <= 0) {
+            throw new RuntimeException("Aucun exemplaire disponible pour ce livre");
+        }
         LoanModel loan = loanAdapter.toModel(loanDto, book, user);
         loan.setReturnDate(LocalDate.now().plusDays(14));
+        // Décrémenter le nombre d'exemplaires disponibles
+        book.setTotalItems(book.getTotalItems() - 1);
+        bookRepository.save(book);
         loan = loanRepository.save(loan);
 
+        return loanAdapter.toDto(loan);
+    }
+
+    public LoanDto retour(LoanDto loanDto) {
+        UserModel user = userRepository.findById(loanDto.getUser_id())
+                .orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));
+        BookModel book = bookRepository.findById(loanDto.getBook_id())
+                .orElseThrow(() -> new EntityNotFoundException("Livre introuvable"));
+    
+        LoanModel loan = loanAdapter.toModel(loanDto, book, user);
+    
+        // Incrémenter le nombre d'exemplaires disponibles
+        book.setTotalItems(book.getTotalItems() + 1);
+        bookRepository.save(book);
+    
+        // Mettre à jour la date de retour dans l'emprunt
+        loan.setReturnDate(LocalDate.now());
+        loanRepository.save(loan);
+    
         return loanAdapter.toDto(loan);
     }
 

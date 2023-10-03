@@ -21,19 +21,22 @@ export class LoanTabComponent {
   currentUser: any;
   message: string = '';
   messageError: string = '';
+  messageItemsError: string = '';
+  totalItems!: number;
   
   constructor(
     private http: HttpClient,
     private bookService: BookService,
     private route: ActivatedRoute,
     private storageService: StorageService,
-    private location: Location
+    private location: Location,
 )
    {}
 
    ngOnInit(): void {
     this.getBook();
     this.currentUser = this.storageService.getUser();
+    this.Items();
   }
 
   getBook():void {
@@ -60,7 +63,7 @@ export class LoanTabComponent {
     (response) => {
       // console.log('Emprunt enregistré avec succès :', response);
       this.message = 'Emprunt enregistré avec succès :';
-      this.reloadPage();
+      // this.reloadPage();
     },
     (error) => {
       // console.error('Erreur lors de l\'enregistrement de l\'emprunt :', error);
@@ -70,6 +73,20 @@ export class LoanTabComponent {
   
 }
 
+ Items() {
+  const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+    this.bookService.getAllItemsByBook().subscribe(
+      (total) => {
+        this.totalItems = total;
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération du total d\'exemplaires disponibles', error);
+        this.messageItemsError = 'Plus d\'exemplaire disponible';
+        
+      }
+    );
+  }
+  
 reloadPage(): void {
   window.location.replace("/main-board");
 }

@@ -33,7 +33,7 @@
                 </div>
                 <div *ngIf="isLoggedIn" class="col-3">
                     <p>Bienvenue  {{ currentUser.firstname }} {{ currentUser.lastname }}</p>
-                    <a href class="nav-link btn btn-danger" (click)="logout()" type="button" >Deconnexion</a>
+                    <a href class="nav-link btn btn-outline-danger btn-sm" (click)="logout()" type="button" >Logout</a>
                 </div>
             </div>
         </div>

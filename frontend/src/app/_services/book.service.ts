@@ -43,6 +43,11 @@ getAll(): Observable<any[]>{
     return this.http.get<Book[]>(API_URL + 'books/list')
   }
 
+getAllItemsByBook(): Observable<number>{
+    return this.http.get<number>(API_URL + 'books/totalitems')
+}
+
+
 getById(id: number): Observable<Book> {
     const url = `${API_URL}books/id/${id}`;
     // équivalent  const url = (API_URL + 'books/' + id);

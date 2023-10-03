@@ -43,12 +43,12 @@ export class LoanService {
 //   }
 
 //Trouver les emprunts pour un user specifique 
-getLoanByUser(): Observable<Loan[]>{
-  const token = this.storageService.getToken();
-  const account = this.storageService.getUser();
-  const headers = new HttpHeaders().set('Authorization',`Bearer ${account.accessToken}`);
-return this.http.get<Loan[]>(API_URL + 'loans/my-loans', { headers:headers});
-}
+  getLoanByUser(): Observable<Loan[]>{
+    const token = this.storageService.getToken();
+    const account = this.storageService.getUser();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${account.accessToken}`);
+  return this.http.get<Loan[]>(API_URL + 'loans/my-loans', { headers:headers});
+  }
 
 
 }

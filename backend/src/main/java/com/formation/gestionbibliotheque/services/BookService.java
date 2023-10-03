@@ -1,13 +1,20 @@
 package com.formation.gestionbibliotheque.services;
 
 import com.formation.gestionbibliotheque.dtos.BookDto;
+import com.formation.gestionbibliotheque.dtos.LoanDto;
 import com.formation.gestionbibliotheque.models.BookModel;
 import com.formation.gestionbibliotheque.models.CategoryModel;
+import com.formation.gestionbibliotheque.models.LoanModel;
+import com.formation.gestionbibliotheque.models.UserModel;
 import com.formation.gestionbibliotheque.repositories.BookRepository;
 import com.formation.gestionbibliotheque.repositories.CategoryRepository;
 import com.formation.gestionbibliotheque.services.adapters.BookAdapter;
+
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,4 +99,12 @@ public class BookService {
         }
         return bookRepository.findAll();
     }
+   
+    public int calculateTotalItems(Long id) {
+        BookDto bookModel = bookRepository.findById(id)
+                .map(bookAdapter::toDto)
+                .orElseThrow(() -> new RuntimeException("Livre non trouvé !"));
+        return bookModel.getRemainingItems();
+    }
+
 }

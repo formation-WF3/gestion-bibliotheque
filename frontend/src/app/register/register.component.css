@@ -2,15 +2,12 @@
 
     margin-top: 10px;
     width: 95%;
-    display: flex;
-    justify-content: space-between;
-    font-size: larger;
 
 }
 
 .form-control {
-    min-height: 45px;
-    max-height: 45px;
+    min-height: 50px;
+    max-height: 50px;
     align-self: center;
     box-shadow: var(--shadowBoxin-2);
     border-radius: 20px;
@@ -23,7 +20,7 @@
     display: flex;
 }
 
-.inputs {
+/* .inputs {
     display: flex;
     justify-content: space-evenly;
     padding-right: 0px;
@@ -32,18 +29,18 @@
 .input-container {
     display: flex;
     flex-direction: column;
-}
+} */
 
-.mail-field {
+/* .mail-field {
     /*Test
-   background-color: red;*/
+   background-color: red;
     min-width: 100%;
     
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-}
+} */
 
 .password-field {
     /*Test
