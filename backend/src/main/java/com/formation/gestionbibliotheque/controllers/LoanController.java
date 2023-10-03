@@ -2,7 +2,6 @@ package com.formation.gestionbibliotheque.controllers;
 
 import com.formation.gestionbibliotheque.dtos.LoanDto;
 import com.formation.gestionbibliotheque.services.LoanService;
-import com.formation.gestionbibliotheque.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

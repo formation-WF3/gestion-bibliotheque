@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { LoanService } from '../_services/loan.service';
 import { Book } from '../models/book';
 import { BookService } from '../_services/book.service';
 import { ActivatedRoute } from '@angular/router';
 import { StorageService } from '../_services/storage.service';
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
-import { Loan } from '../models/Loan';
 
 
 const API_URL = "http://localhost:8080/api/";
@@ -27,7 +24,6 @@ export class LoanTabComponent {
   
   constructor(
     private http: HttpClient,
-    // private loanService: LoanService,
     private bookService: BookService,
     private route: ActivatedRoute,
     private storageService: StorageService,

@@ -16,6 +16,7 @@ const API_URL = "http://localhost:8080/api/";
 export class BookDetailComponent {
   book: Book | undefined;
   currentUser: any;
+  currentUserID: number;
   message: string = '';
   messageError: string = '';
   constructor(
@@ -25,7 +26,7 @@ export class BookDetailComponent {
     private location: Location,
     private storageService: StorageService
     
-  ) {}
+  ) {this.currentUserID = this.bookService.getCurrentUserID();}
 
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
@@ -48,32 +49,32 @@ export class BookDetailComponent {
         .subscribe(() => this.goBack());
     }
   }
-    enregistrerEmprunt() {
-      const url = `${API_URL}loans/create`;
-      const empruntData = {
+  //   enregistrerEmprunt() {
+  //     const url = `${API_URL}loans/create`;
+  //     const empruntData = {
 
-        user_id: this.currentUser.id,
-        book_id: this.book?.id
+  //       user_id: this.currentUser.id,
+  //       book_id: this.book?.id
 
-    };
-    this.http.post(url, empruntData).subscribe(
+  //   };
+  //   this.http.post(url, empruntData).subscribe(
     
-      (response) => {
-        // console.log('Emprunt enregistré avec succès :', response);
-        this.message = 'Emprunt enregistré avec succès :';
-        this.reloadPage();
-      },
-      (error) => {
-        // console.error('Erreur lors de l\'enregistrement de l\'emprunt :', error);
-        this.messageError = 'Erreur lors de l\'enregistrement de l\'emprunt  :';
-      }
-    );
+  //     (response) => {
+  //       console.log('Emprunt enregistré avec succès :', response);
+  //       // this.message = 'Emprunt enregistré avec succès :';
+  //       // this.reloadPage();
+  //     },
+  //     (error) => {
+  //       console.error('Erreur lors de l\'enregistrement de l\'emprunt :', error);
+  //       // this.messageError = 'Erreur lors de l\'enregistrement de l\'emprunt  :';
+  //     }
+  //   );
   
-  }
+  // }
 
-  reloadPage(): void {
-    window.location.replace("/main-board");
-  }
+  // reloadPage(): void {
+  //   window.location.replace("/main-board");
+  // }
 
   get isAdmin(): boolean {
     const userRole = this.storageService.hasRole("ROLE_ADMIN");

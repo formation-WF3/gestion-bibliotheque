@@ -1,19 +1,25 @@
-
-  <div *ngIf="!isLoggedIn" class="p-5 bg-light mb-4">
-    <nav class="d-flex">
-        <a [routerLink]="['/login']" id="login_link" class="text-reset p-1">Login page</a>
-          <span> / </span>
-        <a [routerLink]="['/register']" id="register_link" class="text-reset p-1">Register page</a>
-  </nav>
+<div class="container text-center">
+  <div class="row">
+    <div *ngIf="!isLoggedIn" class="p-5 bg-light mb-4">
+      <nav class="d-flex">
+          <a [routerLink]="['/login']" id="login_link" class="text-reset p-1">Login page</a>
+            <span> / </span>
+          <a [routerLink]="['/register']" id="register_link" class="text-reset p-1">Register page</a>
+      </nav>
+    </div>
+  </div>
 </div>
-  <div *ngIf="isLoggedIn">
-    <nav class="d-flex">
-        <a [routerLink]="['/book-search']" id="bookSearch_link" class="text-reset p-1">Rechercher un livre</a>
-        <span class="p-1"> / </span>
-        <a [routerLink]="['/main-board']" id="board_link" class="text-reset p-1">Page profil</a>
-        <span class="p-1"> / </span>
-        <a [routerLink]="['/books']" id="bookList_link" class="text-reset p-1">Liste des livres </a>
-    </nav>
- 
+<div class="container text-center">
+  <div class="row">
+    <div *ngIf="isLoggedIn">
+      <nav class="d-flex">
+          <a [routerLink]="['/book-search']" id="bookSearch_link" class="text-reset p-1">Rechercher un livre</a>
+          <span class="p-1"> / </span>
+          <a [routerLink]="['/main-board']" id="board_link" class="text-reset p-1">Page profil</a>
+          <span class="p-1"> / </span>
+          <a [routerLink]="['/books']" id="bookList_link" class="text-reset p-1">Liste des livres </a>
+      </nav>
+    </div>
   <!-- <div class="col-md-2 p-5"> <a href class="nav-link btn btn-danger" (click)="logout()" type="button">Deconnexion</a></div>-->
-</div> 
+  </div> 
+</div>

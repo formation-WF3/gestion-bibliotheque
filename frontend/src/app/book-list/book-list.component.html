@@ -1,7 +1,7 @@
 <div class="main-pannel container">
   <div class="row">
     <div class="col-md-12">
-      <table class="booklist table">
+      <table class="booklist table" >
           <thead class="thead-light">
             <tr>
               <th colspan="4" class="bookList-title" scope="col">Liste des Livres</th>
@@ -18,7 +18,7 @@
               <td class="bookList-details"><a routerLink="/book-detail/{{book.id}}">{{book.title}}</a></td>
               <td class="bookList-details">{{book.author}}</td>
               <td class="bookList-details"><span class="badge badge-primary ">{{ book.totalItems }}</span></td>
-              <td class="bookList-details"><a routerLink="/loans/{{book.id}}">Emprunter</a></td>
+              <td class="bookList-details"><a routerLink="/loans/{{book.id}}" class="btn btn-outline-dark">Emprunter</a></td>
             </tr>
           </tbody>
         </table>

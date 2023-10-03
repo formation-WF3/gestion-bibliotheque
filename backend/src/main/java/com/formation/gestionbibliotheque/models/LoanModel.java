@@ -3,9 +3,6 @@ package com.formation.gestionbibliotheque.models;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
-
-import java.sql.Date;
-import java.time.Instant;
 import java.time.LocalDate;
 
 @NoArgsConstructor

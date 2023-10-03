@@ -4,7 +4,6 @@ import com.formation.gestionbibliotheque.dtos.LoanDto;
 import com.formation.gestionbibliotheque.models.BookModel;
 import com.formation.gestionbibliotheque.models.LoanModel;
 import com.formation.gestionbibliotheque.models.UserModel;
-import com.formation.gestionbibliotheque.payload.request.LoanRequest;
 import com.formation.gestionbibliotheque.repositories.BookRepository;
 import com.formation.gestionbibliotheque.repositories.LoanRepository;
 import com.formation.gestionbibliotheque.repositories.UserRepository;
@@ -18,9 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
@@ -58,6 +55,7 @@ public class LoanService {
 
         return loanAdapter.toDto(loan);
     }
+
     public LoanDto add(LoanDto loanDto) {
         Long book_id = loanDto.getBook_id();
         Long user_id = loanDto.getUser_id();
