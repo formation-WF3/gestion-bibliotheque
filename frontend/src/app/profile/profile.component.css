@@ -1,9 +1,8 @@
-#profile_container{
+#profile_container {
     width: auto;
     height: 90%;
     margin-right: auto;
     margin-left: auto;
-   
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -12,41 +11,41 @@
 
 .user-container,
 .role-container,
-.mail-container{
+.mail-container {
     display: flex;
     justify-content: space-between;
-    
+
 }
 
 
-.line{
-   
-    display:flex;
+.line {
+
+    display: flex;
 
 }
 
 .line1,
-.line2
-{display:flex;
+.line2 {
+    display: flex;
     flex-direction: column;
     justify-content: center;
-     height: 100%;
+    height: 100%;
 }
 
-.line2{
+.line2 {
 
-font-size: x-large;
+    font-size: x-large;
 
 
 }
 
 
-.profile-button{
+.profile-button {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-   /* border: none;*/
+    /* border: none;*/
     border-radius: 20px;
     height: 50px;
     background-color: var(--color-secondary-dark);
@@ -68,5 +67,3 @@ font-size: x-large;
     box-shadow: var(--shadowBoxin-2);
     transform: translateY(2px);
 }
-
-

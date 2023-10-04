@@ -1,16 +1,48 @@
-#navButton_container{
+.validation-buttons{
+
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+   padding: 0;
+   
+   
+
+}
+.validation-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+     
+}
+
+.validation-btn {
    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 95%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-
+    align-items: center;
+    border: none;
+    border-radius: 3vh;
+    height: 3rem;
+    background-color: var(--color-secondary-dark);
+    font-size: 0.6em;
 }
 
-button{
+.validation-btn:hover {
+    background: var(--color-button);
+    border: none;
+    color: black;
+    font-weight: 200;
+}
+
+.validation-btn:active {
+
+    box-shadow: var(--shadowBoxin-2);
+    transform: translateY(2px);
+}
+
+
+/* button{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -32,5 +64,12 @@ button:hover{
 }
 button:focus{
 
-    transform: translateY(2px);
+    transform: translateY(2px); 
+}*/
+@media(min-width:768px){
+
+}
+
+@media(min-width:992px){
+
 }
