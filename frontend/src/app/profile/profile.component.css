@@ -33,6 +33,10 @@
     .line2 {
         font-size:1.5em;
     }
+    .profile-container{
+        height: 58vh;
+    }
+    .profile-container,
     .user-container,
 .lastname-container,
 .firstname-container,
