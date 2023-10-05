@@ -1,32 +1,54 @@
-<div class="container justify-content-center">
-  <div class="row">
+<div class="detail-pannel ">
+  <div class="row" *ngIf="!isAdmin">
     <div *ngIf="book" class="col-md-12">
-      <button type="button" (click)="goBack()"  class="btn btn-info btn-sm m-1">go back </button>
-        <h1 class="text-center">Details du livre </h1>
-        <div *ngIf="message" class="alert alert-success">{{message}}</div>
-        <div *ngIf="messageError" class="alert alert-danger">{{message}}</div>
-        <span class="input-group-text" id="inputGroup-sizing-default">id: {{book.id}}</span>
-        
-          <label for="book-title"> Book Title: </label>
-          <input id="book-title" [(ngModel)]=" book.title" placeholder="Book title" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
-        
-          <label for="book-author"> Book Author: </label>
-          <input id="book-author" [(ngModel)]=" book.author" placeholder="Book author" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
-        
-          <label for="total_items"> total items: </label>
-          <input id="total_items" [(ngModel)]=" book.totalItems" placeholder="total items" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
-        
-          <label for="book-author">Book Author: </label>
-          <input id="book-author" [(ngModel)]="book.author" placeholder="Book author" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
-        
-          <label for="book-items">Book Items: </label>
-          <input id="book-items" [(ngModel)]="book.totalItems" placeholder="Book items" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
-        
-          <a routerLink="/loans/{{book.id}}">Emprunter</a>
-          <div  *ngIf="isAdmin">
-            <button type="button" (click)="save()" class="btn btn-outline-dark btn-sm m-1"> save</button>  
+      <div *ngIf="message" class="alert alert-success">{{message}}</div>
+      <div *ngIf="messageError" class="alert alert-danger">{{message}}</div>
+      <div class="card col-12">
+        <div class="card-body">
+          <p class="card-title">{{book.title}}</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item item-title"> Auteur : </li>
+            <li class="list-group-item">{{book.author}}</li>
+            <li class="list-group-item item-title">Genre : </li>
+            <li class="list-group-item">tba</li>
+            <li class="list-group-item item-title">Disponible: </li>           
+            <li class="list-group-item">tba</li>
+          </ul>
+          <div class="card-footer ">
+            <button type="button" (click)="goBack()" class="btn btn-info col-12 m-1">go back </button>
+            <button class="btn btn-info col-12 m-1"><a routerLink="/loans/{{book.id}}"></a>Emprunter</button>
+          </div>
         </div>
-          <!-- <a (click)="enregistrerEmprunt()" class="btn btn-outline-success btn-sm m-1" type="button"> Emprunter </a>   -->
+
+      </div>
+
+
+
+
+
+      <div *ngIf="isAdmin">
+        <label for="book-title"> Book Title: </label>
+        <input id="book-title" [(ngModel)]=" book.title" placeholder="Book title" type="text" class="form-control"
+          aria-label="Default" aria-describedby="inputGroup-sizing-default" />
+
+        <label for="book-author"> Book Author: </label>
+        <input id="book-author" [(ngModel)]=" book.author" placeholder="Book author" type="text" class="form-control"
+          aria-label="Default" aria-describedby="inputGroup-sizing-default" />
+
+        <label for="total_items"> total items: </label>
+        <input id="total_items" [(ngModel)]=" book.totalItems" placeholder="total items" type="text"
+          class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" />
+
+        <label for="book-author">Book Author: </label>
+        <input id="book-author" [(ngModel)]="book.author" placeholder="Book author" type="text" class="form-control"
+          aria-label="Default" aria-describedby="inputGroup-sizing-default" />
+
+        <label for="book-items">Book Items: </label>
+        <input id="book-items" [(ngModel)]="book.totalItems" placeholder="Book items" type="text" class="form-control"
+          aria-label="Default" aria-describedby="inputGroup-sizing-default" />
+        <button type="button" (click)="save()" class="btn btn-outline-dark btn-sm m-1"> save</button>
+      </div>
+      <!-- <a (click)="enregistrerEmprunt()" class="btn btn-outline-success btn-sm m-1" type="button"> Emprunter </a>   -->
     </div>
   </div>
 </div>
