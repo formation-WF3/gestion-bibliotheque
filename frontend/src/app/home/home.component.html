@@ -1,11 +1,12 @@
-<div class="container text-center">
+<div class="container">
   <div class="row">
-    <div *ngIf="!isLoggedIn" class="p-5 bg-light mb-4">
-      <nav class="d-flex">
-          <a [routerLink]="['/login']" id="login_link" class="text-reset p-1">Login page</a>
-            <span> / </span>
-          <a [routerLink]="['/register']" id="register_link" class="text-reset p-1">Register page</a>
-      </nav>
+    <div *ngIf="!isLoggedIn">
+      <h1>Veuillez vous connecter</h1>
+      <div class="col-md-4 m-auto p-5">
+          <p><button class="login-button" [routerLink]="['/login']" id="login_link">Login</button></p>
+            
+          <p><button  class="register-button"  [routerLink]="['/register']" id="register_link">Register</button></p>
+      </div>
     </div>
   </div>
 </div>

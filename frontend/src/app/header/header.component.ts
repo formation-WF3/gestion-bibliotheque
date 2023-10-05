@@ -15,6 +15,8 @@ export class HeaderComponent {
   username?: string;
   currentUser: any;
   private roles: string[] = [];
+  public isCollapsed = true;
+
   constructor(private storageService: StorageService, private authService: AuthService,private userService: UserService) { }
 
   ngOnInit(): void {

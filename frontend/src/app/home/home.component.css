@@ -1,1 +1,42 @@
-/*navbar*/
+button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+/* Styliser le conteneur */
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* Styliser le bouton de connexion */
+.login-button {
+    text-decoration: none;
+    background-color: var(--color-secondary-dark); /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    font-size: 24px; /* Taille de la police */
+    padding: 20px 53px; /* Rembourrage (padding) du bouton */
+    border-radius: 10px; /* Coins arrondis */
+    cursor: pointer; /* Curseur au survol */
+    border: none; /* Pas de bordure */
+    transition: background-color 0.3s ease; /* Transition en douceur */
+}
+
+/* Styliser le bouton d'inscription */
+.register-button {
+    text-decoration: none;
+    background-color: var(--color-secondary-dark);
+    color: #fff;
+    font-size: 24px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet de survol */
+.login-button:hover, .register-button:hover {
+    background-color: var(--color-button); /* Nouvelle couleur de fond au survol */
+}

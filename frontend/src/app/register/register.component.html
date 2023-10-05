@@ -1,7 +1,6 @@
 <div class="container p-1">
     <div class="row">
       <div class="col-md-4 m-auto">
-      <button type="button" (click)="goBack()"   class="btn btn-outline-info btn-sm m-1 col-lg-4 col-md-3 col-sm-3">RETOUR </button>
       <h1 class="h1 text-center">Register</h1>
         <form 
         *ngIf="!isSuccessful" 
@@ -10,7 +9,7 @@
         #f="ngForm" novalidate  
         >
             <div class="form-group">
-              <label for="username">
+              <label for="username" class="m-1">
                 Identifiant
               </label>
               <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3"
@@ -23,7 +22,7 @@
             </div>
 
             <div class="form-group">
-              <label for="lastname">
+              <label for="lastname" class="m-1">
                 Nom
               </label>
               <input type="text" class=" form-control" name="lastname" [(ngModel)]="form.lastname" required minlength="3"
@@ -36,7 +35,7 @@
             </div>
 
             <div class="form-group">
-              <label for="firstname">
+              <label for="firstname" class="m-1">
                 Prénom
               </label>
               <input type="text" class=" form-control" name="firstname" [(ngModel)]="form.firstname" required
@@ -51,7 +50,7 @@
 
             <div class="form-group">
               <div class="input-container mail-field">
-                <label for="email">
+                <label for="email" class="m-1">
                   Email
                 </label>
                 <input type="email" class="col-1 form-control" name="email" [(ngModel)]="form.email" required email
@@ -64,7 +63,7 @@
             </div>
 
             <div class="form-group">
-              <label for="password">
+              <label for="password" class="m-1">
                 Mot de passe
               </label>
               <input type="password" class=" form-control" name="password" [(ngModel)]="form.password" required
@@ -77,7 +76,7 @@
               </div>
             </div>
             <div class="form-group ">
-              <label for="confirm">
+              <label for="confirm" class="m-1">
                 Confirmez mot de passe
               </label>
               <input type="password" class="form-control" name="confirmPassword" [(ngModel)]="form.confirmPassword" required
@@ -87,6 +86,11 @@
           <div class="validation-buttons col-12 ">
             <button type="submit" class="validation-btn col-lg-3 col-md-3 col-sm-3  ">Valider</button>
             <button type="button" (click)="onReset(f)" class="validation-btn col-lg-3 col-md-3 col-sm-3 ">Annuler </button>
+          </div>
+          <div class="subscribe-text">
+            <p>Vous avez un compte:
+              <a [routerLink]="['/login']" id="login_link">Login</a>
+            </p>
           </div>
         </form>
     </div>

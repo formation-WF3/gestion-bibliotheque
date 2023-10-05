@@ -36,7 +36,7 @@ export class LoanTabComponent {
    ngOnInit(): void {
     this.getBook();
     this.currentUser = this.storageService.getUser();
-    this.Items();
+    // this.Items();
   }
 
   getBook():void {
@@ -73,19 +73,19 @@ export class LoanTabComponent {
   
 }
 
- Items() {
-  const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
-    this.bookService.getAllItemsByBook().subscribe(
-      (total) => {
-        this.totalItems = total;
-      },
-      (error) => {
-        console.error('Erreur lors de la récupération du total d\'exemplaires disponibles', error);
-        this.messageItemsError = 'Plus d\'exemplaire disponible';
+//  Items() {
+//   // const totalItems = this.getBook.book.totalItems;
+//     this.bookService.getAllItemsByBook().subscribe(
+//       (total) => {
+//         this.totalItems = total;
+//       },
+//       (error) => {
+//         console.error('Erreur lors de la récupération du total d\'exemplaires disponibles', error);
+//         this.messageItemsError = 'Plus d\'exemplaire disponible';
         
-      }
-    );
-  }
+//       }
+//     );
+//   }
   
 reloadPage(): void {
   window.location.replace("/main-board");
