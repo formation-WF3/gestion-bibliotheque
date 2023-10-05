@@ -15,8 +15,17 @@
         </form>
     </div>
         <div class="down-pannel">
-<app-book-search-results></app-book-search-results>
-        
+            <div *ngIf="!books$">
+                <p> Aucun resultat</p>
+            </div>
+            <p>book-search-results works!</p>
+            <ul class="search-result">
+                <li *ngFor="let book of books$ | async" >
+                  <a routerLink="/book-detail/{{book.id}}">
+                    {{book.title}} - {{book.author}}
+                  </a>
+                </li>
+            </ul>
     </div>
 </div>
 
