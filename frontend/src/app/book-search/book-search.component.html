@@ -8,7 +8,7 @@
     <div class="input-zone row">
         <form th:action="@{/}" class="search-form col-12">
             <input type="text" class="search-input" placeholder="Recherche rapide"
-                #searchBox id="search-box" (input)="search(searchBox.value)" th:value="${term}" name="term">
+                #searchBox id="search-box" (input)="search(searchBox.value)" >
 
                 <div class="btn-container">
             <button class="go-btn " type="submit" value="Search">GO</button></div> 
@@ -20,7 +20,7 @@
             </div>
             <p>book-search-results works!</p>
             <ul class="search-result">
-                <li *ngFor="let book of books$ | async" >
+                <li *ngFor="let book of books$ |async" >
                   <a routerLink="/book-detail/{{book.id}}">
                     {{book.title}} - {{book.author}}
                   </a>

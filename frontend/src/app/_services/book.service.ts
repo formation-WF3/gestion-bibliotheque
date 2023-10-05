@@ -1,14 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { MessageService } from './MessageService';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
+import { MessageService } from './MessageService';
 // import { Book } from '../models/book';
-import { StorageService } from './storage.service';
-import { identifierName } from '@angular/compiler';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from '../models/book';
+import { StorageService } from './storage.service';
 
 
 const API_URL = "http://localhost:8080/api/";
@@ -56,7 +55,7 @@ getByTitle(title: string): Observable<any>{
     return this.http.get<Book>(`${API_URL}books/title/${title}`);
 }
   
-searchbooks(term: string): Observable<Book[]> {
+searchBook(term: string): Observable<Book[]> {
   if (!term.trim()) {
       // if not search term, return empty book array.
     return of([]);

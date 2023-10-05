@@ -31,7 +31,7 @@ export class BookSearchResultsComponent {
         distinctUntilChanged(),
   
         // switch to new search observable each time the term changes
-        switchMap((term: string) => this.bookService.searchbooks(term)),
+        switchMap((term: string) => this.bookService.searchBook(term)),
         );
     }
   }
