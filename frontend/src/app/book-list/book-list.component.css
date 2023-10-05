@@ -1,47 +1,80 @@
-.main-pannel{
+.list-pannel{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 13vh;
+  left:20vw;
+  height: 85vh;
+  width: 78vw;
 
 overflow: hidden;
 
 }
 .bookList{
-
-  width: 90%;
-  height: 90%;
-  margin: auto;
+ 
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-width: none;
+  scrollbar-width: none; 
+}
+
+.bookList-title{
+  font-size: 1.5em;
+}
+.theader{
+  background-color: var(--color-secondary);
+}
+.bookList-details{
+list-style-type: none;
+font-size: 1em;
 }
 
 ::-webkit-scrollbar{
   display: none;
 }
 
-.bookList-container{
 
- 
-  
-}
-.bookList-title{
-
-  font-size: 3rem;
-  text-align: center;
-  
-}
-.bookList-details{
-
-list-style-type: none;
-font-size: 1rem;
-
-}
 a{
-  color:blueviolet;
+  color: black;
   text-decoration: none;
 }
 a:hover{
   color: var(--color-button);
 }
-a:active{
-  box-shadow: var(--shadowBoxin);
-  transform: translateY(2px);
+
+
+@media(min-width:800px) {
+    
+  .to-center {
+    margin-top: 5vh;
+    
+}
+.list-pannel {
+    top: 20vh;
+    width:92vw;
+    left:4vw;
+    height: 90vh;
+
+}
+.bookList-title{
+  font-size: 2rem;
+}
+}
+.bookList-details{
+  list-style-type: none;
+  font-size: 1.5rem;
+  }
+
+  .bookList-details a{
+    list-style-type: none;
+    font-size: 1.5rem;
+    } 
+@media(min-width:992px){
+
+  
+.list-pannel {
+  top: 28vh;
+  left:4vw;
+  height: 70vh;
+
+}
 }
