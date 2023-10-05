@@ -4,28 +4,29 @@
     </div>
 </div>
 
-<div *ngIf="isLoggedIn" >
+<div *ngIf="isLoggedIn">
     <div class="input-zone row">
         <form th:action="@{/}" class="search-form col-12">
-            <input type="text" class="search-input" placeholder="Recherche rapide"
-                #searchBox id="search-box" (input)="search(searchBox.value)" >
+            <input type="text" class="search-input" placeholder="Recherche rapide" #searchBox id="search-box"
+                (input)="search(searchBox.value)">
 
-                <div class="btn-container">
-            <button class="go-btn " type="submit" value="Search">GO</button></div> 
+            <div class="btn-container">
+                <button class="go-btn " type="submit" value="Search">GO</button>
+            </div>
         </form>
     </div>
-        <div class="down-pannel">
-            <div *ngIf="!books$">
-                <p> Aucun resultat</p>
-            </div>
-            <p>book-search-results works!</p>
+    <div class="down-pannel">
+        <div class="down-pannel-1">
+            <h2>Résultat de la recherche</h2>
+        </div>
+        <div class="down-pannel-2">
             <ul class="search-result">
-                <li *ngFor="let book of books$ |async" >
-                  <a routerLink="/book-detail/{{book.id}}">
-                    {{book.title}} - {{book.author}}
-                  </a>
+                <li *ngFor="let book of books$ |async">
+                    <a routerLink="/book-detail/{{book.id}}">
+                        {{book.title}} - {{book.author}}
+                    </a>
                 </li>
             </ul>
+        </div>
     </div>
 </div>
-

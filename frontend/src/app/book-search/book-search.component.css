@@ -4,10 +4,8 @@
 }
 
 .input-zone {
-  background-color: yellowgreen;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   position: fixed;
   top: 13.4vh;
   left: 22vw;
@@ -17,7 +15,6 @@
 }
 
 .search-form {
-  background-color: aquamarine;
   margin-left: 0;
   display: flex;
   flex-direction: row;
@@ -27,18 +24,16 @@
 .search-input {
   width: 80%;
   height: 2em;
-  border-radius: 30px;
+  padding: 0.5em;
+  border-radius: 15px;
+  font-size: 1.2em;
 }
 
-::placeholder {
-  padding: 1rem;
-  font-size: 0.8em;
-}
+
 
 .btn-container {
   width: 20%;
 
-  background-color: brown;
 }
 
 .go-btn {
@@ -72,30 +67,43 @@
 }
 
 
-.down-pannel{
-  background-color: violet;
+.down-pannel {
+
+
+  display: flex;
+  flex-direction: column;
   height: 75vh;
+
 }
+
+.down-pannel-1 {
+
+  margin-top: 1em;
+  text-align: center;
+}
+
+.down-pannel-2 {
+  height: 60vh;
+  margin-top: 1em;
+}
+
 /* list result search*/
 li {
   list-style-type: none;
 }
 
 .search-result li a {
-  border-bottom: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+
   display: inline-block;
   width: 100%;
-  max-width: 600px;
-  padding: .5rem;
-  box-sizing: border-box;
+  padding: .5em;
   text-decoration: none;
   color: black;
+  border-bottom: var(--border-secondary-light);
 }
 
 .search-result li a:hover {
-  background-color: #435A60;
+  background-color: var(--color-button);
   color: white;
 }
 
@@ -104,16 +112,39 @@ li {
   .to-center {
     margin-top: 10vh;
   }
+
   .input-zone {
-
     top: 17vh;
-    left: 10vw;
+    left: 2vw;
     height: 10vh;
-    width: 80vw;
-  
-  }
-  .down-pannel{
+    width: 99vw;
+    
 
+  }
+
+  .search-input {
+
+    height: 2.5em;
+    padding: 1em;
+    border-radius: 20px;
+    font-size: 1.5em;
+  }
+
+  .btn-container {
+    width: 20%;
+
+  }
+
+  .go-btn {
+
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.2rem;
+
+  }
+
+
+  .down-pannel {
     height: 70vh;
   }
 
@@ -123,17 +154,35 @@ li {
   .to-center {
     margin-top: 5vh;
   }
+
   .input-zone {
 
     top: 27vh;
-    left: 10vw;
+    left: 5vw;
     height: 10vh;
-    width: 80vw;
-  
+    width: 90vw;
+
   }
-  .down-pannel{
-    position: relative;
-    top: 3vw;
-    height:60vh;
+
+  .search-input {
+    height: 3em;
+    padding: 1em;
+    font-size: 1.8em;
+    border-radius: 30px;
+  }
+  .down-pannel {
+    position: fixed;
+    top: 39vh;
+    height: 60vh;
+    left: 2vw;
+    width: 96vw;
+  }
+
+
+  .go-btn {
+    width: 5.5rem;
+    height: 5.5rem;
+    font-size: 2rem;
+
   }
 }

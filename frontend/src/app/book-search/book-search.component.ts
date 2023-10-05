@@ -14,6 +14,7 @@ export class BookSearchComponent {
   books$!: Observable<Book[]>;
   private searchTerms = new Subject<string>();
 
+
   isLoggedIn = false;
   constructor(private bookService: BookService, private http: HttpClient, private storageService: StorageService) {}
 
@@ -35,5 +36,4 @@ export class BookSearchComponent {
         );
     }
   }
-
 }
