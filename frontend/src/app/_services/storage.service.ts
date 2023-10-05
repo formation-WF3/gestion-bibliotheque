@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import jwt_decode from "jwt-decode";
+import jwt_decode from 'jwt-decode';
 
 const USER_KEY = 'auth-user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StorageService {
+  userRole: string[] = ['ROLE_USER', 'ROLE_ADMIN'];
 
-  userRole: string[] = ["ROLE_USER", "ROLE_ADMIN"];
-
-  getUserInfo(role: string) : boolean {
+  getUserInfo(role: string): boolean {
     return this.userRole.includes(role);
   }
   constructor() {}
@@ -22,7 +21,6 @@ export class StorageService {
   public saveUser(user: any): void {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
-    
   }
 
   public getUser(): any {
@@ -43,17 +41,16 @@ export class StorageService {
   }
 
   public getToken(): string | null {
-
-    return localStorage.getItem("accessToken");
-
+    return localStorage.getItem('accessToken');
   }
 
-    hasRole(role: string): boolean {
-      const userRole = this.getUser();
-      if (!userRole){
-        console.log("No token"); return false;
-      } 
-      
-      return userRole.roles.includes(role);
+public  hasRole(role: string): boolean {
+    const userRole = this.getUser();
+    if (!userRole) {
+      console.log('No token');
+      return false;
+    }
+
+    return userRole.roles.includes(role);
   }
 }

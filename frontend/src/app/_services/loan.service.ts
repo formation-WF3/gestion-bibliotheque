@@ -10,8 +10,7 @@ import { Observable } from 'rxjs';
 import { Loan } from '../models/Loan';
 import { AuthService } from './auth.service';
 
-const API_URL = "http://localhost:8080/api/";
-
+const API_URL = 'http://localhost:8080/api/';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +19,10 @@ export class LoanService {
   private baseUrl = 'http://localhost:8080/api/loans'; // L'URL backend Spring Boot
 
   currentUser: any;
-  constructor(private http: HttpClient, private storageService: StorageService) {}
+  constructor(
+    private http: HttpClient,
+    private storageService: StorageService
+  ) {}
 
   ngOnInit(): void {
     this.getCurrentUserID();
@@ -30,25 +32,20 @@ export class LoanService {
     this.currentUser = this.storageService.getUser();
     return this.currentUser; // Exemple d'ID d'utilisateur
   }
-  getAll(): Observable<any[]>{ 
-
-    return this.http.get<Loan[]>(API_URL + 'loans/list')
+  getAll(): Observable<any[]> {
+    return this.http.get<Loan[]>(API_URL + 'loans/list');
   }
-//   createBorrow(utilisateur:StorageService,book: Book) {
-    
-//     return this.http.post(`${this.baseUrl}/create`, {
-//       utilisateur,
-//       book,
-//     });
-//   }
 
-//Trouver les emprunts pour un user specifique 
-getLoanByUser(): Observable<Loan[]>{
-  const token = this.storageService.getToken();
-  const account = this.storageService.getUser();
-  const headers = new HttpHeaders().set('Authorization',`Bearer ${account.accessToken}`);
-return this.http.get<Loan[]>(API_URL + 'loans/my-loans', { headers:headers});
-}
-
-
+  //Trouver les emprunts pour un user specifique
+  getLoanByUser(): Observable<Loan[]> {
+    const token = this.storageService.getToken();
+    const account = this.storageService.getUser();
+    const headers = new HttpHeaders().set(
+      'Authorization',
+      `Bearer ${account.accessToken}`
+    );
+    return this.http.get<Loan[]>(API_URL + 'loans/my-loans', {
+      headers: headers,
+    });
+  }
 }

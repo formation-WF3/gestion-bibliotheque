@@ -1,69 +1,47 @@
 #profile_container {
-    width: auto;
-    height: 90%;
-    margin-right: auto;
-    margin-left: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin: 0;
+    /* margin-top: 1em; */
+    height: 60vh;
 }
-
-
 .user-container,
+.lastname-container,
+.firstname-container,
 .role-container,
 .mail-container {
     display: flex;
     justify-content: space-between;
-
 }
-
-
-.line {
-
-    display: flex;
-
-}
-
 .line1,
 .line2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    font-size: 1em;
 }
-
-.line2 {
-
-    font-size: x-large;
-
-
+@media(min-width:800px){
+    .line1,
+    .line2 {
+        font-size: 2em;
+    }
 }
-
-
-.profile-button {
+@media(min-width:992px){
+    .line1,
+    .line2 {
+        font-size:1.5em;
+    }
+    .user-container,
+.lastname-container,
+.firstname-container,
+.role-container,
+.mail-container {
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    /* border: none;*/
-    border-radius: 20px;
-    height: 50px;
-    background-color: var(--color-secondary-dark);
-    box-shadow: var(--shadowBoxin-2);
-    color: white;
-    font-size: larger;
+    margin-top: 0;
+}
+ 
 }
 
-
-.profile-button:hover {
-    background-color: var(--color-secondary);
-    border: var(--border-secondary-dark);
-    color: black;
-    font-weight: 200;
-}
-
-.profile-button:active {
-
-    box-shadow: var(--shadowBoxin-2);
-    transform: translateY(2px);
-}

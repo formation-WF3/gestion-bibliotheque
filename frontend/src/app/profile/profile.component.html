@@ -1,39 +1,22 @@
-<div id="profile_container" class="row" *ngIf="currentUser; else loggedOut">
-  <div class="user-container ">
-    <div class="line col-12">
-      <h4 class="line1 col-4">User :</h4>
-      <p class="line2 col-6">{{ currentUser.username }}</p>
-    </div>
-        <div class="line col-4">
-      <button [routerLink]="['/update-user']" class="profile-button col-6">Modifier</button>
-    </div>
+<div id="profile_container"  >
+  <div class="user-container">
+    <p class="line1 col-4">User:</p>
+    <p class="line2 col-6">{{ currentUser.username }}</p>
   </div>
   <div class="lastname-container">
-    <div class="line col-12">
-      <h4 class="line1 col-4">Nom :</h4>
-      <p class="line2 col-6">{{ currentUser.lastname }}</p>
-    </div>
+    <p class="line1 col-4">Nom :</p>
+    <p class="line2 col-6">{{ currentUser.lastname }}</p>
   </div>
   <div class="firstname-container">
-    <div class="line col-12">
-      <h4 class="line1 col-4">Prénom:</h4>
-      <p class="line2 col-6">{{ currentUser.firstname }}</p>
-    </div>
+    <p class="line1 col-4">Prénom:</p>
+    <p class="line2 col-6">{{ currentUser.firstname }}</p>
   </div>
   <div class="mail-container">
-    <div class="line col-12">
-      <h4 class="line1 col-4">Email :</h4>
-      <p class="line2 col-6">{{ currentUser.email }}</p>
-    </div>
+    <p class="line1 col-4">Email :</p>
+    <p class="line2 col-6">{{ currentUser.email }}</p>
   </div>
   <div class="role-container">
-    <div class="line col-12">
-      <h4 class="line1 col-4">Roles: </h4>
-      <p class="line2 col-6">{{ currentUser.roles }}</p>
-      <!--<p *ngFor="let role of currentUser.roles"> {{ role }}</p>-->
-    </div>
-  </div>
+    <p class="line1 col-4">Roles: </p>
+    <p class="line2 col-6" *ngFor="let role of currentUser.roles">{{ role }}</p>
+     </div>
 </div>
-<ng-template class="small-container" #loggedOut>
-  Please login.
-</ng-template>
