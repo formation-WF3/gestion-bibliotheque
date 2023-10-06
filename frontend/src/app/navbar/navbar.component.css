@@ -177,14 +177,6 @@ box-shadow: var(--shadowBoxin-2);
   }
 }
 
-
-
-
-
-
-
-
-
 .navbar-button:hover {
   background-color: var(--color-button);
 }

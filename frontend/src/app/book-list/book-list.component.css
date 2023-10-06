@@ -1,71 +1,78 @@
 
+
+.book-list-panel {
+
+  margin-top: 1rem;
+    height: 75vh;
+}
+
+.book-list-title{
+  font-size: 1.5em;
+}
 .content-panel {
+ 
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 60vh;
-
-
-
+  height: 70vh;
 }
 
 table {
-     width: 65vw;
-  height: 55vh;
+  
+  width: 100%;
+  height: 65vh;
   border-collapse: collapse;
 }
 
-
-
 thead {
-  display: table;   /*to take the same width as tr  */
+  
+  display: table; /*to take the same width as tr  */
   width: 100%;
-  border-bottom:var( --border-secondary-light);
-
-
+  background-color: var(--color-secondary);
+  border-bottom: var(--border-secondary-light);
 }
 
 tbody {
-  display: block;    /* to enable vertical scrolling */
-  max-height: 46vh;  
-  overflow-y: scroll;    /* keeps the scrollbar even if it doesn't need it; display purpose */
+ 
+
+  display: block;  /* to enable vertical scrolling */
+  max-height: 60vh;
+  overflow-y: scroll;
+  /* keeps the scrollbar even if it doesn't need it; display purpose */
 }
 
 .book-title,
 .book-author {
-  height: 5em;
+  height: 3em;
+  font-size: 1em;
+  text-align: left;
+  padding: 1em;
+   width: 50%;
 }
-.book-author,
-.book-title {
-  width: 50%;
-}
-
-
-
-.book-title,
-.book-author {
-  border-right: var( --border-secondary-light);
-}
-
-
-th {
+.text-detail  {
   font-size: 1.2em;
+}
+.book-title {
+  border-right: var(--border-secondary-light);
 }
 
 tr {
+  
   display: table;
-  /* display purpose; th's border */
   width: 100%;
-  font-size: 0.6em;
-
   box-sizing: border-box;
-  /* because of the border (Chrome needs this line, but not FF) */
+
 }
 
-td {
-  text-align: center;
-
-
+a{
+  color: black;
+}
+a:hover{
+  color:white;
+  text-decoration: none;
+}
+tr:hover{
+  background-color:var(--color-button) ;
 }
 
 ::-webkit-scrollbar {
@@ -73,49 +80,61 @@ td {
 }
 
 
+@media(min-width:800px) {
+  .book-list-title{
+    font-size: 2em;
+  }
 
-@media(min-width:800px){
+  tbody {
+    
+    display: block;  /* to enable vertical scrolling */
+    max-height: 60vh;
+    overflow-y: scroll;
+    /* keeps the scrollbar even if it doesn't need it; display purpose */
+  }
+  
+  .book-title,
+  .book-author {
+    height: 8em;
+
+    text-align: left;
+    padding: 1em;
+     width: 50%;
+  }
+  .book-title {
+    border-right: var(--border-secondary-light);
+  }
+  .text-detail  {
+    font-size:2em;
+  }
+
+ 
+}
+
+@media(min-width:992px) {
   
   .book-list-title{
-      font-size: 2.8em;
+    font-size: 2em;
   }
-  table{
-      width:88vw ;
+
+  tbody {
+
+    max-height: 50vh;
+ 
   }
-  th{
-      padding-left:1em ;
-      font-size: 2.5em;
-  }
-  td{
-      text-align: left;
-      padding-left: 1em;
-      font-size:2em
-  }
-}
-@media(min-width:992px){
-  .book-list-title{
-      font-size: 3em;
-  }
-  .content-panel
-  {
-      height: 52vh;
-  }
-  /* table{
-      height: 20vh;
-      
-  } */
   
-.book-title,
-.book-author
-{
-  height: 3em;
-}
-  th{
-      font-size: 3em;
-  }
-  td{
-      font-size:2.5em
-  }
-}
+  .book-title,
+  .book-author {
+    height: 2em;
 
-
+    text-align: left;
+    padding: 1em;
+     width: 50%;
+  }
+  .book-title {
+    border-right: var(--border-secondary-light);
+  }
+  .text-detail  {
+    font-size:1em;
+  }
+}
