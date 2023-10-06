@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: space-around;
     width: 95%;
-    height: 100%;
+    height: 500px;
     margin-left: auto;
     margin-right: auto;
 
@@ -16,11 +16,11 @@ button{
     justify-content: space-around;
     align-items: center;
     border-radius: 20px;
-    height: 25%;
+    height: 15%;
     background-color: var(--color-secondary-dark);
     box-shadow: var(--shadowBoxin-2);
     color: white;
-    font-size:xx-large;
+    font-size:small;
 }
 
 button:hover{

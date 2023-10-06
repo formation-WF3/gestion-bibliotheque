@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { NgForm } from '@angular/forms';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -20,7 +21,7 @@ export class RegisterComponent implements OnInit {
   errorMessage = '';
 username: any;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,  private location: Location) { }
 
   ngOnInit(): void {
   }
@@ -46,6 +47,9 @@ username: any;
   }
   reloadPage(): void {
     window.location.replace("/home");
+  }
+  goBack(): void {
+    this.location.back();
   }
 }
 

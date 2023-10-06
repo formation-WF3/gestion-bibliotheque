@@ -6,6 +6,17 @@ label {
     font-size: 1em;
     padding: .5rem;
   }
+  a{
+    color:blueviolet;
+    text-decoration: none;
+  }
+  a:hover{
+    color: var(--color-button);
+  }
+  a:active{
+    box-shadow: var(--shadowBoxin);
+    transform: translateY(2px);
+  }
   /* button {
     margin-top: 20px;
     margin-right: .5rem;

@@ -2,7 +2,6 @@ package com.formation.gestionbibliotheque.controllers;
 
 import com.formation.gestionbibliotheque.dtos.LoanDto;
 import com.formation.gestionbibliotheque.services.LoanService;
-import com.formation.gestionbibliotheque.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,15 +21,16 @@ public class LoanController {
         List<LoanDto> loans = loanService.getAllByUser();
         return new ResponseEntity<>(loans, HttpStatus.OK);
     }
+    
     @GetMapping("/list")
     public ResponseEntity<List<LoanDto>> getAll2() {
         List<LoanDto> loans = loanService.getAll();
         return new ResponseEntity<>(loans, HttpStatus.OK);
     }
+
     @PostMapping("/create")
     public ResponseEntity<LoanDto> emprunterLivre(@RequestBody LoanDto loanDto) {
         LoanDto loan = loanService.emprunt(loanDto);
-
 
         return new ResponseEntity<>(loan, HttpStatus.CREATED);
     }

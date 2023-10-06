@@ -4,7 +4,6 @@ import com.formation.gestionbibliotheque.dtos.LoanDto;
 import com.formation.gestionbibliotheque.models.BookModel;
 import com.formation.gestionbibliotheque.models.LoanModel;
 import com.formation.gestionbibliotheque.models.UserModel;
-import com.formation.gestionbibliotheque.payload.request.LoanRequest;
 import com.formation.gestionbibliotheque.repositories.BookRepository;
 import com.formation.gestionbibliotheque.repositories.LoanRepository;
 import com.formation.gestionbibliotheque.repositories.UserRepository;
@@ -18,9 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
@@ -51,13 +48,38 @@ public class LoanService {
     public LoanDto emprunt(LoanDto loanDto) {
         UserModel user = userRepository.findById(loanDto.getUser_id()).orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));
         BookModel book = bookRepository.findById(loanDto.getBook_id()).orElseThrow(() -> new EntityNotFoundException("Livre introuvable"));
-
+        if (book.getTotalItems() <= 0) {
+            throw new RuntimeException("Aucun exemplaire disponible pour ce livre");
+        }
         LoanModel loan = loanAdapter.toModel(loanDto, book, user);
         loan.setReturnDate(LocalDate.now().plusDays(14));
+        // Décrémenter le nombre d'exemplaires disponibles
+        book.setTotalItems(book.getTotalItems() - 1);
+        bookRepository.save(book);
         loan = loanRepository.save(loan);
 
         return loanAdapter.toDto(loan);
     }
+
+    public LoanDto retour(LoanDto loanDto) {
+        UserModel user = userRepository.findById(loanDto.getUser_id())
+                .orElseThrow(() -> new EntityNotFoundException("Utilisateur introuvable"));
+        BookModel book = bookRepository.findById(loanDto.getBook_id())
+                .orElseThrow(() -> new EntityNotFoundException("Livre introuvable"));
+    
+        LoanModel loan = loanAdapter.toModel(loanDto, book, user);
+    
+        // Incrémenter le nombre d'exemplaires disponibles
+        book.setTotalItems(book.getTotalItems() + 1);
+        bookRepository.save(book);
+    
+        // Mettre à jour la date de retour dans l'emprunt
+        loan.setReturnDate(LocalDate.now());
+        loanRepository.save(loan);
+    
+        return loanAdapter.toDto(loan);
+    }
+
     public LoanDto add(LoanDto loanDto) {
         Long book_id = loanDto.getBook_id();
         Long user_id = loanDto.getUser_id();

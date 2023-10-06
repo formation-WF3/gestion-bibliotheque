@@ -5,27 +5,39 @@
         <h1 class="text-center">Details du livre </h1>
         <div *ngIf="message" class="alert alert-success">{{message}}</div>
         <div *ngIf="messageError" class="alert alert-danger">{{message}}</div>
+        <div  *ngIf="isAdmin">
+          <h1 class="h1">Mode Admin</h1>
         <span class="input-group-text" id="inputGroup-sizing-default">id: {{book.id}}</span>
         
-          <label for="book-title"> Book Title: </label>
+          <label for="book-title"> Titre du livre: </label>
           <input id="book-title" [(ngModel)]=" book.title" placeholder="Book title" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
         
-          <label for="book-author"> Book Author: </label>
+          <label for="book-author"> Autheur: </label>
           <input id="book-author" [(ngModel)]=" book.author" placeholder="Book author" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
         
-          <label for="total_items"> total items: </label>
+          <label for="total_items"> Total Exemplaire : </label>
           <input id="total_items" [(ngModel)]=" book.totalItems" placeholder="total items" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
         
-          <label for="book-author">Book Author: </label>
-          <input id="book-author" [(ngModel)]="book.author" placeholder="Book author" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
-        
-          <label for="book-items">Book Items: </label>
+          <label for="book-items">Nombre d'exemplaire disponible: </label>
           <input id="book-items" [(ngModel)]="book.totalItems" placeholder="Book items" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
-        
-          <div  *ngIf="isAdmin">
-            <button type="button" (click)="save()" class="btn btn-outline-dark btn-sm m-1"> save</button>  
+            <button type="button" (click)="save()" class="btn btn-outline-danger m-1"> save</button>
+            <a routerLink="/loans/{{book.id}}" class="btn btn-outline-dark">Emprunter</a>
         </div>
-          <!-- <a (click)="enregistrerEmprunt()" class="btn btn-outline-success btn-sm m-1" type="button"> Emprunter </a>   -->
-    </div>
+        <div  *ngIf="!isAdmin">
+          <h1 class="h1">Mode Utilisateur</h1>
+          <label for="book-title"> Titre du livre: </label>
+          <input id="book-title" [(ngModel)]=" book.title" placeholder="Book title" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"  disabled="disabled"/>
+        
+          <label for="book-author"> Autheur: </label>
+          <input id="book-author" [(ngModel)]=" book.author" placeholder="Book author" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"  disabled="disabled"/>
+        
+          <label for="total_items"> Total Exemplaire : </label>
+          <input id="total_items" [(ngModel)]=" book.totalItems" placeholder="total items" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"  disabled="disabled"/>
+        
+          <label for="book-items">Nombre d'exemplaire disponible: </label>
+          <input id="book-items" [(ngModel)]="book.totalItems" placeholder="Book items" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"  disabled="disabled"/>
+          <p class="text-center p-2"><a routerLink="/loans/{{book.id}}" class="btn btn-outline-dark">Emprunter</a></p>
+        </div>
+      </div>
   </div>
 </div>

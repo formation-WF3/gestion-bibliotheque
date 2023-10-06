@@ -68,5 +68,11 @@ font-size: x-large;
     box-shadow: var(--shadowBoxin-2);
     transform: translateY(2px);
 }
+.profil-title{
+    border-radius: 40%;
+    font-size: 2rem;
+    text-align: center;
+    
+  }
 
 

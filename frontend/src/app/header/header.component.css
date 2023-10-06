@@ -91,11 +91,56 @@ background: linear-gradient(to right,  #7c4dff 0%,#48c088 52%,#84f9bd 100%); /* 
     box-shadow: var(--shadowBoxin);
     transform: translateY(2px);
 }
+.menu-button {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+}
 
-.goBack-logo,
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+}
+
+/* Styles pour le menu caché */
+.menu {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #333;
+  position: absolute;
+  top: 60px;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  transition: right 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #555;
+}
+
+/* Styles pour afficher le menu lorsqu'il est ouvert */
+.menu.open {
+  right: 0;
+}
+/* .goBack-logo,
 .bookList-logo,
 .connect-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */

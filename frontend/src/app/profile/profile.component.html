@@ -1,36 +1,22 @@
-<div id="profile_container" class="row" *ngIf="currentUser; else loggedOut">
-  <div class="user-container ">
-    <div class="line col-4">
-      <h4 class="line1 col-4">User :</h4>
-      <p class="line2 col-6">{{ currentUser.username }}</p>
-    </div>
-        <div class="col-4">
-      <button [routerLink]="['/update-user']" class="profile-button col-6">Modifier</button>
-    </div>
-  </div>
-  <div class="lastname-container">
-    <div class="line col-4">
-      <h4 class="line1 col-4">Nom :</h4>
-      <p class="line2 col-6">{{ currentUser.lastname }}</p>
-    </div>
-  </div>
-  <div class="firstname-container">
-    <div class="line col-4">
-      <h4 class="line1 col-4">Prénom:</h4>
-      <p class="line2 col-6">{{ currentUser.firstname }}</p>
-    </div>
-  </div>
-  <div class="mail-container">
-    <div class="line col-4">
-      <h4 class="line1 col-4">Email :</h4>
-      <p class="line2 col-6">{{ currentUser.email }}</p>
-    </div>
-  </div>
-  <div class="role-container">
-    <div class="line col-4">
-      <h4 class="line1 col-4">Roles: </h4>
-      <p class="line2 col-6">{{ currentUser.roles }}</p>
-      <!--<p *ngFor="let role of currentUser.roles"> {{ role }}</p>-->
+<div classe="container" *ngIf="currentUser; else loggedOut">
+  <div class="row p-5">
+    <div class="col-md-12">
+    <h1  class="profil-title"> Profil</h1>
+  
+      <!-- <h4>User :</h4>
+      <p>{{ currentUser.username }}</p> -->
+   
+      <label for="lastname"> Nom  </label>
+      <input id="lastname" [(ngModel)]="currentUser.lastname" placeholder="lastname" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
+      
+      <label for="firstname"> Prénom  </label>
+      <input id="firstname" [(ngModel)]="currentUser.firstname " placeholder="firstname" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
+     
+      <label for="email"> Email </label>
+      <input id="email" [(ngModel)]="currentUser.email" placeholder="email" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
+      <label for="role"> Nom  </label>
+      <input id="role" [(ngModel)]="currentUser.roles " placeholder="role" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" disabled="disabled"/>
+      <button [routerLink]="['/update-user']" class="btn btn-outline-success btn-sm m-1">Modifier</button>
     </div>
   </div>
 </div>

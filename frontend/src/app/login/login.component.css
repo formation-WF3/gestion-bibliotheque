@@ -1,22 +1,22 @@
-.form-group {
-    margin: auto;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-.log-label {
+/* .log-label {
     align-self: center;
     font-size: x-large;
+} */
+
+.form-group {
+
+    margin-top: 10px;
+    width: 95%;
+
 }
 
 .form-control {
     min-height: 50px;
+    max-height: 50px;
     align-self: center;
     box-shadow: var(--shadowBoxin-2);
     border-radius: 20px;
 }
-
 
 .rpl {
     display: flex;

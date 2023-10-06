@@ -4,6 +4,8 @@ import com.formation.gestionbibliotheque.dtos.BookDto;
 import com.formation.gestionbibliotheque.models.BookModel;
 import com.formation.gestionbibliotheque.services.BookService;
 import lombok.AllArgsConstructor;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,6 +50,11 @@ public class BookController {
     public List<BookModel> getByTerm( @PathVariable String term) {
        return bookService.getByTerm(term);
        
+    }
+    @GetMapping("/totalitems")
+    public ResponseEntity<Integer> getTotalItems() {
+        int totalCopies = bookService.calculateTotalItems(null); // Vous devrez créer cette méthode dans votre service.
+        return ResponseEntity.ok(totalCopies);
     }
 
 
