@@ -16,16 +16,20 @@
   }
 
   @media(min-width:992px){
-
+    .detail-pannel {
+            /* height: 50vh;
+      width: 70vw; */
+    }
+    
     .card-title{
       
-      font-size: 2cqb;
+      font-size: 1em;
        }
   
     .list-group-item{
-      font-size: 1.5em;
+      font-size: 0.8em;
     }
     .btn{
-      font-size: 2em;
+      font-size: 1em;
     }
   }

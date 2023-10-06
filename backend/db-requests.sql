@@ -8,14 +8,19 @@ INSERT INTO `category` (`name`)
 
 /* Insertion de livres pour tests */
 INSERT INTO `book` (`title`, `author`, `total_items`, `remaining_items`, `category_id`)
-    VALUES  ('Le mage', 'Raymond E.FEIST', 3, 1, 2),
-            ('C\'est pas ma faute', 'Mr TAN', 5, 2, 3),
-            ('Rufus va à l\'école', 'V. GORBACHEV', 1, 1, 5),
-            ('Tom-Tom et Nana', 'Caroline MAYARD', 1, 0, 4),
-            ('Les super histoires des filles', 'Fred MULTIER', 6, 4, 5),
-            ('Créer un site Web pour les nuls', 'David CROWLER', 3, 2, 2),
-            ('300 Recettes pour la machine à pain', 'Cécile LE HINGRAT', 4, 4, 3),
-            ('Au secours des ours polaires', 'Nickelodeon', 8, 3, 5);
+    VALUES  ('Substance Mort', ' K.Dick, Philip', 3, 1, 2),
+            ('Le Chat', 'Simenon, Georges', 5, 2, 3),
+            ('Les Miserables vol-1', 'Hugo, Victor', 1, 1, 5),
+            ('Christine', 'King, Stephen', 1, 0, 4),
+            ('Dune', 'Herbert, Franck', 6, 4, 5),
+            ('500 000 Dollars', 'Hemingway, Ernest', 3, 2, 2),
+            ('La Horde Du Hurlevent', 'Damazio, Alain', 4, 4, 3),
+            ('Au Dela du Mal', 'Stevens, Shane', 8, 3, 5),
+            ('Le Mambo des Deux ours', 'Lonsdale, Joe R.', 1, 0, 4),
+            ('Sido', 'Colette', 6, 4, 5),
+            ('Sutree', 'MC Carthy, Cormack', 3, 2, 2),
+            ('Le Silmarillon', 'Tolkien, J.R.R.', 4, 4, 3),
+            ('Le Feu', 'Barbusse, Henry', 8, 3, 5);
 
 /* Insertion des roles */
 INSERT INTO `role` (`name`)
@@ -25,12 +30,11 @@ VALUES  ('ROLE_USER'),
 
 /* Insertion d'utilisateurs pour tests */
 INSERT INTO `user` (`username`, `lastname`, `firstname`, `password`, `email`, `email_verified`, `can_borrow`, `penalty_amount`, `role_id`)
-    VALUES  ('Gil', 'TEIGNE', 'Gilles', 'graboulli', 'gilles.t@test.fr', true, true, 0, 1),
-            ('Dav', 'HAURY', 'David', 'digachou', 'david.h@test.com', false, false, 0, 1),
-            ('Line', 'TAIG', 'Caroline', '18c02t', 'caro.t@test.orgg', true, false, 5.5, 1),
-            ('Mymy', 'GUAN', 'Michel', 'juerghte', 'mymy@test.mag', false, true, 0, 1),
-            ('Fred', 'TANG', 'Frederic', 'klertagi', 'fred.t@test.ue',  true, true, 0, 2),
-            ('Julieg', 'GASTON', 'Julie', 'tagadaJG', 'julie.g@test.wor', true, false, 0, 2);
+    VALUES  ('Vince', 'Faure', 'Vincent', 'password', 'vince@vince.faure', true, true, 0, 1),
+            ('Elsa', 'Faure', 'Elsa', 'password', 'elsa@elsa.faure', true, false, 0, 1),
+            ('Cliff', 'Burton', 'Cliff', 'password', 'cliff@megafoce.', true, false, 5.5, 1),
+            ('Bon', 'Scott', 'Bon', 'password', 'bon@acdc.aus', true, true, 0, 1),
+
 
 
 
