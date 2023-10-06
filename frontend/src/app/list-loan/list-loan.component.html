@@ -1,29 +1,31 @@
-
-<div *ngIf="listLoans" class="content-panel">
-    <div class="col-md-12">
-        <table class="booklist table">
-            <thead class="thead-light">
-              <tr>
-                <th colspan="4" class="bookList-title" scope="col">Liste des Livres</th>
-              </tr>
-            </thead>
-            <tbody class="bookList-container" >
-                <tr>  
-                    <th class="bookList-details">Title du livre</th>
-                    <th class="bookList-details">Date d'emprunt</th>
-                    <th class="bookList-details">Date de retour</th>
-                </tr>
-              <tr  *ngFor="let loan of listLoans">
-                <td class="bookList-details"><a routerLink="/book-detail/{{loan.book_id}}">{{loan.title }}</a></td>
-                <td class="bookList-details">{{ loan.borrowedAt }}</td>
-                <td class="bookList-details">{{ loan.returnDate }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+<div class="loan-title">
+  <p>Vos emprunts</p>
 </div>
+<div *ngIf="listLoans" class="content-panel">
+ 
+    <table class="loan-list-table">
+      <thead class="theader">
+        <tr>
+          <th class="loan-list-title ">Titre</th>
+          <th class="loan-list-loan">Emprunt</th>
+          <th class="loan-list-return">Retour</th>
+        </tr>
+      </thead>
+      <tbody class="loan-list-container">
+        <tr>
+
+        </tr>
+        <tr *ngFor="let loan of listLoans" class="test">
+          <td class="loan-list-title">{{loan.title }}</td>
+          <td class="loan-list-loan">{{ loan.borrowedAt }}</td>
+          <td class="loan-list-return">{{ loan.returnDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 <div *ngIf="!listLoans">
-    <h3 class="text-center">Pas d'Emprunt existant</h3>
+  <h3 class="text-center">Pas d'Emprunt existant</h3>
 </div>
 
 <!-- <table>

@@ -1,0 +1,125 @@
+.content-panel {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 60vh;
+
+
+
+}
+
+table {
+       width: 65vw;
+    height: 55vh;
+    border-collapse: collapse;
+}
+
+
+
+thead {
+    display: table;   /*to take the same width as tr  */
+    width: 100%;
+    border-bottom:var( --border-secondary-light);
+
+
+}
+
+tbody {
+    display: block;    /* to enable vertical scrolling */
+    max-height: 46vh;  
+    overflow-y: scroll;    /* keeps the scrollbar even if it doesn't need it; display purpose */
+}
+
+.loan-list-title,
+.loan-list-loan,
+.loan-list-return {
+    height: 5em;
+}
+
+.loan-list-title {
+    width: 45%;
+}
+
+.loan-list-loan,
+.loan-list-return {
+    width: 27%;
+
+}
+
+.loan-list-title,
+.loan-list-loan {
+    border-right: var( --border-secondary-light);
+}
+
+
+th {
+    font-size: 1.2em;
+}
+
+tr {
+    display: table;
+    /* display purpose; th's border */
+    width: 100%;
+    font-size: 0.6em;
+
+    box-sizing: border-box;
+    /* because of the border (Chrome needs this line, but not FF) */
+}
+
+td {
+    text-align: center;
+
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+@media(min-width:800px){
+    
+    .loan-title{
+        font-size: 2.8em;
+    }
+    table{
+        width:88vw ;
+    }
+    th{
+        padding-left:1em ;
+        font-size: 2.5em;
+    }
+    td{
+        text-align: left;
+        padding-left: 1em;
+        font-size:2em
+    }
+}
+@media(min-width:992px){
+    .loan-title{
+        font-size: 3em;
+    }
+    .content-panel
+    {
+        height: 52vh;
+    }
+    /* table{
+        height: 20vh;
+        
+    } */
+    
+.loan-list-title,
+.loan-list-loan,
+.loan-list-return {
+    height: 3em;
+}
+    th{
+        font-size: 3em;
+    }
+    td{
+        font-size:2.5em
+    }
+}
+
+
