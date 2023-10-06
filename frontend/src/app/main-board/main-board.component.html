@@ -1,6 +1,4 @@
-<!-- <div class="upper-pannel">
-    <app-advanced-search></app-advanced-search>
-</div> -->
+
 <div class="to-center">
     <div *ngIf="!isLoggedIn" >
     <app-connect-frame></app-connect-frame>
@@ -9,7 +7,7 @@
 
 <div *ngIf="isLoggedIn">
     <div class="main-pannel  col-9 col-sm-11 ">
-        <div class="side-pannel ">
+        <div class="top-pannel ">
             <app-nav-buttons (navEvent)="selectComponent($event)"></app-nav-buttons>
         </div>
         <div class="content-pannel ">
