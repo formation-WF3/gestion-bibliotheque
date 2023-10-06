@@ -1,80 +1,121 @@
-.list-pannel{
+
+.content-panel {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 13vh;
-  left:20vw;
-  height: 85vh;
-  width: 78vw;
+  position: relative;
+  height: 60vh;
 
-overflow: hidden;
+
 
 }
-.bookList{
- 
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scrollbar-width: none; 
+
+table {
+     width: 65vw;
+  height: 55vh;
+  border-collapse: collapse;
 }
 
-.bookList-title{
-  font-size: 1.5em;
-}
-.theader{
-  background-color: var(--color-secondary);
-}
-.bookList-details{
-list-style-type: none;
-font-size: 1em;
+
+
+thead {
+  display: table;   /*to take the same width as tr  */
+  width: 100%;
+  border-bottom:var( --border-secondary-light);
+
+
 }
 
-::-webkit-scrollbar{
+tbody {
+  display: block;    /* to enable vertical scrolling */
+  max-height: 46vh;  
+  overflow-y: scroll;    /* keeps the scrollbar even if it doesn't need it; display purpose */
+}
+
+.book-title,
+.book-author {
+  height: 5em;
+}
+.book-author,
+.book-title {
+  width: 50%;
+}
+
+
+
+.book-title,
+.book-author {
+  border-right: var( --border-secondary-light);
+}
+
+
+th {
+  font-size: 1.2em;
+}
+
+tr {
+  display: table;
+  /* display purpose; th's border */
+  width: 100%;
+  font-size: 0.6em;
+
+  box-sizing: border-box;
+  /* because of the border (Chrome needs this line, but not FF) */
+}
+
+td {
+  text-align: center;
+
+
+}
+
+::-webkit-scrollbar {
   display: none;
 }
 
 
-a{
-  color: black;
-  text-decoration: none;
-}
-a:hover{
-  color: var(--color-button);
-}
 
-
-@media(min-width:800px) {
-    
-  .to-center {
-    margin-top: 5vh;
-    
-}
-.list-pannel {
-    top: 20vh;
-    width:92vw;
-    left:4vw;
-    height: 90vh;
-
-}
-.bookList-title{
-  font-size: 2rem;
-}
-}
-.bookList-details{
-  list-style-type: none;
-  font-size: 1.5rem;
-  }
-
-  .bookList-details a{
-    list-style-type: none;
-    font-size: 1.5rem;
-    } 
-@media(min-width:992px){
-
+@media(min-width:800px){
   
-.list-pannel {
-  top: 28vh;
-  left:4vw;
-  height: 70vh;
+  .book-list-title{
+      font-size: 2.8em;
+  }
+  table{
+      width:88vw ;
+  }
+  th{
+      padding-left:1em ;
+      font-size: 2.5em;
+  }
+  td{
+      text-align: left;
+      padding-left: 1em;
+      font-size:2em
+  }
+}
+@media(min-width:992px){
+  .book-list-title{
+      font-size: 3em;
+  }
+  .content-panel
+  {
+      height: 52vh;
+  }
+  /* table{
+      height: 20vh;
+      
+  } */
+  
+.book-title,
+.book-author
+{
+  height: 3em;
+}
+  th{
+      font-size: 3em;
+  }
+  td{
+      font-size:2.5em
+  }
+}
 
-}
-}
+
